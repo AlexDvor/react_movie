@@ -1,7 +1,11 @@
+import Container from "./components/Container";
+
 function App() {
   return (
     <>
-      <h1>Test</h1>
+      <Container>
+        <h1>Test</h1>
+      </Container>
     </>
   );
 }
