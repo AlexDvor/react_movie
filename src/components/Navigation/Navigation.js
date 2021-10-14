@@ -1,18 +1,19 @@
-import { StyledNavLink } from './Navigation.styled';
+import { NavList, NavItem, StyledNavLink } from './Navigation.styled';
 
 export default function Navigation() {
   return (
     <nav>
-      <ul>
-        <li>
+      <NavList>
+        <NavItem>
           <StyledNavLink exact to="/">
             Home
           </StyledNavLink>
-        </li>
-        <li>
+        </NavItem>
+
+        <NavItem>
           <StyledNavLink to="/movies">Movies</StyledNavLink>
-        </li>
-      </ul>
+        </NavItem>
+      </NavList>
     </nav>
   );
 }

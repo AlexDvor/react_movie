@@ -1,5 +1,7 @@
-import Header from "./components/Header/Header";
-import { Route, Switch } from "react-router";
+import Header from './components/Header/Header';
+import { Route, Switch } from 'react-router';
+// Pages
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
       <Header></Header>
       <Switch>
         <Route exact path="/">
-          <h1>home</h1>
+          <HomePage />
         </Route>
 
         <Route exact path="/movies">
