@@ -8,7 +8,7 @@ function App() {
     <>
       <Header></Header>
       <Switch>
-        <Route exact path="/react_movies">
+        <Route exact path="/">
           <HomePage />
         </Route>
 
