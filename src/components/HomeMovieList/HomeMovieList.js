@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MovieList, MovieItem, WrapperThumb, WrapperContent, Image } from './HomeMovieList.styled';
 
 export default function HomeMovieList({ movies }) {
@@ -7,12 +8,18 @@ export default function HomeMovieList({ movies }) {
       {movies.length > 0 &&
         movies.map(({ id, poster_path, title }) => (
           <MovieItem key={id}>
-            <WrapperThumb>
-              <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-            </WrapperThumb>
-            <WrapperContent>
-              <h2>{title}</h2>
-            </WrapperContent>
+            <Link
+              to={{
+                pathname: `/movies/${id}`,
+              }}
+            >
+              <WrapperThumb>
+                <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
+              </WrapperThumb>
+              <WrapperContent>
+                <h2>{title}</h2>
+              </WrapperContent>
+            </Link>
           </MovieItem>
         ))}
     </MovieList>

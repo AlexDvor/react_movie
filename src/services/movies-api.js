@@ -8,3 +8,9 @@ export async function fetchMovie() {
     .then(res => res.data)
     .catch(error => error.massage);
 }
+
+export async function fetchMovieByID(id) {
+  return await axios(`${BASE_URL}/${id}?api_key=${API_KEY}&language=en-US&page=1`)
+    .then(res => res.data)
+    .catch(error => error.massage);
+}
