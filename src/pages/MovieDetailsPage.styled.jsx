@@ -142,7 +142,7 @@ export const BlurBack = styled.div`
   right: 0;
   background-size: cover;
   border-radius: 11px;
-  background: url('https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png');
+  /* background: url('https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png'); */
   background-repeat: no-repeat;
 
   @media screen and (min-width: 768px) {
