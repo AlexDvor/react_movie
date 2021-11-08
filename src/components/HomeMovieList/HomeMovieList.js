@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { WrapperThumb, Image } from './HomeMovieList.styled';
+import { WrapperThumb, Image, TestDiv } from './HomeMovieList.styled';
 import Slider from 'react-slick';
 import Container from '../Container';
 
@@ -8,16 +8,15 @@ export default function HomeMovieList({ movies }) {
   console.log(movies);
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 8,
-    slidesToScroll: 5,
+    slidesToScroll: 3,
     arrows: true,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    swipeToSlide: true,
-    touchMove: true,
+    // autoplay: false,
+    // autoplaySpeed: 2000,
+    // pauseOnHover: true,
+    // swipeToSlide: false,
     draggable: false,
     swipe: true,
 
@@ -28,7 +27,6 @@ export default function HomeMovieList({ movies }) {
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -53,7 +51,7 @@ export default function HomeMovieList({ movies }) {
         breakpoint: 320,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           arrows: true,
         },
       },
@@ -65,11 +63,13 @@ export default function HomeMovieList({ movies }) {
       <Slider {...settings}>
         {movies.length > 0 &&
           movies.map(({ id, poster_path, title }) => (
-            <Link key={id} to={{ pathname: `/movies/${id}` }}>
-              <WrapperThumb>
-                <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-              </WrapperThumb>
-            </Link>
+            <TestDiv key={id}>
+              <Link to={{ pathname: `/movies/${id}` }}>
+                <WrapperThumb>
+                  <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
+                </WrapperThumb>
+              </Link>
+            </TestDiv>
           ))}
       </Slider>
     </Container>

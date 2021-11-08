@@ -12,3 +12,8 @@ export const Image = styled.img`
 `;
 
 export const WrapperSlider = styled.div``;
+
+export const TestDiv = styled.div`
+  padding: 5px;
+  /* background-color: white; */
+`;
