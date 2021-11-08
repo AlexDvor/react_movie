@@ -9,10 +9,10 @@ export const MovieWrapper = styled.div`
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
-  // &:hover {
-  //   transform: scale(1.02);
-  //   transition: all 0.4s;
-  // }
+  /* &:hover {
+    transform: scale(1.02);
+    transition: all 0.4s;
+  } */
 
   box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
   &:hover {
@@ -89,7 +89,12 @@ export const MovieImg = styled.img`
   margin-right: 20px;
   height: 120px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+
+  @media screen and (min-width: 769px) {
+    height: 250px;
+  }
 `;
+
 export const MovieDesc = styled.div`
   padding: 25px;
   height: 50%;
@@ -142,7 +147,6 @@ export const BlurBack = styled.div`
   right: 0;
   background-size: cover;
   border-radius: 11px;
-  /* background: url('https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png'); */
   background-repeat: no-repeat;
 
   @media screen and (min-width: 768px) {
