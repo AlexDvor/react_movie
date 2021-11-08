@@ -13,10 +13,6 @@ export default function HomeMovieList({ movies }) {
     slidesToShow: 8,
     slidesToScroll: 3,
     arrows: true,
-    // autoplay: false,
-    // autoplaySpeed: 2000,
-    // pauseOnHover: true,
-    // swipeToSlide: false,
     draggable: false,
     swipe: true,
 
