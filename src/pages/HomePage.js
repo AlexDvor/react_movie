@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
-import { fetchMovie } from '../services/movies-api';
+import {
+  fetchUpMovies,
+  fetchTopMovies,
+  fetchPopularMovies,
+  fetchTrendMovies,
+} from '../services/movies-api';
 import Container from '../components/Container';
 import MovieList from '../components/MovieList/MovieList';
 import TitleByType from '../components/TitleByType/TitleByType';
@@ -7,16 +12,32 @@ import TitleByType from '../components/TitleByType/TitleByType';
 // console.log(fetchMovie().then(res => console.log(res.results)));
 
 export default function HomePage() {
-  const [movies, setMovies] = useState([]);
+  const [upComingMovies, setUpComingMovies] = useState([]);
+  const [topMovies, setTopMovies] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [trendMovies, setTrendMovies] = useState([]);
+  console.log(trendMovies);
 
   useEffect(() => {
-    fetchMovie().then(res => setMovies(res.results));
+    fetchUpMovies().then(res => setUpComingMovies(res.results));
+    fetchTopMovies().then(res => setTopMovies(res.results));
+    fetchPopularMovies().then(res => setPopularMovies(res.results));
+    fetchTrendMovies().then(res => setTrendMovies(res.results));
   }, []);
 
   return (
     <Container>
+      <TitleByType text="Top Day" />
+      <MovieList movies={trendMovies} />
+
+      <TitleByType text="Populas Movies" />
+      <MovieList movies={popularMovies} />
+
       <TitleByType text="Upcoming" />
-      <MovieList movies={movies} />
+      <MovieList movies={upComingMovies} />
+
+      <TitleByType text="Top Movies" />
+      <MovieList movies={topMovies} />
     </Container>
   );
 }
