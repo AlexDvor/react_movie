@@ -7,6 +7,7 @@ export const MovieList = styled.ul`
   margin-left: -10px;
   margin-top: -10px;
 `;
+
 export const MovieItem = styled.li`
   margin-left: 10px;
   margin-top: 10px;
@@ -14,7 +15,7 @@ export const MovieItem = styled.li`
 `;
 
 export const WrapperThumb = styled.div`
-  max-width: 250px;
+  max-width: 200px;
 `;
 export const WrapperContent = styled.div``;
 export const Image = styled.img`
