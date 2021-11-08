@@ -40,28 +40,28 @@ export default function MovieDetailsPage() {
             <MovieMinutes>125 min</MovieMinutes>
             <MovieType>Action, Fantasy</MovieType>
           </MovieHeader>
-          <MovieDesc class="movie_desc">
-            <MovieText class="text">
+          <MovieDesc>
+            <MovieText>
               Lara Croft, the fiercely indeMovieTextendent daughter of a missing adventurer, must
               push herself beyond her limits when she finds herself on the island where her father
               disappeared.
             </MovieText>
           </MovieDesc>
-          <MovieSocial class="movie_social">
+          <MovieSocial>
             <MovieSocialList>
               <MovieSocialItem>
-                <MovieI class="material-icons">share</MovieI>
+                <MovieI>share</MovieI>
               </MovieSocialItem>
               <MovieSocialItem>
-                <MovieI class="material-icons"></MovieI>
+                <MovieI></MovieI>
               </MovieSocialItem>
               <MovieSocialItem>
-                <MovieI class="material-icons">chat_bubble</MovieI>
+                <MovieI>chat_bubble</MovieI>
               </MovieSocialItem>
             </MovieSocialList>
           </MovieSocial>
         </InfoSection>
-        <BlurBack class="blur_back tomb_back"></BlurBack>
+        <BlurBack></BlurBack>
       </MovieWrapper>
     </Container>
   );

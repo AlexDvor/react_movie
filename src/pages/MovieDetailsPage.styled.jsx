@@ -4,12 +4,7 @@ export const MovieWrapper = styled.div`
   position: relative;
   display: block;
   max-width: 1723px;
-
-  // width: 800px;
-  //   width: 1200px;
-  // height: 350px;
   height: 685px;
-  //   height: 870px;
   margin: 100px auto;
   overflow: hidden;
   border-radius: 10px;

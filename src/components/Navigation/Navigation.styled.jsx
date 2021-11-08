@@ -7,7 +7,7 @@ export const NavList = styled.ul`
 
 export const NavItem = styled.li`
   padding: 20px 0px;
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin-left: 25px;
   }
 `;

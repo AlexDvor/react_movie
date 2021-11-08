@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { MovieList, MovieItem, WrapperThumb, WrapperContent, Image } from './HomeMovieList.styled';
+import { WrapperThumb, Image } from './HomeMovieList.styled';
 import Slider from 'react-slick';
+import Container from '../Container';
 
 export default function HomeMovieList({ movies }) {
   const URL = 'https://image.tmdb.org/t/p/w500/';
@@ -15,13 +16,17 @@ export default function HomeMovieList({ movies }) {
     autoplay: false,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    swipeToSlide: true,
+    touchMove: true,
+    draggable: false,
+    swipe: true,
 
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 3,
+          slidesToScroll: 4,
           infinite: true,
           dots: true,
         },
@@ -56,14 +61,18 @@ export default function HomeMovieList({ movies }) {
   };
 
   return (
-    <Slider {...settings}>
-      {movies.length > 0 &&
-        movies.map(({ id, poster_path, title }) => (
-          <WrapperThumb>
-            <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-          </WrapperThumb>
-        ))}
-    </Slider>
+    <Container>
+      <Slider {...settings}>
+        {movies.length > 0 &&
+          movies.map(({ id, poster_path, title }) => (
+            <Link key={id} to={{ pathname: `/movies/${id}` }}>
+              <WrapperThumb>
+                <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
+              </WrapperThumb>
+            </Link>
+          ))}
+      </Slider>
+    </Container>
   );
 }
 
