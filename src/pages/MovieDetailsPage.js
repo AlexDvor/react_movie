@@ -30,7 +30,7 @@ export default function MovieDetailsPage() {
     fetchMovieByID(Number(movieId)).then(setMovie);
   }, [movieId]);
 
-  console.log('movie', movie);
+  const parseMovieData = obj => obj.map(item => item.name).join(', ');
 
   return (
     <Container>
@@ -40,9 +40,9 @@ export default function MovieDetailsPage() {
             <MovieHeader>
               <MovieImg src={`${URL}/${movie.poster_path}`} alt={movie.title} />
               <MovieTitle>{movie.title}</MovieTitle>
-              <MovieYear>{movie.release_date}</MovieYear>
+              <MovieYear>{movie.release_date.slice(0, 4)}</MovieYear>
               <MovieMinutes>{movie.runtime} min</MovieMinutes>
-              <MovieType>(Action, Fantasy)</MovieType>
+              <MovieType>{parseMovieData(movie.genres)}</MovieType>
             </MovieHeader>
             <MovieDesc>
               <MovieText>{movie.overview}</MovieText>
