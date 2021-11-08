@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
-import { WrapperThumb, Image, TestDiv } from './HomeMovieList.styled';
+import { WrapperThumb, Image, TestDiv } from './MovieList.styled';
 import Slider from 'react-slick';
 import Container from '../Container';
 
-export default function HomeMovieList({ movies }) {
+export default function MovieList({ movies }) {
   const URL = 'https://image.tmdb.org/t/p/w500/';
-  console.log(movies);
-
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 8,
     slidesToScroll: 3,

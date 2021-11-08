@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchMovie } from '../services/movies-api';
 import Container from '../components/Container';
-import HomeMovieList from '../components/HomeMovieList/HomeMovieList';
+import MovieList from '../components/MovieList/MovieList';
 import TitleByType from '../components/TitleByType/TitleByType';
 
 // console.log(fetchMovie().then(res => console.log(res.results)));
@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <Container>
       <TitleByType text="Upcoming" />
-      <HomeMovieList movies={movies} />
+      <MovieList movies={movies} />
     </Container>
   );
 }
