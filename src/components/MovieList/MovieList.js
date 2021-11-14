@@ -14,7 +14,7 @@ export default function MovieList({ movies }) {
     draggable: false,
     swipe: true,
     initialSlide: 4,
-    touchThreshold: 10,
+    touchThreshold: 13,
 
     responsive: [
       {
