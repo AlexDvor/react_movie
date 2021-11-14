@@ -7,12 +7,14 @@ export default function MovieList({ movies }) {
   const URL = 'https://image.tmdb.org/t/p/w500/';
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false, // Infinitely wrap around contents
     slidesToShow: 8,
     slidesToScroll: 3,
     arrows: true,
     draggable: false,
     swipe: true,
+    initialSlide: 4,
+    touchThreshold: 10,
 
     responsive: [
       {
@@ -45,7 +47,7 @@ export default function MovieList({ movies }) {
         breakpoint: 320,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           arrows: false,
         },
       },
