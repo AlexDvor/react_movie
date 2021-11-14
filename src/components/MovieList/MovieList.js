@@ -5,15 +5,17 @@ import Container from '../Container';
 
 export default function MovieList({ movies }) {
   const URL = 'https://image.tmdb.org/t/p/w500/';
+
   const settings = {
     dots: false,
+    lazyLoad: true,
     infinite: false, // Infinitely wrap around contents
     slidesToShow: 8,
     slidesToScroll: 3,
     arrows: true,
     draggable: false,
     swipe: true,
-    initialSlide: 4,
+    initialSlide: 1,
     touchThreshold: 13,
 
     responsive: [
@@ -30,7 +32,8 @@ export default function MovieList({ movies }) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
+          initialSlide: 0,
+          infinite: false,
         },
       },
 
@@ -48,7 +51,8 @@ export default function MovieList({ movies }) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
+          arrows: true,
+          infinite: true,
         },
       },
     ],
