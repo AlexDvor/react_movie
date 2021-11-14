@@ -46,7 +46,7 @@ export default function MovieList({ movies }) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 2,
-          arrows: true,
+          arrows: false,
         },
       },
     ],
