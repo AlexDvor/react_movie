@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { WrapperThumb, Image, TestDiv } from './MovieList.styled';
+import { ImageWrapper, Image, CardWrapper } from './MovieList.styled';
 import Slider from 'react-slick';
 import Container from '../Container';
 
@@ -59,13 +59,13 @@ export default function MovieList({ movies }) {
       <Slider {...settings}>
         {movies.length > 0 &&
           movies.map(({ id, poster_path, title }) => (
-            <TestDiv key={id}>
+            <CardWrapper key={id}>
               <Link to={{ pathname: `/movies/${id}` }}>
-                <WrapperThumb>
+                <ImageWrapper>
                   <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-                </WrapperThumb>
+                </ImageWrapper>
               </Link>
-            </TestDiv>
+            </CardWrapper>
           ))}
       </Slider>
     </Container>
