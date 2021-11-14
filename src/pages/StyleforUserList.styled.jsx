@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 export const MovieWrapper = styled.div`
   position: relative;
   display: block;
-  max-width: 1820px;
+  max-width: 1723px;
   height: 685px;
-  margin: 50px auto;
+  margin: 100px auto;
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
@@ -21,10 +21,9 @@ export const MovieWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 95%;
-    margin: 20px auto;
-    /* min-height: 350px;
-    height: auto; */
-    height: 100vh;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
   }
 `;
 
@@ -56,7 +55,7 @@ export const MovieHeader = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    margin-top: 231px;
+    margin-top: 85px;
   }
 `;
 export const MovieTitle = styled.h1`
