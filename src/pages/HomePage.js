@@ -30,14 +30,14 @@ export default function HomePage() {
       <TitleByType text="Upcoming" />
       <MovieList movies={upComingMovies} />
 
-      {/* <TitleByType text="Top Day" />
+      <TitleByType text="Top Day" />
       <MovieList movies={trendMovies} />
 
       <TitleByType text="Populas Movies" />
       <MovieList movies={popularMovies} />
 
       <TitleByType text="Top Movies" />
-      <MovieList movies={topMovies} /> */}
+      <MovieList movies={topMovies} />
     </Container>
   );
 }

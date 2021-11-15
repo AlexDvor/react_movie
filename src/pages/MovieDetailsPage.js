@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 // Components
 import Container from '../components/Container';
 import PlayButton from '../components/PlayButton/PlayButton';
+import Player from '../components/Player/Player';
 import AddButton from '../components/AddButton/AddButton';
 import {
   MovieWrapper,
@@ -24,6 +25,7 @@ import {
   MovieButtonsContainer,
   MovieButtonsList,
   BlurBack,
+  PlayerWrapper,
 } from './MovieDetailsPage.styled';
 
 export default function MovieDetailsPage() {
@@ -55,7 +57,7 @@ export default function MovieDetailsPage() {
             <MovieButtonsContainer>
               <MovieButtonsList>
                 <MovieButtonsItem>
-                  <PlayButton />
+                  <PlayButton movieId={movieId} />
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>
@@ -86,6 +88,8 @@ export default function MovieDetailsPage() {
           ></BlurBack>
         </MovieWrapper>
       )}
+
+      <Player movieId={movieId}></Player>
     </Container>
   );
 }
