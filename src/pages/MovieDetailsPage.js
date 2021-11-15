@@ -1,6 +1,8 @@
 import { fetchMovieByID } from '../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+// Components
+import PlayButton from '../components/PlayButton/PlayButton';
 import Container from '../components/Container';
 import {
   MovieWrapper,
@@ -17,6 +19,9 @@ import {
   MovieSocialList,
   MovieSocialItem,
   MovieI,
+  MovieButtonsItem,
+  MovieButtonsContainer,
+  MovieButtonsList,
   BlurBack,
 } from './MovieDetailsPage.styled';
 
@@ -46,19 +51,28 @@ export default function MovieDetailsPage() {
             <MovieDesc>
               <MovieText>{movie.overview}</MovieText>
             </MovieDesc>
-            <MovieSocial>
+            <MovieButtonsContainer>
+              <MovieButtonsList>
+                <MovieButtonsItem>
+                  <PlayButton />
+                </MovieButtonsItem>
+              </MovieButtonsList>
+            </MovieButtonsContainer>
+            {/* <MovieSocial>
               <MovieSocialList>
                 <MovieSocialItem>
                   <MovieI>share</MovieI>
                 </MovieSocialItem>
+
                 <MovieSocialItem>
                   <MovieI></MovieI>
                 </MovieSocialItem>
+
                 <MovieSocialItem>
                   <MovieI>chat_bubble</MovieI>
                 </MovieSocialItem>
               </MovieSocialList>
-            </MovieSocial>
+            </MovieSocial> */}
           </InfoSection>
           <BlurBack
             style={{

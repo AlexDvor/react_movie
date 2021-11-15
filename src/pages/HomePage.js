@@ -29,8 +29,8 @@ export default function HomePage() {
     <Container>
       <TitleByType text="Upcoming" />
       <MovieList movies={upComingMovies} />
-      {/* 
-      <TitleByType text="Top Day" />
+
+      {/* <TitleByType text="Top Day" />
       <MovieList movies={trendMovies} />
 
       <TitleByType text="Populas Movies" />

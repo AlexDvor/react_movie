@@ -113,6 +113,7 @@ export const MovieText = styled.p`
   color: #cfd6e1;
 `;
 
+/////// MovieSocial wrapper
 export const MovieSocial = styled.div`
   height: 10%;
   padding-left: 15px;
@@ -140,6 +141,23 @@ export const MovieI = styled.i`
   cursor: pointer;
 `;
 
+///////
+
+/////// MovieButtons
+export const MovieButtonsContainer = styled.div`
+  height: 10%;
+  padding-left: 15px;
+  padding-bottom: 20px;
+`;
+
+export const MovieButtonsList = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+export const MovieButtonsItem = styled.li``;
+
+///////
 export const BlurBack = styled.div`
   position: absolute;
   top: 0;
