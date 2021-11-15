@@ -3,8 +3,7 @@ import Slider from 'react-slick';
 export default function MovieSlider({ children }) {
   const settings = {
     dots: false,
-    lazyLoad: true,
-    infinite: true, // Infinitely wrap around contents
+    infinite: false, // Infinitely wrap around contents
     slidesToShow: 8,
     slidesToScroll: 3,
     arrows: true,
@@ -19,6 +18,7 @@ export default function MovieSlider({ children }) {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
+          infinite: true,
         },
       },
       {
@@ -45,6 +45,7 @@ export default function MovieSlider({ children }) {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
+          infinite: true,
         },
       },
     ],

@@ -27,7 +27,7 @@ export default function Player({ movieId }) {
             <ReactPlayer
               {...settings}
               config={{ youtube: { playerVars: { showinfo: 1 } } }}
-              url={`${URL}/watch?v=${item.key}`}
+              url={`${URL}/embed/${item.key}`}
             />
           </TrailerItem>
         ))}
