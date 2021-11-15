@@ -17,8 +17,6 @@ export const Image = styled.img`
   height: 100%;
 `;
 
-export const WrapperSlider = styled.div``;
-
 export const CardWrapper = styled.div`
   padding: 5px;
   /* background-color: white; */
