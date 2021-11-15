@@ -12,6 +12,8 @@ export const Wrapper = styled.div`
 `;
 
 export const TrailerList = styled.ul``;
+
 export const TrailerItem = styled.li`
-  width: 250px;
+  /* width: 350px; */
+  /* height: auto; */
 `;

@@ -4,7 +4,7 @@ import Player from '../components/Player/Player';
 export default function MyListPage() {
   return (
     <Container>
-      <Player></Player>
+      <Player movieId="438631"></Player>
     </Container>
   );
 }
