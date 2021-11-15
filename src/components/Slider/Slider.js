@@ -10,8 +10,8 @@ export default function MovieSlider({ children }) {
     arrows: true,
     draggable: false,
     swipe: true,
-    initialSlide: 1,
-    touchThreshold: 13,
+    initialSlide: 0,
+    touchThreshold: 13, //swipe-speed
 
     responsive: [
       {

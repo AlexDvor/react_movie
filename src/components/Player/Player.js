@@ -1,8 +1,8 @@
 import ReactPlayer from 'react-player/youtube';
 import { useEffect, useState } from 'react';
-import { PlayerWrapper } from './Player.styled';
-
+import { PlayerWrapper, Wrapper } from './Player.styled';
 import { fetchTrailer } from '../../services/movies-api';
+import MovieSlider from '../Slider/Slider';
 
 export default function Player({ movieId }) {
   const URL = 'https://www.youtube.com';
@@ -11,6 +11,8 @@ export default function Player({ movieId }) {
   const settings = {
     controls: true,
     playing: false,
+    width: '100%',
+    height: '100%',
   };
 
   useEffect(() => {
@@ -18,8 +20,19 @@ export default function Player({ movieId }) {
   }, [movieId]);
 
   return (
-    <PlayerWrapper>
-      {movie && movie.map(item => <ReactPlayer {...settings} url={`${URL}/watch?v=${item.key}`} />)}
-    </PlayerWrapper>
+    <MovieSlider>
+      {movie &&
+        movie.map(item => (
+          <Wrapper>
+            <ReactPlayer key={item.key} {...settings} url={`${URL}/watch?v=${item.key}`} />
+          </Wrapper>
+        ))}
+    </MovieSlider>
   );
+}
+{
+  /* 
+// <MovieSlider>
+//   {movie && movie.map(item => <ReactPlayer {...settings} url={`${URL}/watch?v=${item.key}`} />)}
+// </MovieSlider>; */
 }
