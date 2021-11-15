@@ -34,3 +34,11 @@ export async function fetchTrendMovies() {
     .then(res => res.data)
     .catch(error => error.massage);
 }
+
+export async function fetchTrailer(movieId) {
+  return await axios(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=uk-UA`,
+  )
+    .then(res => res.data)
+    .catch(error => error.massage);
+}

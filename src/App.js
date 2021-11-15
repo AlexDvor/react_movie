@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 // Pages
 import HomePage from './pages/HomePage';
 import MovieDetailsPage from './pages/MovieDetailsPage';
+import MyListPage from './pages/MyListPage';
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
           <MovieDetailsPage />
         </Route>
 
-        <Route exact path="/movies">
-          <MovieDetailsPage />
+        <Route exact path="/my_list">
+          <MyListPage />
         </Route>
       </Switch>
     </>

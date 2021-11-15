@@ -11,7 +11,7 @@ export default function Navigation() {
         </NavItem>
 
         <NavItem>
-          <StyledNavLink to="/movies">My List</StyledNavLink>
+          <StyledNavLink to="/my_list">My List</StyledNavLink>
         </NavItem>
       </NavList>
     </nav>
