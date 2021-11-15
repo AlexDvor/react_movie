@@ -17,15 +17,15 @@ import {
   MovieImg,
   MovieDesc,
   MovieText,
-  MovieSocial,
-  MovieSocialList,
-  MovieSocialItem,
-  MovieI,
+  // MovieSocial,
+  // MovieSocialList,
+  // MovieSocialItem,
+  // MovieI,
   MovieButtonsItem,
   MovieButtonsContainer,
   MovieButtonsList,
   BlurBack,
-  PlayerWrapper,
+  // PlayerWrapper,
 } from './MovieDetailsPage.styled';
 
 export default function MovieDetailsPage() {

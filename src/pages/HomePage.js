@@ -9,14 +9,11 @@ import Container from '../components/Container';
 import MovieList from '../components/MovieList/MovieList';
 import TitleByType from '../components/TitleByType/TitleByType';
 
-// console.log(fetchMovie().then(res => console.log(res.results)));
-
 export default function HomePage() {
   const [upComingMovies, setUpComingMovies] = useState([]);
   const [topMovies, setTopMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
   const [trendMovies, setTrendMovies] = useState([]);
-  console.log(trendMovies);
 
   useEffect(() => {
     fetchUpMovies().then(res => setUpComingMovies(res.results));

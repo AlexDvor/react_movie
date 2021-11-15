@@ -4,7 +4,7 @@ export default function MovieSlider({ children }) {
   const settings = {
     dots: false,
     lazyLoad: true,
-    infinite: false, // Infinitely wrap around contents
+    infinite: true, // Infinitely wrap around contents
     slidesToShow: 8,
     slidesToScroll: 3,
     arrows: true,
@@ -19,7 +19,6 @@ export default function MovieSlider({ children }) {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          infinite: true,
         },
       },
       {
@@ -28,7 +27,6 @@ export default function MovieSlider({ children }) {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 0,
-          infinite: false,
         },
       },
 
@@ -47,7 +45,6 @@ export default function MovieSlider({ children }) {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          infinite: true,
         },
       },
     ],

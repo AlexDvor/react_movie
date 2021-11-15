@@ -10,3 +10,8 @@ export const Wrapper = styled.div`
   height: auto;
   /* padding: 10px; */
 `;
+
+export const TrailerList = styled.ul``;
+export const TrailerItem = styled.li`
+  width: 250px;
+`;
