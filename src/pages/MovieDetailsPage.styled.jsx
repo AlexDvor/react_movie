@@ -151,11 +151,16 @@ export const MovieButtonsContainer = styled.div`
 `;
 
 export const MovieButtonsList = styled.ul`
+  display: flex;
   list-style: none;
   padding: 0;
 `;
 
-export const MovieButtonsItem = styled.li``;
+export const MovieButtonsItem = styled.li`
+  &:not(:last-child) {
+    margin-right: 13px;
+  }
+`;
 
 ///////
 export const BlurBack = styled.div`

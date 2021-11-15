@@ -2,8 +2,9 @@ import { fetchMovieByID } from '../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 // Components
-import PlayButton from '../components/PlayButton/PlayButton';
 import Container from '../components/Container';
+import PlayButton from '../components/PlayButton/PlayButton';
+import AddButton from '../components/AddButton/AddButton';
 import {
   MovieWrapper,
   InfoSection,
@@ -55,6 +56,10 @@ export default function MovieDetailsPage() {
               <MovieButtonsList>
                 <MovieButtonsItem>
                   <PlayButton />
+                </MovieButtonsItem>
+
+                <MovieButtonsItem>
+                  <AddButton />
                 </MovieButtonsItem>
               </MovieButtonsList>
             </MovieButtonsContainer>
