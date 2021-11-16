@@ -24,7 +24,7 @@ export const MovieWrapper = styled.div`
     margin: 20px auto;
     /* min-height: 350px;
     height: auto; */
-    height: 106vh;
+    height: 100vh;
   }
 `;
 
@@ -56,7 +56,7 @@ export const MovieHeader = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    margin-top: 334px;
+    margin-top: 50px;
   }
 `;
 export const MovieTitle = styled.h1`
@@ -145,9 +145,8 @@ export const MovieI = styled.i`
 
 /////// MovieButtons
 export const MovieButtonsContainer = styled.div`
-  height: 10%;
-  padding-left: 15px;
-  padding-bottom: 20px;
+  /* height: 10%; */
+  margin: 0px 0px 20px 15px;
 `;
 
 export const MovieButtonsList = styled.ul`
@@ -167,7 +166,7 @@ export const BlurBack = styled.div`
   position: absolute;
   top: 0;
   z-index: 1;
-  height: 100%;
+  height: 60%;
   right: 0;
   background-size: cover;
   border-radius: 11px;
@@ -175,6 +174,7 @@ export const BlurBack = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 80%;
+    height: 100%;
   }
 
   @media screen and (max-width: 768px) {

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledButton = styled.button`
-  width: 124px;
+  width: 100px;
   height: 30px;
   display: flex;
   align-items: center;
