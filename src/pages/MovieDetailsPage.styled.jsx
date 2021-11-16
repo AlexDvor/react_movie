@@ -24,7 +24,7 @@ export const MovieWrapper = styled.div`
     margin: 20px auto;
     /* min-height: 350px;
     height: auto; */
-    height: 100vh;
+    height: 106vh;
   }
 `;
 
@@ -56,7 +56,7 @@ export const MovieHeader = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    margin-top: 231px;
+    margin-top: 334px;
   }
 `;
 export const MovieTitle = styled.h1`

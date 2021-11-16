@@ -89,7 +89,7 @@ export default function MovieDetailsPage() {
         </MovieWrapper>
       )}
 
-      <Player movieId={movieId}></Player>
+      {/* <Player movieId={movieId}></Player> */}
     </Container>
   );
 }

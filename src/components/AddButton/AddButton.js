@@ -1,5 +1,5 @@
 import { StyledButton } from './AddButton.styled';
-import { IoIosAddCircle } from 'react-icons/all';
+import { IoIosAddCircle } from 'react-icons/io';
 export default function AddButton() {
   return (
     <>
