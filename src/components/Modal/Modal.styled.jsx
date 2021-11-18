@@ -17,8 +17,9 @@ export const ContentModal = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: 1200px;
+  max-width: 1280px;
   max-height: 100vh;
+  height: 80vh;
   width: 100%;
   /* padding: 40px; */
   background-color: #ffffff;

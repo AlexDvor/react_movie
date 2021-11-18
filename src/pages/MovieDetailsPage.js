@@ -95,10 +95,11 @@ export default function MovieDetailsPage() {
         </MovieWrapper>
       )}
 
-      {/* <Player movieId={movieId}></Player> */}
-      {isOpen && <Modal onClose={onClick}></Modal>}
+      {isOpen && (
+        <Modal onClose={onClick}>
+          <Player movieId={movieId}></Player>
+        </Modal>
+      )}
     </Container>
   );
 }
-
-// https://image.tmdb.org/t/p/original/dqcZi5qWufkKUZXAxG3EqWjAM9c.jpg

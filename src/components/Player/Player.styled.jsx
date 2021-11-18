@@ -5,15 +5,8 @@ export const PlayerWrapper = styled.div`
   justify-content: center;
 `;
 
-export const Wrapper = styled.div`
-  width: 250px;
-  height: auto;
-  /* padding: 10px; */
-`;
+export const Wrapper = styled.div``;
 
 export const TrailerList = styled.ul``;
 
-export const TrailerItem = styled.li`
-  /* width: 350px; */
-  /* height: auto; */
-`;
+export const TrailerItem = styled.li``;
