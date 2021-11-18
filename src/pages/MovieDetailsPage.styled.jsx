@@ -24,7 +24,7 @@ export const MovieWrapper = styled.div`
     margin: 20px auto;
     /* min-height: 350px;
     height: auto; */
-    height: 100vh;
+    height: auto;
   }
 `;
 
@@ -146,13 +146,22 @@ export const MovieI = styled.i`
 /////// MovieButtons
 export const MovieButtonsContainer = styled.div`
   /* height: 10%; */
-  margin: 0px 0px 20px 15px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 25px;
+  }
 `;
 
 export const MovieButtonsList = styled.ul`
   display: flex;
+  justify-content: center;
   list-style: none;
   padding: 0;
+
+  @media screen and (min-width: 768px) {
+    justify-content: start;
+  }
 `;
 
 export const MovieButtonsItem = styled.li`
