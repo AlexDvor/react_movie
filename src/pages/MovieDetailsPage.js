@@ -6,6 +6,7 @@ import Container from '../components/Container';
 import PlayButton from '../components/PlayButton/PlayButton';
 import Player from '../components/Player/Player';
 import AddButton from '../components/AddButton/AddButton';
+import Modal from '../components/Modal/Modal';
 import {
   MovieWrapper,
   InfoSection,
@@ -29,6 +30,7 @@ import {
 } from './MovieDetailsPage.styled';
 
 export default function MovieDetailsPage() {
+  const [isOpen, setIsOpen] = useState(false);
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams('');
 
@@ -38,6 +40,10 @@ export default function MovieDetailsPage() {
 
   const URL = 'https://image.tmdb.org/t/p/w500/';
   const parseMovieData = obj => obj.map(item => item.name).join(', ');
+
+  const onClick = e => {
+    setIsOpen(prevState => !prevState);
+  };
 
   return (
     <Container>
@@ -57,7 +63,7 @@ export default function MovieDetailsPage() {
             <MovieButtonsContainer>
               <MovieButtonsList>
                 <MovieButtonsItem>
-                  <PlayButton movieId={movieId} />
+                  <PlayButton movieId={movieId} click={onClick} />
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>
@@ -90,6 +96,7 @@ export default function MovieDetailsPage() {
       )}
 
       {/* <Player movieId={movieId}></Player> */}
+      {isOpen && <Modal onClose={onClick}></Modal>}
     </Container>
   );
 }
