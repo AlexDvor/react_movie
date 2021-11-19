@@ -13,7 +13,7 @@ export default function Player({ movieId }) {
     controls: true,
     // light: true,
     width: '100%',
-    height: '524px',
+    height: '100%',
 
     config: {
       youtube: {
@@ -35,13 +35,9 @@ export default function Player({ movieId }) {
   }, [movieId]);
 
   return (
-    <TrailerList>
-      {movie &&
-        movie.map(item => (
-          <TrailerItem key={item.key}>
-            <ReactPlayer {...settings} url={`${URL}/embed/${item.key}`} />
-          </TrailerItem>
-        ))}
-    </TrailerList>
+    <>
+      {movie.length >= 1 &&
+        movie.map(item => <ReactPlayer {...settings} url={`${URL}/embed/${item.key}`} />)}
+    </>
   );
 }
