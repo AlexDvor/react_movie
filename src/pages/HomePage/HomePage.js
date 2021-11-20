@@ -4,10 +4,10 @@ import {
   fetchTopMovies,
   fetchPopularMovies,
   fetchTrendMovies,
-} from '../services/movies-api';
-import Container from '../components/Container';
-import MovieList from '../components/MovieList/MovieList';
-import TitleByType from '../components/TitleByType/TitleByType';
+} from '../../services/movies-api';
+import Container from '../../components/Container';
+import MovieList from '../../components/MovieList/MovieList';
+import TitleByType from '../../components/TitleByType/TitleByType';
 
 export default function HomePage() {
   const [upComingMovies, setUpComingMovies] = useState([]);

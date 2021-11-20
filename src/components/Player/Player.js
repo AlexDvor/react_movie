@@ -1,13 +1,10 @@
 import ReactPlayer from 'react-player/youtube';
 import { useEffect, useState } from 'react';
-import { TrailerList, TrailerItem, Wrapper } from './Player.styled';
 import { fetchTrailer } from '../../services/movies-api';
-// import MovieSlider from '../Slider/Slider';
 
 export default function Player({ movieId }) {
   const URL = 'https://www.youtube.com';
   const [movie, setMovie] = useState([]);
-  console.log(movie);
 
   const settings = {
     controls: true,
@@ -37,7 +34,9 @@ export default function Player({ movieId }) {
   return (
     <>
       {movie.length >= 1 &&
-        movie.map(item => <ReactPlayer {...settings} url={`${URL}/embed/${item.key}`} />)}
+        movie.map(item => (
+          <ReactPlayer {...settings} key={item.key} url={`${URL}/embed/${item.key}`} />
+        ))}
     </>
   );
 }

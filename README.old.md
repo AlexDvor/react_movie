@@ -1,5 +1,4 @@
 # react_movie
 
-Problems:
-
 - React Player
+- Play Button (disabled)

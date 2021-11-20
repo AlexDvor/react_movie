@@ -9,6 +9,14 @@ export const StyledButton = styled.button`
   padding: 5px 40px;
   border: 0px;
   border-radius: 4px;
+  /* background-image: ${props => (props.disabled ? 'red' : 'green')}; */
+  /* background-image: ${props => {
+    if (!props.disabled) {
+      return 'linear-gradient(0deg, rgba(64, 145, 108, 1) 49%, rgba(116, 198, 157, 1) 100%)';
+    }
+    return 'linear-gradient(0deg, rgba(87,87,87,1) 2%, rgba(187,187,187,1) 100%)';
+  }}; */
+
   background-image: linear-gradient(0deg, rgba(64, 145, 108, 1) 49%, rgba(116, 198, 157, 1) 100%);
   transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
