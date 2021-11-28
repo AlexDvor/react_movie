@@ -51,5 +51,13 @@ export async function fetchMovieByCast(movieId) {
     .catch(error => error.massage);
 }
 
+export async function fetchMovieByName(movieName) {
+  return await axios(
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}&language=en-US&page=1&include_adult=false;`,
+  )
+    .then(res => res.data)
+    .catch(error => error.massage);
+}
+
 // uk - UA;
 // en - US;
