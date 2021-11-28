@@ -17,3 +17,22 @@ export const Item = styled.li`
   text-align: center;
   list-style: none;
 `;
+
+export const ImageWrapper = styled.div`
+  width: 200px;
+  height: 300px;
+`;
+
+export const Image = styled.img`
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export const ImageDefault = styled.img`
+  display: block;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+`;
