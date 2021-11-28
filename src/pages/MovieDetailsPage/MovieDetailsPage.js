@@ -2,6 +2,7 @@ import { fetchMovieByID } from '../../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 // Components
+import AdditionalButton from '../../components/AdditionalButton/AdditionalButton';
 import Container from '../../components/Container';
 import PlayButton from '../../components/PlayButton/PlayButton';
 import Player from '../../components/Player/Player';
@@ -22,13 +23,13 @@ import {
   MovieButtonsContainer,
   MovieButtonsList,
   BlurBack,
-  // PlayerWrapper,
 } from './MovieDetailsPage.styled';
 
 export default function MovieDetailsPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams('');
+
   const URL = 'https://image.tmdb.org/t/p/w500/';
 
   useEffect(() => {
@@ -63,6 +64,10 @@ export default function MovieDetailsPage() {
 
                 <MovieButtonsItem>
                   <AddButton />
+                </MovieButtonsItem>
+
+                <MovieButtonsItem>
+                  <AdditionalButton movieId={movieId} />
                 </MovieButtonsItem>
               </MovieButtonsList>
             </MovieButtonsContainer>

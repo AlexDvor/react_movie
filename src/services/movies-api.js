@@ -43,5 +43,13 @@ export async function fetchTrailer(movieId) {
     .catch(error => error.massage);
 }
 
+export async function fetchMovieByCast(movieId) {
+  return await axios(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=uk-UA;`,
+  )
+    .then(res => res.data)
+    .catch(error => error.massage);
+}
+
 // uk - UA;
 // en - US;

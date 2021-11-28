@@ -1,4 +1,4 @@
-import Container from '../components/Container';
+import Container from '../../components/Container';
 // import Player from '../components/Player/Player';
 
 export default function MyListPage() {
