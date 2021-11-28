@@ -1,7 +1,6 @@
 import ReactPlayer from 'react-player/youtube';
 import { useEffect, useState } from 'react';
 import { fetchTrailer } from '../../services/movies-api';
-import { PlayerWrapper } from './Player.styled';
 
 export default function Player({ movieId }) {
   const URL = 'https://www.youtube.com';
