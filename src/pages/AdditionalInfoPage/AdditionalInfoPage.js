@@ -15,7 +15,6 @@ import defaultImage from '../../images/default1.jpg';
 export default function AdditionalInfoPage() {
   const [movieData, setMovieData] = useState([]);
   const { movieId } = useParams('');
-  console.log('movieData***', movieData);
 
   const URL = 'https://image.tmdb.org/t/p/w500';
 
