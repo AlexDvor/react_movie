@@ -24,7 +24,7 @@ export const MovieWrapper = styled.div`
     margin: 20px auto;
     /* min-height: 350px;
     height: auto; */
-    height: auto;
+    height: 100%;
   }
 `;
 
