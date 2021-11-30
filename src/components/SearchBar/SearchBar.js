@@ -3,16 +3,7 @@ import { Search, SearchIconWrapper, StyledInputBase } from './SearchBar.styled';
 import { useEffect, useState } from 'react';
 import { fetchMovieByName } from '../../services/movies-api';
 
-export default function SearchAppBar() {
-  const [filter, setFilter] = useState('');
-  const [data, setData] = useState([]);
-  console.log('DATA', data);
-
-  useEffect(() => {
-    if (filter === '') return;
-    fetchMovieByName(filter).then(setData);
-  }, [filter]);
-
+export default function SearchAppBar({ filter, searchField }) {
   return (
     <>
       <Search>
@@ -25,7 +16,7 @@ export default function SearchAppBar() {
           type="text"
           name="filter"
           value={filter}
-          onChange={e => setFilter(e.target.value)}
+          onChange={e => searchField(e.target.value)}
         />
       </Search>
     </>

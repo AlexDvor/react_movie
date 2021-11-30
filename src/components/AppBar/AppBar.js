@@ -1,7 +1,6 @@
 import Navigation from '../Navigation/Navigation';
 import Container from '../Container';
 import { WrapperAppBar, ContentBox } from './AppBar.styled';
-import SearchAppBar from '../SearchBar/SearchBar';
 
 export default function AppBar() {
   return (
@@ -9,7 +8,6 @@ export default function AppBar() {
       <Container>
         <ContentBox>
           <Navigation />
-          <SearchAppBar />
         </ContentBox>
       </Container>
     </WrapperAppBar>

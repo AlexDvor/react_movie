@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage/HomePage';
 import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage';
 import MyListPage from './pages/MyListPage/MyListPage';
 import AdditionalInfoPage from './pages/AdditionalInfoPage/AdditionalInfoPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
         <Route exact path="/movies/:movieId/actors">
           <AdditionalInfoPage />
+        </Route>
+
+        <Route exact path="/search">
+          <SearchPage />
         </Route>
       </Switch>
     </>

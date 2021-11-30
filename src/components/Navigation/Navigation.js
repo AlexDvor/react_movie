@@ -13,6 +13,10 @@ export default function Navigation() {
         <NavItem>
           <StyledNavLink to="/my_list">My List</StyledNavLink>
         </NavItem>
+
+        <NavItem>
+          <StyledNavLink to="/search">Search</StyledNavLink>
+        </NavItem>
       </NavList>
     </nav>
   );
