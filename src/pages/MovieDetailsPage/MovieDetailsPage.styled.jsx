@@ -24,7 +24,6 @@ export const MovieWrapper = styled.div`
     margin: 20px auto;
     height: auto;
     /* min-height: 350px;
-
     /* height: 100vh; */
   }
 `;
@@ -36,6 +35,7 @@ export const InfoSection = styled.div`
   background-blend-mode: multiply;
   z-index: 2;
   border-radius: 10px;
+
   @media screen and (min-width: 768px) {
     background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
   }
@@ -60,6 +60,7 @@ export const MovieHeader = styled.div`
     margin-top: 50px;
   }
 `;
+
 export const MovieTitle = styled.h1`
   color: #fff;
   font-weight: 400;
@@ -114,7 +115,6 @@ export const MovieText = styled.p`
   color: #cfd6e1;
 `;
 
-/////// MovieSocial wrapper
 export const MovieSocial = styled.div`
   height: 10%;
   padding-left: 15px;
@@ -142,11 +142,7 @@ export const MovieI = styled.i`
   cursor: pointer;
 `;
 
-///////
-
-/////// MovieButtons
 export const MovieButtonsContainer = styled.div`
-  /* height: 10%; */
   margin-bottom: 30px;
 
   @media screen and (min-width: 768px) {
@@ -176,7 +172,6 @@ export const MovieButtonsItem = styled.li`
   }
 `;
 
-///////
 export const BlurBack = styled.div`
   position: absolute;
   top: 0;
