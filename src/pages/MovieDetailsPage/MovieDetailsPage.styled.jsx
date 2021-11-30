@@ -4,7 +4,7 @@ export const MovieWrapper = styled.div`
   position: relative;
   display: block;
   max-width: 1820px;
-  height: 685px;
+  height: 90vh;
   margin: 50px auto;
   overflow: hidden;
   border-radius: 10px;
@@ -19,12 +19,13 @@ export const MovieWrapper = styled.div`
     box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     width: 95%;
     margin: 20px auto;
+    height: auto;
     /* min-height: 350px;
-    height: auto; */
-    height: 100%;
+
+    /* height: 100vh; */
   }
 `;
 
@@ -158,15 +159,20 @@ export const MovieButtonsList = styled.ul`
   justify-content: center;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
+  gap: 12px;
 
   @media screen and (min-width: 768px) {
     justify-content: start;
+    gap: 0px;
   }
 `;
 
 export const MovieButtonsItem = styled.li`
-  &:not(:last-child) {
-    margin-right: 13px;
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
   }
 `;
 
