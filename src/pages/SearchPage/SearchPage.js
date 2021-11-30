@@ -13,24 +13,31 @@ import {
   SearchWrapper,
 } from './SearchPage.styled';
 import defaultImage from '../../images/default_gallery.jpg';
-import debounce from 'lodash.debounce';
+import useDebounce from '../../hooks/useDebounce';
 
 export default function SearchPage() {
   const [movies, setMovies] = useState([]);
   const [filter, setFilter] = useState('');
-
-  const URL = 'https://image.tmdb.org/t/p/w500';
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
-    if (filter === '') return;
-    fetchMovieByName(filter).then(res => setMovies(res.results));
-  }, [filter]);
+    if (query === '') return;
+    fetchMovieByName(query).then(res => setMovies(res.results));
+  }, [query]);
 
+  const debouncedSave = useDebounce(nextValue => setQuery(nextValue), 600);
+  const handleChange = event => {
+    const { value: nextValue } = event.target;
+    setFilter(nextValue);
+    debouncedSave(nextValue);
+  };
+
+  const URL = 'https://image.tmdb.org/t/p/w500';
   return (
     <Container>
       <ContentBox>
         <SearchWrapper>
-          <SearchBar filter={filter} searchField={setFilter} />
+          <SearchBar filter={filter} onChange={handleChange} />
         </SearchWrapper>
         <MovieListWrapper>
           {movies.length > 0 &&

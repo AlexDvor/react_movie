@@ -1,9 +1,9 @@
 import SearchIcon from '@mui/icons-material/Search';
 import { Search, SearchIconWrapper, StyledInputBase } from './SearchBar.styled';
-import { useEffect, useState } from 'react';
-import { fetchMovieByName } from '../../services/movies-api';
+// import { useEffect, useState } from 'react';
+// import { fetchMovieByName } from '../../services/movies-api';
 
-export default function SearchAppBar({ filter, searchField }) {
+export default function SearchAppBar({ filter, onChange }) {
   return (
     <>
       <Search>
@@ -16,7 +16,7 @@ export default function SearchAppBar({ filter, searchField }) {
           type="text"
           name="filter"
           value={filter}
-          onChange={e => searchField(e.target.value)}
+          onChange={onChange}
         />
       </Search>
     </>
