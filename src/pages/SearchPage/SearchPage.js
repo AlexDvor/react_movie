@@ -13,6 +13,7 @@ import {
   SearchWrapper,
 } from './SearchPage.styled';
 import defaultImage from '../../images/default_gallery.jpg';
+import debounce from 'lodash.debounce';
 
 export default function SearchPage() {
   const [movies, setMovies] = useState([]);
