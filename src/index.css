@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
 
-
 body {
-  background-color: #141414;;
+  background-color: #141414;
   font-family: 'Montserrat', helvetica, arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -17,6 +16,4 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
-  
 }
-
