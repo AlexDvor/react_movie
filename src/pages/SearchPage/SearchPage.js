@@ -1,7 +1,6 @@
-import Container from '../../components/Container/Container';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { fetchMovieByName } from '../../services/movies-api';
+import debounce from 'lodash.debounce';
 import { Link } from 'react-router-dom';
 import {
   MovieListWrapper,
@@ -13,7 +12,8 @@ import {
   SearchWrapper,
 } from './SearchPage.styled';
 import defaultImage from '../../images/default_gallery.jpg';
-import useDebounce from '../../hooks/useDebounce';
+import Container from '../../components/Container/Container';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 export default function SearchPage() {
   const [movies, setMovies] = useState([]);
@@ -25,12 +25,21 @@ export default function SearchPage() {
     fetchMovieByName(query).then(res => setMovies(res.results));
   }, [query]);
 
-  const debouncedSave = useDebounce(nextValue => setQuery(nextValue), 600);
-  const handleChange = event => {
-    const { value: nextValue } = event.target;
-    setFilter(nextValue);
-    debouncedSave(nextValue);
-  };
+  const debouncedSearch = useMemo(
+    () =>
+      debounce(val => {
+        setQuery(val);
+      }, 750),
+    [setQuery],
+  );
+
+  const handleChange = useCallback(
+    e => {
+      setFilter(e.target.value);
+      debouncedSearch(e.target.value);
+    },
+    [debouncedSearch],
+  );
 
   const URL = 'https://image.tmdb.org/t/p/w500';
   return (
