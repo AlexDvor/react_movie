@@ -91,36 +91,3 @@ export default function SearchPage() {
     </Container>
   );
 }
-
-//  <InfiniteScroll
-//    dataLength={movies.length} //This is important field to render the next data
-//    next={nextPage}
-//    hasMore={true}
-//    loader={<h4>Loading...</h4>}
-//  ></InfiniteScroll>;
-
-// return (
-//   <Container>
-//     <ContentBox>
-//       <SearchWrapper>
-//         <SearchBar filter={filter} onChange={handleChange} />
-//       </SearchWrapper>
-//       <MovieListWrapper>
-//         {movies.length > 0 &&
-//           movies.map(({ id, poster_path, title }) => (
-//             <MovieCardItem key={id}>
-//               <MovieCardWrapper>
-//                 <Link to={{ pathname: `/movies/${id}` }}>
-//                   {poster_path ? (
-//                     <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-//                   ) : (
-//                     <DefaultImage src={defaultImage} alt="Not Found" width="200px" />
-//                   )}
-//                 </Link>
-//               </MovieCardWrapper>
-//             </MovieCardItem>
-//           ))}
-//       </MovieListWrapper>
-//     </ContentBox>
-//   </Container>
-// );
