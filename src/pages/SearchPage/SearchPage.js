@@ -19,11 +19,12 @@ export default function SearchPage() {
   const [movies, setMovies] = useState([]);
   const [filter, setFilter] = useState('');
   const [query, setQuery] = useState('');
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     if (query === '') return;
-    fetchMovieByName(query).then(res => setMovies(res.results));
-  }, [query]);
+    fetchMovieByName(query, page).then(res => setMovies(res.results));
+  }, [query, page]);
 
   const debouncedSearch = useMemo(
     () =>
