@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { fetchMovieByName } from '../../services/movies-api';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import debounce from 'lodash.debounce';
 import { Link } from 'react-router-dom';
 import {
@@ -23,7 +24,10 @@ export default function SearchPage() {
 
   useEffect(() => {
     if (query === '') return;
-    fetchMovieByName(query, page).then(res => setMovies(res.results));
+
+    fetchMovieByName(query, page).then(res =>
+      setMovies(prevState => [...prevState, ...res.results]),
+    );
   }, [query, page]);
 
   const debouncedSearch = useMemo(
@@ -37,10 +41,16 @@ export default function SearchPage() {
   const handleChange = useCallback(
     e => {
       setFilter(e.target.value);
+      setPage(1);
+      setMovies([]);
       debouncedSearch(e.target.value);
     },
     [debouncedSearch],
   );
+
+  const nextPage = () => {
+    setPage(prevState => prevState + 1);
+  };
 
   const URL = 'https://image.tmdb.org/t/p/w500';
   return (
@@ -49,23 +59,68 @@ export default function SearchPage() {
         <SearchWrapper>
           <SearchBar filter={filter} onChange={handleChange} />
         </SearchWrapper>
-        <MovieListWrapper>
-          {movies.length > 0 &&
-            movies.map(({ id, poster_path, title }) => (
-              <MovieCardItem key={id}>
-                <MovieCardWrapper>
-                  <Link to={{ pathname: `/movies/${id}` }}>
-                    {poster_path ? (
-                      <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-                    ) : (
-                      <DefaultImage src={defaultImage} alt="Not Found" width="200px" />
-                    )}
-                  </Link>
-                </MovieCardWrapper>
-              </MovieCardItem>
-            ))}
-        </MovieListWrapper>
+
+        <InfiniteScroll
+          dataLength={movies.length} //This is important field to render the next data
+          next={nextPage}
+          hasMore={true}
+          loader={
+            <div style={{ height: '80%', paddingLeft: '35%', overflow: 'hidden', opacity: '0' }}>
+              <h2>Loading...</h2>
+            </div>
+          }
+        >
+          <MovieListWrapper>
+            {movies.length > 0 &&
+              movies.map(({ id, poster_path, title }) => (
+                <MovieCardItem key={id}>
+                  <MovieCardWrapper>
+                    <Link to={{ pathname: `/movies/${id}` }}>
+                      {poster_path ? (
+                        <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
+                      ) : (
+                        <DefaultImage src={defaultImage} alt="Not Found" width="200px" />
+                      )}
+                    </Link>
+                  </MovieCardWrapper>
+                </MovieCardItem>
+              ))}
+          </MovieListWrapper>
+        </InfiniteScroll>
       </ContentBox>
     </Container>
   );
 }
+
+//  <InfiniteScroll
+//    dataLength={movies.length} //This is important field to render the next data
+//    next={nextPage}
+//    hasMore={true}
+//    loader={<h4>Loading...</h4>}
+//  ></InfiniteScroll>;
+
+// return (
+//   <Container>
+//     <ContentBox>
+//       <SearchWrapper>
+//         <SearchBar filter={filter} onChange={handleChange} />
+//       </SearchWrapper>
+//       <MovieListWrapper>
+//         {movies.length > 0 &&
+//           movies.map(({ id, poster_path, title }) => (
+//             <MovieCardItem key={id}>
+//               <MovieCardWrapper>
+//                 <Link to={{ pathname: `/movies/${id}` }}>
+//                   {poster_path ? (
+//                     <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
+//                   ) : (
+//                     <DefaultImage src={defaultImage} alt="Not Found" width="200px" />
+//                   )}
+//                 </Link>
+//               </MovieCardWrapper>
+//             </MovieCardItem>
+//           ))}
+//       </MovieListWrapper>
+//     </ContentBox>
+//   </Container>
+// );
