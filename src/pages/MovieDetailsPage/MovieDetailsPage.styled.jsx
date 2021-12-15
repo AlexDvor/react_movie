@@ -115,32 +115,32 @@ export const MovieText = styled.p`
   color: #cfd6e1;
 `;
 
-export const MovieSocial = styled.div`
-  height: 10%;
-  padding-left: 15px;
-  padding-bottom: 20px; ;
-`;
-export const MovieSocialList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
+// export const MovieSocial = styled.div`
+//   height: 10%;
+//   padding-left: 15px;
+//   padding-bottom: 20px; ;
+// `;
+// export const MovieSocialList = styled.ul`
+//   list-style: none;
+//   padding: 0;
+// `;
 
-export const MovieSocialItem = styled.li`
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.4);
-  transition: color 0.3s;
-  transition-delay: 0.15s;
-  margin: 0 10px;
-  &:hover {
-    transition: color 0.3s;
-    color: rgba(255, 255, 255, 0.8);
-  }
-`;
+// export const MovieSocialItem = styled.li`
+//   display: inline-block;
+//   color: rgba(255, 255, 255, 0.4);
+//   transition: color 0.3s;
+//   transition-delay: 0.15s;
+//   margin: 0 10px;
+//   &:hover {
+//     transition: color 0.3s;
+//     color: rgba(255, 255, 255, 0.8);
+//   }
+// `;
 
-export const MovieI = styled.i`
-  font-size: 19px;
-  cursor: pointer;
-`;
+// export const MovieI = styled.i`
+//   font-size: 19px;
+//   cursor: pointer;
+// `;
 
 export const MovieButtonsContainer = styled.div`
   margin-bottom: 30px;
