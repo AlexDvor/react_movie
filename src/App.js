@@ -6,7 +6,7 @@ import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage';
 import MyListPage from './pages/MyListPage/MyListPage';
 import AdditionalInfoPage from './pages/AdditionalInfoPage/AdditionalInfoPage';
 import SearchPage from './pages/SearchPage/SearchPage';
-import { Footer } from './components/Footer/Footer';
+// import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           <SearchPage />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
