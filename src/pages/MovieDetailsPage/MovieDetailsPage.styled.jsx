@@ -21,7 +21,7 @@ export const MovieWrapper = styled.div`
 
   @media screen and (max-width: 767px) {
     width: 95%;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     height: auto;
     /* min-height: 350px;
     /* height: 100vh; */
