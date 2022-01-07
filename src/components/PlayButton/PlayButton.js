@@ -6,10 +6,14 @@ export default function PlayButton({ movieId, click, isDisable }) {
     return !isDisable ? 'Play' : 'Not Available';
   };
 
+  const showIcon = () => {
+    return !isDisable ? 'flex' : 'none';
+  };
+
   return (
     <>
       <StyledButton type="button" onClick={click} disabled={isDisable}>
-        <AiFillPlayCircle color="white" size="1.2em" />
+        <AiFillPlayCircle color="white" size="1.2em" display={showIcon()} />
         {messageBtn()}
       </StyledButton>
     </>
