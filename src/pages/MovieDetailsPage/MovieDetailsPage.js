@@ -31,8 +31,6 @@ export default function MovieDetailsPage() {
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
 
-  console.log('trailer', trailer);
-
   const URL = 'https://image.tmdb.org/t/p/w500/';
 
   useEffect(() => {
