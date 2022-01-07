@@ -1,4 +1,4 @@
-import { fetchMovieByID } from '../../services/movies-api';
+import { fetchMovieByID, fetchTrailer } from '../../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 // Components
@@ -28,12 +28,16 @@ import {
 export default function MovieDetailsPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [movie, setMovie] = useState(null);
+  const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
+
+  console.log('trailer', trailer);
 
   const URL = 'https://image.tmdb.org/t/p/w500/';
 
   useEffect(() => {
     fetchMovieByID(Number(movieId)).then(setMovie);
+    fetchTrailer(Number(movieId)).then(res => setTrailer(res.results.slice(0, 1)));
   }, [movieId]);
 
   const parseMovieData = obj => obj.map(item => item.name).join(', ');
@@ -59,7 +63,11 @@ export default function MovieDetailsPage() {
             <MovieButtonsContainer>
               <MovieButtonsList>
                 <MovieButtonsItem>
-                  <PlayButton movieId={movieId} click={onClick} isDisable={false} />
+                  <PlayButton
+                    movieId={movieId}
+                    click={onClick}
+                    isDisable={trailer.length >= 1 ? false : true}
+                  />
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>

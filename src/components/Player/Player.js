@@ -5,6 +5,7 @@ import { fetchTrailer } from '../../services/movies-api';
 export default function Player({ movieId }) {
   const URL = 'https://www.youtube.com';
   const [movie, setMovie] = useState([]);
+  console.log(movie);
 
   const settings = {
     controls: true,

@@ -37,7 +37,7 @@ export async function fetchTrendMovies() {
 
 export async function fetchTrailer(movieId) {
   return await axios(
-    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US;`,
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=uk-UA;`,
   )
     .then(res => res.data)
     .catch(error => error.massage);
