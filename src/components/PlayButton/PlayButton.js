@@ -9,7 +9,7 @@ export default function PlayButton({ movieId, click, isDisable }) {
   return (
     <>
       <StyledButton type="button" onClick={click} disabled={isDisable}>
-        <AiFillPlayCircle color="white" fontSize="15px" />
+        <AiFillPlayCircle color="white" size="1.2em" />
         {messageBtn()}
       </StyledButton>
     </>

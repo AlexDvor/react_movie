@@ -5,8 +5,9 @@ export const StyledButton = styled.button`
   height: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
-  padding: 5px 40px;
+  padding: 5px 20px;
   border: 0px;
   border-radius: 4px;
   background-image: linear-gradient(0deg, rgba(64, 145, 108, 1) 49%, rgba(116, 198, 157, 1) 100%);

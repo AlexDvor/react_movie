@@ -26,7 +26,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   font-size: ${setFontSize};
   color: white;
-  padding: 5px 40px;
+  padding: 5px 20px;
   border: 0px;
   border-radius: 4px;
   background-image: ${setBackgroundImage};

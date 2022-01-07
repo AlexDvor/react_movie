@@ -4,7 +4,7 @@ export default function AddButton() {
   return (
     <>
       <StyledButton type="button">
-        <IoIosAddCircle color="white" fontSize="17px" />
+        <IoIosAddCircle color="white" size="1.2em" />
         Add
       </StyledButton>
     </>
