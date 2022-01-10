@@ -22,13 +22,29 @@ export default function SearchPage() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
 
+  console.log(movies);
+
   useEffect(() => {
     if (query === '') return;
 
-    fetchMovieByName(query, page).then(res =>
-      setMovies(prevState => [...prevState, ...res.results]),
-    );
+    fetchMovieByName(query, page)
+      .then(res => {
+        return filterByPosterPath(res.results);
+      })
+      .then(res => {
+        setMovies(prevState => [...prevState, ...res]);
+      });
   }, [query, page]);
+
+  const filterByPosterPath = array => {
+    const newArr = [];
+    for (let arr of array) {
+      if (arr.poster_path) {
+        newArr.push(arr);
+      }
+    }
+    return newArr;
+  };
 
   const debouncedSearch = useMemo(
     () =>
