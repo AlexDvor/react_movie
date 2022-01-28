@@ -12,6 +12,7 @@ const setBackgroundImage = props => {
 };
 
 const setHover = props => {
+  console.log('props,', props);
   if (!props.disabled) {
     return 'linear-gradient(0deg, rgba(47, 106, 78, 1) 49%, rgba(107, 184, 145, 1) 100%)';
   }
