@@ -1,34 +1,10 @@
-// Skip to content
-// Search or jump to…
-// Pulls
-// Issues
-// Marketplace
-// Explore
-
-// @AlexDvor
-// AlexDvor
-// /
-// goit-react-hw-08-phonebook
-// Public
-// Code
-// Issues
-// Pull requests
-// Actions
-// Projects
-// Wiki
-// More
-// goit-react-hw-08-phonebook/src/redux/Auth/Auth-operations.js /
-// @AlexDvor
-// AlexDvor bug-fix form
-// Latest commit 80a6ed3 on 27 Oct 2021
-//  History
-//  1 contributor
-// 64 lines (56 sloc)  1.78 KB
-
-// import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+const API_KEY = 'f992f54d2833387603d88ceb953812b4';
+const BASE_URL = 'https://api.themoviedb.org/3/movie';
 // import { toast } from 'react-toastify';
-// import axios from 'axios';
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+// axios.defaults.headers.common['Authorization'] = API_KEY;
+axios.defaults.baseURL = BASE_URL;
 
 // const token = {
 //   set(token) {
@@ -39,17 +15,20 @@
 //   },
 // };
 
-// const register = createAsyncThunk('auth/register', async (userData, { rejectWithValue }) => {
-//   try {
-//     const { data } = await axios.post('/users/signup', userData);
-//     console.log('register: ', data);
-//     token.set(data.token);
-//     return data;
-//   } catch (error) {
-//     toast.error('This email is already registered ');
-//     return rejectWithValue(console.log(error));
-//   }
-// });
+const getMovies = createAsyncThunk('auth/register', async (userData, { rejectWithValue }) => {
+  try {
+    const { data } = await axios.get(
+      `/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
+      userData,
+    );
+    console.log('getMovies: ', data);
+    // token.set(data.token);
+    return data;
+  } catch (error) {
+    // toast.error('This email is already registered ');
+    return rejectWithValue(console.log(error));
+  }
+});
 
 // const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue }) => {
 //   try {
@@ -88,18 +67,4 @@
 //   }
 // });
 
-// export { register, login, logOut, fetchCurrentUser };
-// © 2022 GitHub, Inc.
-// Terms
-// Privacy
-// Security
-// Status
-// Docs
-// Contact GitHub
-// Pricing
-// API
-// Training
-// Blog
-// About
-// Loading complete Octotree
-//  Login with GitHub
+export { getMovies };
