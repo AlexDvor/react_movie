@@ -22,15 +22,15 @@ const middleware = [
   }),
 ];
 
-const authPersistConfig = {
-  key: 'auth',
+const moviesPersistConfig = {
+  key: 'favorite',
   storage,
-  //   whitelist: ['token'],
+  whitelist: ['favorite'],
 };
 
 const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, moviesSlice),
+    movies: persistReducer(moviesPersistConfig, moviesSlice),
     // contacts: contactReducer,
   },
   middleware,

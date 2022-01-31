@@ -30,6 +30,7 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
+  console.log('movie,', movie);
 
   const URL = 'https://image.tmdb.org/t/p/w500/';
 
@@ -69,7 +70,7 @@ export default function MovieDetailsPage() {
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>
-                  <AddButton />
+                  <AddButton addToList={movie} />
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>

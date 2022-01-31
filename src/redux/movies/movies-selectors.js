@@ -1,5 +1,5 @@
-// const getUsername = state => state.auth.user.name;
+const getFavoriteMovies = state => state.movies.favorite;
 // const getIsLoggedIn = state => state.auth.isLoggedIn;
 // const getFetchingCurrent = state => state.auth.isFetchingCurrent;
 
-// export { getIsLoggedIn, getUsername, getFetchingCurrent };
+export { getFavoriteMovies };
