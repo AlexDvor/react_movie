@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
+export const MovieCardList = styled.ul``;
+
+export const MovieCardItem = styled.li``;
+
 export const MovieCard = styled.div`
   position: relative;
   display: block;
@@ -53,7 +57,7 @@ export const MovieHeader = styled.div`
   }
 `;
 
-export const Locandina = styled.img`
+export const Image = styled.img`
   position: relative;
   float: left;
   margin-right: 20px;

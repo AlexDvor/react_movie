@@ -1,8 +1,10 @@
 import {
+  MovieCardList,
+  MovieCardItem,
   MovieCard,
   InfoSection,
   MovieHeader,
-  Locandina,
+  Image,
   TitleMovie,
   ReleaseDate,
   Minutes,
@@ -22,40 +24,45 @@ const URL = 'https://image.tmdb.org/t/p/w500/';
 export default function FavoriteMovieCard({ movie }) {
   return (
     <>
-      {movie.map(item => {})}
-      <MovieCard>
-        <InfoSection>
-          <MovieHeader>
-            <Locandina src={`${URL}/${movie.poster_path}`} alt={movie.title} />
-            <TitleMovie>{movie.title}</TitleMovie>
-            <ReleaseDate>{movie.release_date.slice(0, 4)}</ReleaseDate>
-            <Minutes>{movie.runtime}</Minutes>
-            <Type>{parseMovieData(movie.genres)}</Type>
-          </MovieHeader>
-          <MovieDesc>
-            <Text>{movie.overview}</Text>
-          </MovieDesc>
-          <MovieSocial>
-            <MovieSocialList>
-              <MovieSocialItem>
-                <MovieSocialIcon>share</MovieSocialIcon>
-              </MovieSocialItem>
-              <MovieSocialItem>
-                <MovieSocialIcon></MovieSocialIcon>
-              </MovieSocialItem>
-              <MovieSocialItem>
-                <MovieSocialIcon>chat_bubble</MovieSocialIcon>
-              </MovieSocialItem>
-            </MovieSocialList>
-          </MovieSocial>
-        </InfoSection>
-        <BlurBack
-          style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path}`,
-          }}
-        ></BlurBack>
-        {/* <div class="blur_back tomb_back"></div> */}
-      </MovieCard>
+      <MovieCardList>
+        {movie.map(item => (
+          <MovieCardItem key={item.id}>
+            <MovieCard>
+              <InfoSection>
+                <MovieHeader>
+                  <Image src={`${URL}/${item.poster_path}`} alt={item.title} />
+                  <TitleMovie>{item.title}</TitleMovie>
+                  <ReleaseDate>{item.release_date.slice(0, 4)}</ReleaseDate>
+                  <Minutes>{item.runtime}</Minutes>
+                  <Type>{parseMovieData(item.genres)}</Type>
+                </MovieHeader>
+                <MovieDesc>
+                  <Text>{item.overview}</Text>
+                </MovieDesc>
+                <MovieSocial>
+                  <MovieSocialList>
+                    <MovieSocialItem>
+                      <MovieSocialIcon>share</MovieSocialIcon>
+                    </MovieSocialItem>
+                    <MovieSocialItem>
+                      <MovieSocialIcon></MovieSocialIcon>
+                    </MovieSocialItem>
+                    <MovieSocialItem>
+                      <MovieSocialIcon>chat_bubble</MovieSocialIcon>
+                    </MovieSocialItem>
+                  </MovieSocialList>
+                </MovieSocial>
+              </InfoSection>
+              <BlurBack
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}`,
+                }}
+              ></BlurBack>
+              {/* <div class="blur_back tomb_back"></div> */}
+            </MovieCard>
+          </MovieCardItem>
+        ))}
+      </MovieCardList>
     </>
   );
 }
