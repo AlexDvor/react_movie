@@ -9,7 +9,7 @@ export default function MyListPage() {
   console.log(hasFavoriteMovie);
   return (
     <Container>
-      <FavoriteMovieCard />
+      {hasFavoriteMovie && hasFavoriteMovie.map(item => <FavoriteMovieCard movie={item} />)}
     </Container>
   );
 }

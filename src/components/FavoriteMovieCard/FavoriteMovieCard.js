@@ -16,27 +16,24 @@ import {
   BlurBack,
 } from './FavoriteMovieCard.styled';
 
-export default function FavoriteMovieCard() {
+const parseMovieData = obj => obj.map(item => item.name).join(', ');
+const URL = 'https://image.tmdb.org/t/p/w500/';
+
+export default function FavoriteMovieCard({ movie }) {
   return (
     <>
+      {movie.map(item => {})}
       <MovieCard>
         <InfoSection>
           <MovieHeader>
-            <Locandina
-              src="https://mr.comingsoon.it/imgdb/locandine/235x336/53750.jpg"
-              alt="test"
-            />
-            <TitleMovie>Tomb Raider</TitleMovie>
-            <ReleaseDate>2018, Roar Uthaug</ReleaseDate>
-            <Minutes>125 min</Minutes>
-            <Type>Action, Fantasy</Type>
+            <Locandina src={`${URL}/${movie.poster_path}`} alt={movie.title} />
+            <TitleMovie>{movie.title}</TitleMovie>
+            <ReleaseDate>{movie.release_date.slice(0, 4)}</ReleaseDate>
+            <Minutes>{movie.runtime}</Minutes>
+            <Type>{parseMovieData(movie.genres)}</Type>
           </MovieHeader>
           <MovieDesc>
-            <Text>
-              Lara Croft, the fiercely independent daughter of a missing adventurer, must push
-              herself beyond her limits when she finds herself on the island where her father
-              disappeared.
-            </Text>
+            <Text>{movie.overview}</Text>
           </MovieDesc>
           <MovieSocial>
             <MovieSocialList>
@@ -54,7 +51,7 @@ export default function FavoriteMovieCard() {
         </InfoSection>
         <BlurBack
           style={{
-            backgroundImage: `url(https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png)`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path}`,
           }}
         ></BlurBack>
         {/* <div class="blur_back tomb_back"></div> */}
