@@ -13,6 +13,11 @@ export const MovieCard = styled.div`
     transform: scale(1.02);
     transition: all 0.4s;
   }
+
+  @media screen and (max-width: 767px) {
+    width: 95%;
+    height: auto;
+  }
 }
 `;
 
@@ -23,12 +28,29 @@ export const InfoSection = styled.div`
   background-blend-mode: multiply;
   z-index: 2;
   border-radius: 10px;
+
+  @media (min-width: 768px) {
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  }
+  @media (max-width: 768px) {
+    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+    display: inline-grid;
+  }
 `;
 
 export const MovieHeader = styled.div`
   position: relative;
   padding: 25px;
   height: 40%;
+
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 85px;
+  }
 `;
 
 export const Locandina = styled.img`
@@ -65,11 +87,15 @@ export const Type = styled.p`
 `;
 
 export const MovieDesc = styled.div`
-  display: inline-block;
-  color: #cee4fd;
-  margin-left: 10px;
   padding: 25px;
   height: 50%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Text = styled.p`
@@ -113,4 +139,13 @@ export const BlurBack = styled.div`
   right: 0;
   background-size: cover;
   border-radius: 11px;
+
+  @media (min-width: 768px) {
+    width: 80%;
+    background-position: -100% 10%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    background-position: 50% 50%;
+  }
 `;
