@@ -10,7 +10,11 @@ const movieSlice = createSlice({
   initialState,
   reducers: {
     addMovieToLibrary(state, { payload }) {
-      state.favorite = [...state.favorite, payload];
+      const result = state.favorite.some(item => item.id === payload.id);
+      if (!result) {
+        state.favorite = [...state.favorite, payload];
+      }
+      return;
     },
 
     removeMovieById(state, { payload }) {
