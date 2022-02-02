@@ -42,10 +42,8 @@ export default function FavoriteMovieCard({ movie }) {
                   <Minutes>{item.runtime}</Minutes>
                   <Type>{parseMovieData(item.genres)}</Type>
                 </MovieHeader>
-                <MovieDesc>
-                  <Text>{item.overview}</Text>
-                </MovieDesc>
-                <WrapperButton>
+                <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
+                {/* <WrapperButton>
                   <ListButton>
                     <ItemButton>
                       <RemoveButton />
@@ -54,7 +52,8 @@ export default function FavoriteMovieCard({ movie }) {
                       <PlayButton />
                     </ItemButton>
                   </ListButton>
-                </WrapperButton>
+                </WrapperButton> */}
+
                 {/* <MovieSocial>
                   <MovieSocialList>
                     <MovieSocialItem>
