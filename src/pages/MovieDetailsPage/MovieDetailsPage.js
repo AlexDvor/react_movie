@@ -2,10 +2,10 @@ import { fetchMovieByID, fetchTrailer } from '../../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
-
 // helpers
-import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 import checkForCopyById from '../../helpers/checkForCopyById';
+//selectors
+import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 // Components
 import AdditionalButton from '../../components/AdditionalButton/AdditionalButton';
 import Container from '../../components/Container';
@@ -36,16 +36,14 @@ export default function MovieDetailsPage() {
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
   const favoriteMovies = useSelector(getFavoriteMovies);
-  // console.log(checkForCopyById(favoriteMovies, movieId));
-
   const URL = 'https://image.tmdb.org/t/p/w500/';
+  const parseMovieData = obj => obj.map(item => item.name).join(', ');
 
   useEffect(() => {
     fetchMovieByID(Number(movieId)).then(setMovie);
     fetchTrailer(Number(movieId)).then(res => setTrailer(res.results.slice(0, 1)));
   }, [movieId]);
 
-  const parseMovieData = obj => obj.map(item => item.name).join(', ');
   const onClick = e => {
     setIsOpen(prevState => !prevState);
   };
