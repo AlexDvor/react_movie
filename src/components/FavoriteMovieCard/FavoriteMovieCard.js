@@ -43,7 +43,7 @@ export default function FavoriteMovieCard({ movie }) {
                   <Type>{parseMovieData(item.genres)}</Type>
                 </MovieHeader>
                 <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
-                {/* <WrapperButton>
+                <WrapperButton>
                   <ListButton>
                     <ItemButton>
                       <RemoveButton />
@@ -52,7 +52,7 @@ export default function FavoriteMovieCard({ movie }) {
                       <PlayButton />
                     </ItemButton>
                   </ListButton>
-                </WrapperButton> */}
+                </WrapperButton>
 
                 {/* <MovieSocial>
                   <MovieSocialList>
