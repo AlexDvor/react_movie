@@ -46,7 +46,7 @@ export default function FavoriteMovieCard({ movie }) {
                 <WrapperButton>
                   <ListButton>
                     <ItemButton>
-                      <RemoveButton />
+                      <RemoveButton id={item.id} />
                     </ItemButton>
                     <ItemButton>
                       <PlayButton />

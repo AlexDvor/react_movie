@@ -6,9 +6,7 @@ import { addMovieToLibrary } from '../../redux/movies/movies-slice';
 export default function AddButton({ addToList }) {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(addMovieToLibrary(addToList));
-  };
+  const handleClick = () => dispatch(addMovieToLibrary(addToList));
 
   return (
     <>

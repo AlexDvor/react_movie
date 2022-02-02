@@ -12,15 +12,18 @@ const movieSlice = createSlice({
     addMovieToLibrary(state, { payload }) {
       state.favorite = [...state.favorite, payload];
     },
+
+    removeMovieById(state, { payload }) {
+      const result = state.favorite.filter(todo => todo.id !== payload);
+      state.favorite = [...result];
+    },
   },
   extraReducers: {
     [moviesOperations.getMovies.fulfilled](state, action) {
-      console.log('state :', state);
-      console.log('action :', action);
       state.favorite = action.payload.results;
     },
   },
 });
 
 export default movieSlice.reducer;
-export const { addMovieToLibrary } = movieSlice.actions;
+export const { addMovieToLibrary, removeMovieById } = movieSlice.actions;
