@@ -1,6 +1,11 @@
 import { fetchMovieByID, fetchTrailer } from '../../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
+
+// helpers
+import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
+import checkForCopyById from '../../helpers/checkForCopyById';
 // Components
 import AdditionalButton from '../../components/AdditionalButton/AdditionalButton';
 import Container from '../../components/Container';
@@ -30,7 +35,8 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
-  console.log('movie,', movie);
+  const favoriteMovies = useSelector(getFavoriteMovies);
+  // console.log(checkForCopyById(favoriteMovies, movieId));
 
   const URL = 'https://image.tmdb.org/t/p/w500/';
 
@@ -70,7 +76,10 @@ export default function MovieDetailsPage() {
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>
-                  <AddButton addToList={movie} />
+                  <AddButton
+                    addToList={movie}
+                    disabled={checkForCopyById(favoriteMovies, movieId)}
+                  />
                 </MovieButtonsItem>
 
                 <MovieButtonsItem>
