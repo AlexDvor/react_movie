@@ -102,6 +102,18 @@ export const MovieDesc = styled.div`
   }
 `;
 
+export const WrapperButton = styled.div``;
+
+export const ListButton = styled.ul`
+  display: flex;
+`;
+
+export const ItemButton = styled.li`
+ &:not(:last-child) {
+      margin-right: 13px;
+
+`;
+
 export const Text = styled.p`
   color: #cfd6e1;
 `;

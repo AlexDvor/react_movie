@@ -10,13 +10,19 @@ import {
   Minutes,
   Type,
   MovieDesc,
+  WrapperButton,
+  ListButton,
+  ItemButton,
   Text,
-  MovieSocial,
-  MovieSocialList,
-  MovieSocialItem,
-  MovieSocialIcon,
+  // MovieSocial,
+  // MovieSocialList,
+  // MovieSocialItem,
+  // MovieSocialIcon,
   BlurBack,
 } from './FavoriteMovieCard.styled';
+//components
+import RemoveButton from '../RemoveButton/RemoveButton';
+import PlayButton from '../PlayButton/PlayButton';
 
 const parseMovieData = obj => obj.map(item => item.name).join(', ');
 const URL = 'https://image.tmdb.org/t/p/w500/';
@@ -39,7 +45,17 @@ export default function FavoriteMovieCard({ movie }) {
                 <MovieDesc>
                   <Text>{item.overview}</Text>
                 </MovieDesc>
-                <MovieSocial>
+                <WrapperButton>
+                  <ListButton>
+                    <ItemButton>
+                      <RemoveButton />
+                    </ItemButton>
+                    <ItemButton>
+                      <PlayButton />
+                    </ItemButton>
+                  </ListButton>
+                </WrapperButton>
+                {/* <MovieSocial>
                   <MovieSocialList>
                     <MovieSocialItem>
                       <MovieSocialIcon>share</MovieSocialIcon>
@@ -51,7 +67,7 @@ export default function FavoriteMovieCard({ movie }) {
                       <MovieSocialIcon>chat_bubble</MovieSocialIcon>
                     </MovieSocialItem>
                   </MovieSocialList>
-                </MovieSocial>
+                </MovieSocial> */}
               </InfoSection>
               <BlurBack
                 style={{
