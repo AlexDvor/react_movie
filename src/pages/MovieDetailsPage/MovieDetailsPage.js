@@ -13,6 +13,7 @@ import PlayButton from '../../components/PlayButton/PlayButton';
 import Player from '../../components/Player/Player';
 import AddButton from '../../components/AddButton/AddButton';
 import Modal from '../../components/Modal/Modal';
+import ButtonsOptionsBar from '../../components/ButtonsOptionsBar/ButtonsOptionsBar';
 import {
   MovieWrapper,
   InfoSection,
@@ -63,7 +64,16 @@ export default function MovieDetailsPage() {
             <MovieDesc>
               <MovieText>{movie.overview}</MovieText>
             </MovieDesc>
-            <MovieButtonsContainer>
+            <ButtonsOptionsBar bottom="40px" left="30px">
+              <PlayButton
+                movieId={movieId}
+                click={onClick}
+                isDisable={trailer.length >= 1 ? false : true}
+              />
+              <AddButton addToList={movie} disabled={checkForCopyById(favoriteMovies, movieId)} />
+              <AdditionalButton movieId={movieId} />
+            </ButtonsOptionsBar>
+            {/* <MovieButtonsContainer>
               <MovieButtonsList>
                 <MovieButtonsItem>
                   <PlayButton
@@ -84,7 +94,7 @@ export default function MovieDetailsPage() {
                   <AdditionalButton movieId={movieId} />
                 </MovieButtonsItem>
               </MovieButtonsList>
-            </MovieButtonsContainer>
+            </MovieButtonsContainer> */}
             {/* <MovieSocial>
               <MovieSocialList>
                 <MovieSocialItem>

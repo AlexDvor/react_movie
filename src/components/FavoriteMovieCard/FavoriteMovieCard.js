@@ -38,7 +38,7 @@ export default function FavoriteMovieCard({ movie }) {
 
                 <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
 
-                <ButtonsOptionsBar>
+                <ButtonsOptionsBar bottom="10px" left="12px">
                   <RemoveButton id={item.id} />
                   <PlayButton />
                 </ButtonsOptionsBar>

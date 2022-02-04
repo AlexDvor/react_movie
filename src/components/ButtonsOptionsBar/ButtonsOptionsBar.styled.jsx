@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 
 export const WrapperButton = styled.div`
   position: absolute;
-  bottom: 10px;
-  left: 12px;
+  bottom: ${props => props.bottom};
+  left: ${props => props.left};
   color: white;
 `;
 export const ListButton = styled.ul`
