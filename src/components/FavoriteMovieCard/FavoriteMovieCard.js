@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
   MovieCardList,
   MovieCardItem,
@@ -26,31 +28,33 @@ export default function FavoriteMovieCard({ movie }) {
       <MovieCardList>
         {movie.map(item => (
           <MovieCardItem key={item.id}>
-            <MovieCard>
-              <InfoSection>
-                <MovieHeader>
-                  <Image src={`${URL}/${item.poster_path}`} alt={item.title} />
-                  <TitleMovie>{item.title}</TitleMovie>
-                  <ReleaseDate>{item.release_date.slice(0, 4)}</ReleaseDate>
-                  <Minutes>{item.runtime}</Minutes>
-                  <Type>{parseMovieData(item.genres)}</Type>
-                </MovieHeader>
+            <Link to={{ pathname: `/movies/${item.id}` }}>
+              <MovieCard>
+                <InfoSection>
+                  <MovieHeader>
+                    <Image src={`${URL}/${item.poster_path}`} alt={item.title} />
+                    <TitleMovie>{item.title}</TitleMovie>
+                    <ReleaseDate>{item.release_date.slice(0, 4)}</ReleaseDate>
+                    <Minutes>{item.runtime}</Minutes>
+                    <Type>{parseMovieData(item.genres)}</Type>
+                  </MovieHeader>
 
-                <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
+                  <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
+                </InfoSection>
 
-                <ButtonsOptionsBar bottom="10px" left="12px">
-                  <RemoveButton id={item.id} />
-                  <PlayButton />
-                </ButtonsOptionsBar>
-              </InfoSection>
+                <BlurBack
+                  style={{
+                    backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}`,
+                  }}
+                ></BlurBack>
+                {/* <div class="blur_back tomb_back"></div> */}
+              </MovieCard>
+            </Link>
 
-              <BlurBack
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}`,
-                }}
-              ></BlurBack>
-              {/* <div class="blur_back tomb_back"></div> */}
-            </MovieCard>
+            <ButtonsOptionsBar bottom="10px" left="12px">
+              <RemoveButton id={item.id} />
+              <PlayButton />
+            </ButtonsOptionsBar>
           </MovieCardItem>
         ))}
       </MovieCardList>

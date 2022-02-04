@@ -9,7 +9,10 @@ export const MovieCardList = styled.ul`
   }
 `;
 
-export const MovieCardItem = styled.li``;
+export const MovieCardItem = styled.li`
+  position: relative;
+  z-index: 1;
+`;
 
 export const MovieCard = styled.div`
   position: relative;

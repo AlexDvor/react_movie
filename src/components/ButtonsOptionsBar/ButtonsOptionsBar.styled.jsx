@@ -5,6 +5,7 @@ export const WrapperButton = styled.div`
   bottom: ${props => props.bottom};
   left: ${props => props.left};
   color: white;
+  z-index: 2;
 `;
 export const ListButton = styled.ul`
   display: flex;
