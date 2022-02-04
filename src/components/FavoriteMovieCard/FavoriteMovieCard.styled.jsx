@@ -75,7 +75,8 @@ export const Image = styled.img`
 
 export const TitleMovie = styled.h1`
   color: #fff;
-  font-weight: 400;
+  font-weight: 200;
+  font-size: 18px;
 `;
 
 export const ReleaseDate = styled.h4`
@@ -110,16 +111,21 @@ export const MovieDesc = styled.div`
   }
 `;
 
-export const WrapperButton = styled.div``;
+export const WrapperButton = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+`;
 
 export const ListButton = styled.ul`
   display: flex;
+  justify-content: start;
+  align-items: center;
 `;
 
 export const ItemButton = styled.li`
- &:not(:last-child) {
-      margin-right: 13px;
-
+  /* &:not(:last-child) {
+      margin-right: 10px; */
 `;
 
 export const Text = styled.p`

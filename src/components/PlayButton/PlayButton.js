@@ -1,20 +1,20 @@
-import { StyledButton } from './PlayButton.styled';
+import { StyledButton, PlayIcon } from './PlayButton.styled';
 import { AiFillPlayCircle } from 'react-icons/ai';
 
 export default function PlayButton({ movieId, click, isDisable }) {
-  const messageBtn = () => {
-    return !isDisable ? 'Play' : 'Not Available';
-  };
+  // const messageBtn = () => {
+  //   return !isDisable ? null : 'Not Available';
+  // };
 
-  const showIcon = () => {
-    return !isDisable ? 'flex' : 'none';
-  };
+  // const showIcon = () => {
+  //   return !isDisable ? 'flex' : 'none';
+  // };
 
   return (
     <>
       <StyledButton type="button" onClick={click} disabled={isDisable}>
-        <AiFillPlayCircle color="white" size="1.2em" display={showIcon()} />
-        {messageBtn()}
+        <PlayIcon disabled={isDisable} />
+        {/* {messageBtn()} */}
       </StyledButton>
     </>
   );

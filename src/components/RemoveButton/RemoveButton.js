@@ -1,4 +1,4 @@
-import { StyledButton } from './RemoveButton.styled';
+import { StyledButton, DeleteIcon } from './RemoveButton.styled';
 import { removeMovieById } from '../../redux/movies/movies-slice';
 import { useDispatch } from 'react-redux';
 
@@ -7,7 +7,7 @@ export default function RemoveButton({ id }) {
   return (
     <>
       <StyledButton type="button" onClick={() => dispatch(removeMovieById(id))}>
-        Delete
+        <DeleteIcon />
       </StyledButton>
     </>
   );
