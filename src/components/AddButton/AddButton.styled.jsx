@@ -24,25 +24,25 @@ export const StyledButton = styled.button`
   justify-content: center;
   font-size: 14px;
   color: white;
-  /* padding: 5px 20px; */
+  padding: 7px;
   border: 0px;
   border-radius: 4px;
-  /* background-image: ${setBackgroundImage}; */
-  background-color: transparent;
+  background-image: ${setBackgroundImage};
+  border-radius: 50%;
 
   cursor: pointer;
-  /* &:hover,
+  &:hover,
   &:focus {
     background-image: ${setHover};
-  } */
+  }
 `;
 
 export const AddIcon = styled(MdBookmarkAdd)`
-  color: #9ac7fa;
-  font-size: 26px;
+  color: white;
+  font-size: 20px;
 `;
 
 export const AddedIcon = styled(MdBookmarkAdded)`
-  color: green;
-  font-size: 26px;
+  color: white;
+  font-size: 20px;
 `;

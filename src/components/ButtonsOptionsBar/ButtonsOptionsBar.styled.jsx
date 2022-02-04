@@ -14,6 +14,6 @@ export const ListButton = styled.ul`
 `;
 
 export const ItemButton = styled.li`
-  /* &:not(:last-child) {
-      margin-right: 10px; */
+  &:not(:last-child) {
+      margin-right: 10px;
 `;
