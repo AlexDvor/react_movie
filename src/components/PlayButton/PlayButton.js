@@ -1,5 +1,4 @@
 import { StyledButton, PlayIcon } from './PlayButton.styled';
-import { AiFillPlayCircle } from 'react-icons/ai';
 
 export default function PlayButton({ movieId, click, isDisable }) {
   // const messageBtn = () => {
