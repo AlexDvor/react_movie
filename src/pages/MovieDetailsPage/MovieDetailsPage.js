@@ -7,7 +7,7 @@ import checkForCopyById from '../../helpers/checkForCopyById';
 //selectors
 import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 // Components
-import AdditionalButton from '../../components/AdditionalButton/AdditionalButton';
+// import AdditionalButton from '../../components/AdditionalButton/AdditionalButton';
 import Container from '../../components/Container';
 import PlayButton from '../../components/PlayButton/PlayButton';
 import Player from '../../components/Player/Player';
@@ -25,9 +25,6 @@ import {
   MovieImg,
   MovieDesc,
   MovieText,
-  MovieButtonsItem,
-  MovieButtonsContainer,
-  MovieButtonsList,
   BlurBack,
 } from './MovieDetailsPage.styled';
 
@@ -64,14 +61,14 @@ export default function MovieDetailsPage() {
             <MovieDesc>
               <MovieText>{movie.overview}</MovieText>
             </MovieDesc>
-            <ButtonsOptionsBar bottom="40px" left="30px">
+            <ButtonsOptionsBar bottom="12px" left="30px">
               <PlayButton
                 movieId={movieId}
                 click={onClick}
                 isDisable={trailer.length >= 1 ? false : true}
               />
               <AddButton addToList={movie} disabled={checkForCopyById(favoriteMovies, movieId)} />
-              <AdditionalButton movieId={movieId} />
+              {/* <AdditionalButton movieId={movieId} /> */}
             </ButtonsOptionsBar>
             {/* <MovieButtonsContainer>
               <MovieButtonsList>

@@ -1,5 +1,5 @@
-import { StyledButton } from './AddButton.styled';
-import { IoIosAddCircle } from 'react-icons/io';
+import { StyledButton, AddIcon, AddedIcon } from './AddButton.styled';
+
 import { useDispatch } from 'react-redux';
 import { addMovieToLibrary } from '../../redux/movies/movies-slice';
 
@@ -11,8 +11,7 @@ export default function AddButton({ addToList, disabled }) {
   return (
     <>
       <StyledButton type="button" onClick={handleClick} disabled={disabled}>
-        <IoIosAddCircle color="white" size="1.2em" />
-        {disabled ? 'Added' : 'Add'}
+        {disabled ? <AddedIcon /> : <AddIcon />}
       </StyledButton>
     </>
   );

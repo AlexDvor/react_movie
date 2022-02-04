@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { MdBookmarkAdd } from 'react-icons/md';
+import { MdBookmarkAdded } from 'react-icons/md';
 
 const setBackgroundImage = props => {
   if (!props.disabled) {
@@ -15,21 +17,32 @@ const setHover = props => {
 };
 
 export const StyledButton = styled.button`
-  width: 100px;
-  height: 30px;
+  /* width: 100px;
+  height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   color: white;
-  padding: 5px 20px;
+  /* padding: 5px 20px; */
   border: 0px;
   border-radius: 4px;
-  background-image: ${setBackgroundImage};
+  /* background-image: ${setBackgroundImage}; */
+  background-color: transparent;
 
   cursor: pointer;
-  &:hover,
+  /* &:hover,
   &:focus {
     background-image: ${setHover};
-  }
+  } */
+`;
+
+export const AddIcon = styled(MdBookmarkAdd)`
+  color: #9ac7fa;
+  font-size: 26px;
+`;
+
+export const AddedIcon = styled(MdBookmarkAdded)`
+  color: green;
+  font-size: 26px;
 `;

@@ -112,6 +112,9 @@ export const MovieDesc = styled.div`
 `;
 
 export const MovieText = styled.p`
+  margin-bottom: 25px;
+  margin-top: 10px;
+
   color: #cfd6e1;
 `;
 
@@ -142,35 +145,35 @@ export const MovieText = styled.p`
 //   cursor: pointer;
 // `;
 
-export const MovieButtonsContainer = styled.div`
-  margin-bottom: 30px;
+// export const MovieButtonsContainer = styled.div`
+//   margin-bottom: 30px;
 
-  @media screen and (min-width: 768px) {
-    margin-left: 25px;
-  }
-`;
+//   @media screen and (min-width: 768px) {
+//     margin-left: 25px;
+//   }
+// `;
 
-export const MovieButtonsList = styled.ul`
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  flex-wrap: wrap;
-  gap: 12px;
+// export const MovieButtonsList = styled.ul`
+//   display: flex;
+//   justify-content: center;
+//   list-style: none;
+//   padding: 0;
+//   flex-wrap: wrap;
+//   gap: 12px;
 
-  @media screen and (min-width: 768px) {
-    justify-content: start;
-    gap: 0px;
-  }
-`;
+//   @media screen and (min-width: 768px) {
+//     justify-content: start;
+//     gap: 0px;
+//   }
+// `;
 
-export const MovieButtonsItem = styled.li`
-  @media screen and (min-width: 768px) {
-    &:not(:last-child) {
-      margin-right: 13px;
-    }
-  }
-`;
+// export const MovieButtonsItem = styled.li`
+//   @media screen and (min-width: 768px) {
+//     &:not(:last-child) {
+//       margin-right: 13px;
+//     }
+//   }
+// `;
 
 export const BlurBack = styled.div`
   position: absolute;
