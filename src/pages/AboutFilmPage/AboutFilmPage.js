@@ -6,7 +6,7 @@ import { useParams } from 'react-router';
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
 
-export default function MovieDetailsPage() {
+export default function AboutFilmPage() {
   const [movie, setMovie] = useState(null);
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
