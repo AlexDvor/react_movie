@@ -2,7 +2,7 @@ import AppBar from './components/AppBar/AppBar';
 import { Route, Switch } from 'react-router';
 // Pages
 import HomePage from './pages/HomePage/HomePage';
-import AboutFilmPage from './pages/AboutFilmPage/AboutFilmPage';
+import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
 import MyListPage from './pages/MyListPage/MyListPage';
 import AdditionalInfoPage from './pages/AdditionalInfoPage/AdditionalInfoPage';
 import SearchPage from './pages/SearchPage/SearchPage';
@@ -18,7 +18,7 @@ function App() {
         </Route>
 
         <Route exact path="/movies/:movieId">
-          <AboutFilmPage />
+          <AboutMoviePage />
         </Route>
 
         <Route exact path="/my_list">
