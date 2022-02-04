@@ -6,7 +6,7 @@ import {
   fetchTrendMovies,
 } from '../../services/movies-api';
 import Container from '../../components/Container';
-import MovieList from '../../components/MovieList/MovieList';
+import HomeMovieList from '../../components/HomeMovieList/HomeMovieList';
 import TitleByType from '../../components/TitleByType/TitleByType';
 
 export default function HomePage() {
@@ -25,16 +25,16 @@ export default function HomePage() {
   return (
     <Container>
       <TitleByType text="Upcoming" />
-      <MovieList movies={upComingMovies} />
+      <HomeMovieList movies={upComingMovies} />
 
       <TitleByType text="Top Day" />
-      <MovieList movies={trendMovies} />
+      <HomeMovieList movies={trendMovies} />
 
       <TitleByType text="Populas Movies" />
-      <MovieList movies={popularMovies} />
+      <HomeMovieList movies={popularMovies} />
 
       <TitleByType text="Top Movies" />
-      <MovieList movies={topMovies} />
+      <HomeMovieList movies={topMovies} />
     </Container>
   );
 }
