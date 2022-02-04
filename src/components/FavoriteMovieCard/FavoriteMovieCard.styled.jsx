@@ -111,54 +111,8 @@ export const MovieDesc = styled.div`
   }
 `;
 
-export const WrapperButton = styled.div`
-  position: absolute;
-  bottom: 10px;
-  left: 12px;
-`;
-
-export const ListButton = styled.ul`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-`;
-
-export const ItemButton = styled.li`
-  /* &:not(:last-child) {
-      margin-right: 10px; */
-`;
-
 export const Text = styled.p`
   color: #cfd6e1;
-`;
-
-export const MovieSocial = styled.div`
-  height: 10%;
-  padding-left: 15px;
-  padding-bottom: 20px;
-`;
-
-export const MovieSocialList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-export const MovieSocialItem = styled.li`
- display: inline-block;
-  color: rgba(255, 255, 255, 0.4);
-  transition: color 0.3s;
-  transition-delay: 0.15s;
-  margin: 0 10px;
-  &:hover {
-    transition: color 0.3s;
-    color: rgba(255, 255, 255, 0.8);
-  }
-}
-`;
-
-export const MovieSocialIcon = styled.i`
-  font-size: 19px;
-  cursor: pointer;
 `;
 
 export const BlurBack = styled.div`

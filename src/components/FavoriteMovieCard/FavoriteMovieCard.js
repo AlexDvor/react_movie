@@ -10,14 +10,6 @@ import {
   Minutes,
   Type,
   MovieDesc,
-  WrapperButton,
-  ListButton,
-  ItemButton,
-  Text,
-  // MovieSocial,
-  // MovieSocialList,
-  // MovieSocialItem,
-  // MovieSocialIcon,
   BlurBack,
 } from './FavoriteMovieCard.styled';
 //components
@@ -43,37 +35,15 @@ export default function FavoriteMovieCard({ movie }) {
                   <Minutes>{item.runtime}</Minutes>
                   <Type>{parseMovieData(item.genres)}</Type>
                 </MovieHeader>
+
                 <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
-                {/* <WrapperButton>
-                  <ListButton>
-                    <ItemButton>
-                      <RemoveButton id={item.id} />
-                    </ItemButton>
-                    <ItemButton>
-                      <PlayButton />
-                    </ItemButton>
-                  </ListButton>
-                </WrapperButton> */}
 
                 <ButtonsOptionsBar>
                   <RemoveButton id={item.id} />
                   <PlayButton />
                 </ButtonsOptionsBar>
-
-                {/* <MovieSocial>
-                  <MovieSocialList>
-                    <MovieSocialItem>
-                      <MovieSocialIcon>share</MovieSocialIcon>
-                    </MovieSocialItem>
-                    <MovieSocialItem>
-                      <MovieSocialIcon></MovieSocialIcon>
-                    </MovieSocialItem>
-                    <MovieSocialItem>
-                      <MovieSocialIcon>chat_bubble</MovieSocialIcon>
-                    </MovieSocialItem>
-                  </MovieSocialList>
-                </MovieSocial> */}
               </InfoSection>
+
               <BlurBack
                 style={{
                   backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}`,
