@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router';
 import HomePage from './pages/HomePage/HomePage';
 import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
 import MyListPage from './pages/MyListPage/MyListPage';
-import AdditionalInfoPage from './pages/AdditionalInfoPage/AdditionalInfoPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 // import { Footer } from './components/Footer/Footer';
 
@@ -23,10 +22,6 @@ function App() {
 
         <Route exact path="/my_list">
           <MyListPage />
-        </Route>
-
-        <Route exact path="/movies/:movieId/actors">
-          <AdditionalInfoPage />
         </Route>
 
         <Route exact path="/search">
