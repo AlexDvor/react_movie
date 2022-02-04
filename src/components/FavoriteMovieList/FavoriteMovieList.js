@@ -13,7 +13,7 @@ import {
   Type,
   MovieDesc,
   BlurBack,
-} from './FavoriteMovieCard.styled';
+} from './FavoriteMovieList.styled';
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
 import PlayButton from '../PlayButton/PlayButton';
@@ -22,7 +22,7 @@ import ButtonsOptionsBar from '../ButtonsOptionsBar/ButtonsOptionsBar';
 const parseMovieData = obj => obj.map(item => item.name).join(', ');
 const URL = 'https://image.tmdb.org/t/p/w500/';
 
-export default function FavoriteMovieCard({ movie }) {
+export default function FavoriteMovieList({ movie }) {
   return (
     <>
       <MovieCardList>
