@@ -23,6 +23,7 @@ import {
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
 import PlayButton from '../PlayButton/PlayButton';
+import ButtonsOptionsBar from '../ButtonsOptionsBar/ButtonsOptionsBar';
 
 const parseMovieData = obj => obj.map(item => item.name).join(', ');
 const URL = 'https://image.tmdb.org/t/p/w500/';
@@ -43,7 +44,7 @@ export default function FavoriteMovieCard({ movie }) {
                   <Type>{parseMovieData(item.genres)}</Type>
                 </MovieHeader>
                 <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>
-                <WrapperButton>
+                {/* <WrapperButton>
                   <ListButton>
                     <ItemButton>
                       <RemoveButton id={item.id} />
@@ -52,7 +53,12 @@ export default function FavoriteMovieCard({ movie }) {
                       <PlayButton />
                     </ItemButton>
                   </ListButton>
-                </WrapperButton>
+                </WrapperButton> */}
+
+                <ButtonsOptionsBar>
+                  <RemoveButton id={item.id} />
+                  <PlayButton />
+                </ButtonsOptionsBar>
 
                 {/* <MovieSocial>
                   <MovieSocialList>
