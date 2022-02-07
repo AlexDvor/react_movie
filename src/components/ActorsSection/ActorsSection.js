@@ -21,6 +21,11 @@ export default function ActorsSection({ data }) {
     if (personId) fetchPersonById(Number(personId)).then(res => setActor(res));
   }, [personId]);
 
+  const checkArrLength = () => {
+    if (data.length > 10) return 12;
+    return 7;
+  };
+
   const handleClick = e => {
     setPersonId(e.target.id);
   };
@@ -28,7 +33,7 @@ export default function ActorsSection({ data }) {
   return (
     <>
       <WrapperSlider>
-        <ActorsSlider>
+        <ActorsSlider quantity={checkArrLength()}>
           {data.length > 0 &&
             data.map(({ id, profile_path, name }) => (
               <CardWrapper key={id} onClick={handleClick}>

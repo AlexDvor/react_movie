@@ -1,10 +1,10 @@
 import Slider from 'react-slick';
 
-export default function ActorsSlider({ children }) {
+export default function ActorsSlider({ children, quantity = 12 }) {
   const settings = {
     dots: false,
     infinite: true, // Infinitely wrap around contents
-    slidesToShow: 12,
+    slidesToShow: quantity,
     slidesToScroll: 3,
     arrows: true,
     draggable: false,
