@@ -12,6 +12,11 @@ export const MovieCardList = styled.ul`
 export const MovieCardItem = styled.li`
   position: relative;
   z-index: 1;
+
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+  &:hover {
+    box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+  }
 `;
 
 export const MovieCard = styled.div`

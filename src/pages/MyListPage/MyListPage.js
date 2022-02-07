@@ -13,7 +13,7 @@ export default function MyListPage() {
       {favoriteMovie.length > 0 ? (
         <FavoriteMovieList movie={favoriteMovie} />
       ) : (
-        <Message>Your Is Empty</Message>
+        <Message>Your List Is Empty</Message>
       )}
     </Container>
   );
