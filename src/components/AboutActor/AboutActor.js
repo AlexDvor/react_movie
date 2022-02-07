@@ -20,10 +20,6 @@ export default function AboutActor({ person }) {
     return biography;
   };
 
-  //  const checkBiography = () => {
-  //    if (biography === '') return `Sorry, we don't have biography about ${name}`;
-  //    return biography;
-  //  };
   return (
     <>
       <Wrapper>
