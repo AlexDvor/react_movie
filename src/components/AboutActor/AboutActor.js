@@ -2,7 +2,6 @@ import { Wrapper, BiographyText, ActorName } from './AboutActor.styled';
 const URL = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2';
 
 export default function AboutActor({ person }) {
-  console.log(person);
   const { name, biography } = person;
 
   const checkBiography = () => {

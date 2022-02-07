@@ -4,7 +4,7 @@ export default function ActorsSlider({ children }) {
   const settings = {
     dots: false,
     infinite: true, // Infinitely wrap around contents
-    slidesToShow: 8,
+    slidesToShow: 12,
     slidesToScroll: 3,
     arrows: true,
     draggable: false,
@@ -24,7 +24,7 @@ export default function ActorsSlider({ children }) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 5,
           slidesToScroll: 2,
           initialSlide: 0,
           infinite: true,
