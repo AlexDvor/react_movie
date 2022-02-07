@@ -16,7 +16,7 @@ import {
 } from './FavoriteMovieList.styled';
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
-import PlayButton from '../PlayButton/PlayButton';
+// import PlayButton from '../PlayButton/PlayButton';
 import ButtonsOptionsBar from '../ButtonsOptionsBar/ButtonsOptionsBar';
 
 const parseMovieData = obj => obj.map(item => item.name).join(', ');
