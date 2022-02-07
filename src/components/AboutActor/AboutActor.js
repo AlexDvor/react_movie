@@ -1,7 +1,7 @@
-import { Wrapper, BiographyText } from './ActorInformation.styled';
+import { Wrapper, BiographyText } from './AboutActor.styled';
 const URL = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2';
 
-export default function ActorInformation({ data }) {
+export default function AboutActor({ data }) {
   const { profile_path, name, biography } = data;
   return (
     <>
