@@ -1,4 +1,9 @@
-import { fetchMovieByID, fetchTrailer, fetchMovieByCast } from '../../services/movies-api';
+import {
+  fetchMovieByID,
+  fetchTrailer,
+  fetchMovieByCast,
+  fetchPersonById,
+} from '../../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
@@ -6,6 +11,7 @@ import { useParams } from 'react-router';
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
 import ActorsList from '../../components/ActorsList/ActorsList';
+import ActorInformation from '../../components/ActorInformation/ActorInformation';
 //helpers
 
 import { filterByProfilePath } from '../../helpers/filterByPath';
@@ -14,7 +20,10 @@ export default function AboutMoviePage() {
   const [movie, setMovie] = useState(null);
   const [actorsData, setActorsData] = useState([]);
   const [trailer, setTrailer] = useState([]);
+  const [actor, setActor] = useState(null);
   const { movieId } = useParams('');
+  console.log(actorsData);
+  console.log('actor', actor);
 
   useEffect(() => {
     fetchMovieByID(Number(movieId)).then(setMovie);
@@ -24,12 +33,14 @@ export default function AboutMoviePage() {
         return filterByProfilePath(res.cast);
       })
       .then(res => setActorsData(res));
+    fetchPersonById(Number(6384)).then(res => setActor(res));
   }, [movieId]);
 
   return (
     <Container>
       {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
       {actorsData && <ActorsList data={actorsData} />}
+      {actor && <ActorInformation data={actor} />}
     </Container>
   );
 }
