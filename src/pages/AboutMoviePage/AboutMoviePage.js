@@ -10,7 +10,7 @@ import { useParams } from 'react-router';
 // Components
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
-import ActorsList from '../../components/ActorsList/ActorsList';
+import CastList from '../../components/CastList/CastList';
 import ActorInformation from '../../components/ActorInformation/ActorInformation';
 //helpers
 
@@ -22,8 +22,8 @@ export default function AboutMoviePage() {
   const [trailer, setTrailer] = useState([]);
   const [actor, setActor] = useState(null);
   const { movieId } = useParams('');
-  console.log(actorsData);
-  console.log('actor', actor);
+  // console.log(actorsData);
+  // console.log('actor', actor);
 
   useEffect(() => {
     fetchMovieByID(Number(movieId)).then(setMovie);
@@ -39,7 +39,7 @@ export default function AboutMoviePage() {
   return (
     <Container>
       {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
-      {actorsData && <ActorsList data={actorsData} />}
+      {actorsData && <CastList data={actorsData} />}
       {actor && <ActorInformation data={actor} />}
     </Container>
   );

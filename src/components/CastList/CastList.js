@@ -1,10 +1,10 @@
 import ActorsSlider from '../ActorsSlider/ActorsSlider';
 // import { Link } from 'react-router-dom';
-import { Image, CardWrapper, ImageWrapper, ActorName } from './ActorsList.styled';
+import { Image, CardWrapper, ImageWrapper, ActorName } from './CastList.styled';
 
 const URL = 'https://image.tmdb.org/t/p/w500';
 
-export default function ActorsList({ data }) {
+export default function CastList({ data }) {
   return (
     <>
       <ActorsSlider>
