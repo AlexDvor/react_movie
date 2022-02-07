@@ -29,6 +29,10 @@ export default function ActorsSection({ data }) {
 
   const handleClick = e => {
     setPersonId(e.target.id);
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   };
 
   return (
