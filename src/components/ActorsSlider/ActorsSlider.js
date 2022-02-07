@@ -5,7 +5,7 @@ export default function ActorsSlider({ children, quantity = 12 }) {
     dots: false,
     infinite: true, // Infinitely wrap around contents
     slidesToShow: quantity,
-    slidesToScroll: 3,
+    slidesToScroll: 4,
     arrows: true,
     draggable: false,
     swipe: true,
@@ -35,7 +35,7 @@ export default function ActorsSlider({ children, quantity = 12 }) {
         breakpoint: 425,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           arrows: true,
           infinite: true,
         },
@@ -44,8 +44,8 @@ export default function ActorsSlider({ children, quantity = 12 }) {
       {
         breakpoint: 320,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           arrows: true,
           infinite: true,
         },

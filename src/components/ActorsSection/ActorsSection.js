@@ -1,4 +1,5 @@
 import {
+  Container,
   WrapperSlider,
   Image,
   CardWrapper,
@@ -22,7 +23,7 @@ export default function ActorsSection({ data }) {
   }, [personId]);
 
   const checkArrLength = () => {
-    if (data.length > 10) return 12;
+    if (data.length > 10) return 9;
     return 7;
   };
 
@@ -32,18 +33,20 @@ export default function ActorsSection({ data }) {
 
   return (
     <>
-      <WrapperSlider>
-        <ActorsSlider quantity={checkArrLength()}>
-          {data.length > 0 &&
-            data.map(({ id, profile_path, name }) => (
-              <CardWrapper key={id} onClick={handleClick}>
-                <WrapperImage>
-                  <Image src={`${URL}/${profile_path}`} alt={name} width="200px" id={id} />
-                </WrapperImage>
-              </CardWrapper>
-            ))}
-        </ActorsSlider>
-      </WrapperSlider>
+      <Container>
+        <WrapperSlider>
+          <ActorsSlider quantity={checkArrLength()}>
+            {data.length > 0 &&
+              data.map(({ id, profile_path, name }) => (
+                <CardWrapper key={id} onClick={handleClick}>
+                  <WrapperImage>
+                    <Image src={`${URL}/${profile_path}`} alt={name} width="200px" id={id} />
+                  </WrapperImage>
+                </CardWrapper>
+              ))}
+          </ActorsSlider>
+        </WrapperSlider>
+      </Container>
 
       <WrapperActor>{actor && <AboutActor person={actor} />}</WrapperActor>
     </>
