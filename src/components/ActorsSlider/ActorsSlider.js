@@ -44,8 +44,8 @@ export default function ActorsSlider({ children }) {
       {
         breakpoint: 320,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           arrows: true,
           infinite: true,
         },
