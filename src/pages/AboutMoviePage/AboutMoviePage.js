@@ -6,6 +6,9 @@ import { useParams } from 'react-router';
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
 import ActorsList from '../../components/ActorsList/ActorsList';
+//helpers
+
+import { filterByProfilePath } from '../../helpers/filterByPath';
 
 export default function AboutMoviePage() {
   const [movie, setMovie] = useState(null);
@@ -16,7 +19,11 @@ export default function AboutMoviePage() {
   useEffect(() => {
     fetchMovieByID(Number(movieId)).then(setMovie);
     fetchTrailer(Number(movieId)).then(res => setTrailer(res.results.slice(0, 1)));
-    fetchMovieByCast(movieId).then(res => setActorsData(res.cast));
+    fetchMovieByCast(movieId)
+      .then(res => {
+        return filterByProfilePath(res.cast);
+      })
+      .then(res => setActorsData(res));
   }, [movieId]);
 
   return (

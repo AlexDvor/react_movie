@@ -15,14 +15,13 @@ import {
 import defaultImage from '../../images/default_gallery.jpg';
 import Container from '../../components/Container/Container';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import { filterByPosterPath } from '../../helpers/filterByPath';
 
 export default function SearchPage() {
   const [movies, setMovies] = useState([]);
   const [filter, setFilter] = useState('');
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
-
-  console.log(movies);
 
   useEffect(() => {
     if (query === '') return;
@@ -35,16 +34,6 @@ export default function SearchPage() {
         setMovies(prevState => [...prevState, ...res]);
       });
   }, [query, page]);
-
-  const filterByPosterPath = array => {
-    const newArr = [];
-    for (let arr of array) {
-      if (arr.poster_path) {
-        newArr.push(arr);
-      }
-    }
-    return newArr;
-  };
 
   const debouncedSearch = useMemo(
     () =>
