@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ImageWrapper, Image, CardWrapper } from './HomeMovieList.styled';
 import Container from '../Container';
-import MovieSlider from '../Slider/Slider';
+import MovieSlider from '../MovieSlider/MovieSlider';
 
 export default function HomeMovieList({ movies }) {
   const URL = 'https://image.tmdb.org/t/p/w500/';
