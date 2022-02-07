@@ -1,4 +1,4 @@
-import { Image, CardWrapper, ImageWrapper, ActorName } from './CastList.styled';
+import { Image, CardWrapper, ImageWrapper } from './ActorsSection.styled';
 import { fetchPersonById } from '../../services/movies-api';
 import { useState, useEffect } from 'react';
 import ActorsSlider from '../ActorsSlider/ActorsSlider';
@@ -7,7 +7,7 @@ import AboutActor from '../AboutActor/AboutActor';
 
 const URL = 'https://image.tmdb.org/t/p/w500';
 
-export default function CastList({ data }) {
+export default function ActorsSection({ data }) {
   const [actor, setActor] = useState(null);
   const [personId, setPersonId] = useState(null);
 
@@ -30,7 +30,6 @@ export default function CastList({ data }) {
               <ImageWrapper>
                 <Image src={`${URL}/${profile_path}`} alt={name} width="200px" id={id} />
               </ImageWrapper>
-              <ActorName>{name}</ActorName>
             </CardWrapper>
           ))}
       </ActorsSlider>

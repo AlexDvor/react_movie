@@ -19,8 +19,3 @@ export const CardWrapper = styled.div`
   padding: 5px;
   /* background-color: white; */
 `;
-export const ActorName = styled.p`
-  color: white;
-  text-align: center;
-  font-size: 13px;
-`;

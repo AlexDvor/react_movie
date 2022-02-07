@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 // Components
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
-import CastList from '../../components/CastList/CastList';
+import ActorsSection from '../../components/ActorsSection/ActorsSection';
 
 //helpers
 import { filterByProfilePath } from '../../helpers/filterByPath';
@@ -29,7 +29,7 @@ export default function AboutMoviePage() {
   return (
     <Container>
       {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
-      {actorsData && <CastList data={actorsData} />}
+      {actorsData && <ActorsSection data={actorsData} />}
     </Container>
   );
 }
