@@ -7,13 +7,14 @@ export const WrapperButton = styled.div`
   color: white;
   z-index: 2;
 `;
-export const ListButton = styled.ul`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-`;
+// export const ListButton = styled.ul`
+//   display: flex;
+//   justify-content: start;
+//   align-items: center;
+// `;
 
-export const ItemButton = styled.li`
-  &:not(:last-child) {
-      margin-right: 10px;
-`;
+// export const ItemButton = styled.li`
+//   /* &:not(:last-child) {
+//     margin-right: 10px;
+//   } */
+// `;

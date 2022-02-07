@@ -53,7 +53,7 @@ export default function FavoriteMovieList({ movie }) {
 
             <ButtonsOptionsBar bottom="10px" left="12px">
               <RemoveButton id={item.id} />
-              <PlayButton />
+              {/* <PlayButton /> */}
             </ButtonsOptionsBar>
           </MovieCardItem>
         ))}
