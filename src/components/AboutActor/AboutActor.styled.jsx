@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const BiographyText = styled.p`
+export const BiographyText = styled.div`
   color: white;
 `;
 
