@@ -4,10 +4,16 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 // import { StyledAutocomplete, StyledBox, StyledTextField } from './LenguajesBox.styled';
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeLanguages } from '../../redux/movies/movies-slice';
 
 export default function LenguajesBox() {
-  const [currentLangs, setCurrentLangs] = useState('US');
+  //   const [currentLangs, setCurrentLangs] = useState('US');
+  const dispatch = useDispatch();
 
+  const onChangeLangs = (event, value) => {
+    dispatch(changeLanguages(value.id));
+  };
   return (
     <Autocomplete
       id="country-select-demo"
@@ -15,7 +21,8 @@ export default function LenguajesBox() {
       //   style={{ width: '100px' }}
       options={countries}
       autoHighlight
-      onChange={(event, value) => setCurrentLangs(value.code)}
+      //   onChange={(event, value) => setCurrentLangs(value.code)}
+      onChange={onChangeLangs}
       getOptionLabel={option => option.label}
       renderOption={(props, option) => (
         <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>

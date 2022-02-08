@@ -1,10 +1,13 @@
 import ReactPlayer from 'react-player/youtube';
 import { useEffect, useState } from 'react';
 import { fetchTrailer } from '../../services/movies-api';
+import { useSelector } from 'react-redux';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 
 export default function Player({ movieId }) {
   const URL = 'https://www.youtube.com';
   const [movie, setMovie] = useState([]);
+  const currentLang = useSelector(getCurrentLanguages);
 
   const settings = {
     controls: true,
@@ -28,8 +31,8 @@ export default function Player({ movieId }) {
   };
 
   useEffect(() => {
-    fetchTrailer(Number(movieId)).then(res => setMovie(res.results.slice(0, 1)));
-  }, [movieId]);
+    fetchTrailer(Number(movieId), currentLang).then(res => setMovie(res.results.slice(0, 1)));
+  }, [movieId, currentLang]);
 
   return (
     <>
