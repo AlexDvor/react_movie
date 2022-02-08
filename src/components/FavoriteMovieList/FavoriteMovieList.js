@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import {
   MovieCardList,
   MovieCardItem,
@@ -13,11 +12,13 @@ import {
   Type,
   MovieDesc,
   BlurBack,
+  WrapperButton,
+  ListButton,
+  ItemButton,
 } from './FavoriteMovieList.styled';
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
 // import PlayButton from '../PlayButton/PlayButton';
-import ButtonsOptionsBar from '../ButtonsOptionsBar/ButtonsOptionsBar';
 
 const parseMovieData = obj => obj.map(item => item.name).join(', ');
 const URL = 'https://image.tmdb.org/t/p/w500/';
@@ -51,10 +52,13 @@ export default function FavoriteMovieList({ movie }) {
               </MovieCard>
             </Link>
 
-            <ButtonsOptionsBar bottom="10px" left="12px">
-              <RemoveButton id={item.id} />
-              {/* <PlayButton /> */}
-            </ButtonsOptionsBar>
+            <WrapperButton>
+              <ListButton>
+                <ItemButton>
+                  <RemoveButton id={item.id} />
+                </ItemButton>
+              </ListButton>
+            </WrapperButton>
           </MovieCardItem>
         ))}
       </MovieCardList>

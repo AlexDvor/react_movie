@@ -114,7 +114,6 @@ export const MovieDesc = styled.div`
 export const MovieText = styled.p`
   margin-bottom: 25px;
   margin-top: 10px;
-
   color: #cfd6e1;
 `;
 
@@ -193,5 +192,25 @@ export const BlurBack = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     background-position: 50% 50%;
+  }
+`;
+
+export const WrapperButton = styled.div`
+  position: absolute;
+  bottom: 12px;
+  left: 30px;
+  color: white;
+  z-index: 2;
+`;
+
+export const ListButton = styled.ul`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+`;
+
+export const ItemButton = styled.li`
+  &:not(:last-child) {
+    margin-right: 10px;
   }
 `;

@@ -12,12 +12,14 @@ import {
   MovieDesc,
   MovieText,
   BlurBack,
+  WrapperButton,
+  ListButton,
+  ItemButton,
 } from './MovieDetailsCard.styled';
 
 //redux
 import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 //components
-import ButtonsOptionsBar from '../ButtonsOptionsBar/ButtonsOptionsBar';
 import PlayButton from '../PlayButton/PlayButton';
 import AddButton from '../AddButton/AddButton';
 import Modal from '../Modal/Modal';
@@ -47,15 +49,26 @@ export default function MovieDetailsCard({ movie, trailer }) {
           <MovieDesc>
             <MovieText>{movie.overview}</MovieText>
           </MovieDesc>
-          <ButtonsOptionsBar bottom="12px" left="30px">
-            <PlayButton
-              movieId={movie.id}
-              click={onClick}
-              isDisable={trailer.length >= 1 ? false : true}
-            />
-            <AddButton addToList={movie} disabled={checkForCopyById(favoriteMovies, movie.id)} />
+          <WrapperButton bottom="12px" left="30px">
+            <ListButton>
+              <ItemButton>
+                <PlayButton
+                  movieId={movie.id}
+                  click={onClick}
+                  isDisable={trailer.length >= 1 ? false : true}
+                />
+              </ItemButton>
+
+              <ItemButton>
+                <AddButton
+                  addToList={movie}
+                  disabled={checkForCopyById(favoriteMovies, movie.id)}
+                />
+              </ItemButton>
+            </ListButton>
+
             {/* <AdditionalButton movieId={movieId} /> */}
-          </ButtonsOptionsBar>
+          </WrapperButton>
           {/* <MovieButtonsContainer>
               <MovieButtonsList>
                 <MovieButtonsItem>
