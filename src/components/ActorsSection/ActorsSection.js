@@ -8,19 +8,22 @@ import {
 } from './ActorsSection.styled';
 import { fetchPersonById } from '../../services/movies-api';
 import { useState, useEffect } from 'react';
-import ActorsSlider from '../ActorsSlider/ActorsSlider';
+import { useSelector } from 'react-redux';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 //components
 import AboutActor from '../AboutActor/AboutActor';
+import ActorsSlider from '../ActorsSlider/ActorsSlider';
 
 const URL = 'https://image.tmdb.org/t/p/w500';
 
 export default function ActorsSection({ data }) {
   const [actor, setActor] = useState(null);
   const [personId, setPersonId] = useState(null);
+  const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
-    if (personId) fetchPersonById(Number(personId)).then(res => setActor(res));
-  }, [personId]);
+    if (personId) fetchPersonById(Number(personId), currentLang).then(res => setActor(res));
+  }, [currentLang, personId]);
 
   const checkArrLength = () => {
     if (data.length > 10) return 9;
