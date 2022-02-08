@@ -11,7 +11,10 @@ export default function LanguageSelectBox() {
   const dispatch = useDispatch();
 
   const onChangeLangs = (event, value) => {
-    dispatch(changeLanguages(value.id));
+    if (!value) {
+      return dispatch(changeLanguages('en'));
+    }
+    return dispatch(changeLanguages(value.id));
   };
 
   return (
@@ -40,10 +43,10 @@ export default function LanguageSelectBox() {
         <TextField
           {...params}
           label="Choose a language"
-          inputProps={{
-            ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
-          }}
+          // inputProps={{
+          //   ...params.inputProps,
+          //   autoComplete: 'new-password', // disable autocomplete and autofill
+          // }}
         />
       )}
     />
