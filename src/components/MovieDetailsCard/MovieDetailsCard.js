@@ -49,7 +49,7 @@ export default function MovieDetailsCard({ movie, trailer }) {
           <MovieDesc>
             <MovieText>{movie.overview}</MovieText>
           </MovieDesc>
-          <WrapperButton bottom="12px" left="30px">
+          <WrapperButton>
             <ListButton>
               <ItemButton>
                 <PlayButton

@@ -93,7 +93,7 @@ export const MovieImg = styled.img`
   height: 120px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
     height: 250px;
   }
 `;
@@ -112,7 +112,7 @@ export const MovieDesc = styled.div`
 `;
 
 export const MovieText = styled.p`
-  margin-bottom: 25px;
+  margin-bottom: 45px;
   margin-top: 10px;
   color: #cfd6e1;
 `;
@@ -201,6 +201,15 @@ export const WrapperButton = styled.div`
   left: 30px;
   color: white;
   z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    bottom: 443px;
+    left: 221px;
+  }
+  @media screen and (min-width: 769px) {
+    bottom: 489px;
+    left: 221px;
+  }
 `;
 
 export const ListButton = styled.ul`
