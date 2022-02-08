@@ -4,14 +4,14 @@ import { MdBookmarkAdded } from 'react-icons/md';
 
 const setBackgroundImage = props => {
   if (!props.disabled) {
-    return 'linear-gradient(0deg, rgba(64, 145, 108, 1) 49%, rgba(116, 198, 157, 1) 100%)';
+    return 'linear-gradient(0deg, rgb(30 77 116) 49%, rgb(0 241 253 / 45%) 100%)';
   }
   return 'linear-gradient(0deg, rgba(87,87,87,1) 2%, rgba(187,187,187,1) 100%)';
 };
 
 const setHover = props => {
   if (!props.disabled) {
-    return 'linear-gradient(0deg, rgba(47, 106, 78, 1) 49%, rgba(107, 184, 145, 1) 100%)';
+    return 'linear-gradient(0deg, rgb(141 17 57) 49%, rgb(219 117 164 / 45%) 100%)';
   }
   return null;
 };
