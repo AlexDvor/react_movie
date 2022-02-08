@@ -1,6 +1,8 @@
 import { fetchMovieByID, fetchTrailer, fetchMovieByCast } from '../../services/movies-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 
 // Components
 import Container from '../../components/Container';
@@ -15,16 +17,17 @@ export default function AboutMoviePage() {
   const [actorsData, setActorsData] = useState([]);
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
+  const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
-    fetchMovieByID(Number(movieId)).then(setMovie);
-    fetchTrailer(Number(movieId)).then(res => setTrailer(res.results.slice(0, 1)));
-    fetchMovieByCast(movieId)
+    fetchMovieByID(Number(movieId), currentLang).then(setMovie);
+    fetchTrailer(Number(movieId), currentLang).then(res => setTrailer(res.results.slice(0, 1)));
+    fetchMovieByCast(Number(movieId), currentLang)
       .then(res => {
         return filterByProfilePath(res.cast);
       })
       .then(res => setActorsData(res));
-  }, [movieId]);
+  }, [currentLang, movieId]);
 
   return (
     <Container>

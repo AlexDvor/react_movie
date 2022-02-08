@@ -3,6 +3,7 @@ import * as moviesOperations from './movies-operations';
 
 const initialState = {
   favorite: [],
+  language: 'en',
 };
 
 const movieSlice = createSlice({
@@ -21,6 +22,10 @@ const movieSlice = createSlice({
       const result = state.favorite.filter(todo => todo.id !== payload);
       state.favorite = [...result];
     },
+
+    changeLanguages(state, { payload }) {
+      state.language = payload;
+    },
   },
   extraReducers: {
     [moviesOperations.getMovies.fulfilled](state, action) {
@@ -30,4 +35,4 @@ const movieSlice = createSlice({
 });
 
 export default movieSlice.reducer;
-export const { addMovieToLibrary, removeMovieById } = movieSlice.actions;
+export const { addMovieToLibrary, removeMovieById, changeLanguages } = movieSlice.actions;
