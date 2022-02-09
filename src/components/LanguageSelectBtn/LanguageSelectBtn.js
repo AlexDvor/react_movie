@@ -17,12 +17,12 @@ export default function LanguageSelectBtn() {
 
   return (
     <>
-      <Dropdown onSelect={handleSelect}>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown onSelect={handleSelect} drop="down">
+        <Dropdown.Toggle variant="dark" id="dropdown-basic">
           {`${currentLang.label}`}
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
+        <Dropdown.Menu align="start">
           {languages.map(item => (
             <Dropdown.Item key={item.id} eventKey={item.id}>
               <img
