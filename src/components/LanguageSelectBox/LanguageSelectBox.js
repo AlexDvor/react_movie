@@ -6,50 +6,58 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { useDispatch } from 'react-redux';
 import { changeLanguages } from '../../redux/movies/movies-slice';
 import { languages } from '../../helpers/languages';
+import { useSelector } from 'react-redux';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 
 export default function LanguageSelectBox() {
+  const currentLang = useSelector(getCurrentLanguages);
   const dispatch = useDispatch();
 
   const onChangeLangs = (event, value) => {
     if (!value) {
       return dispatch(changeLanguages('en'));
     }
-    return dispatch(changeLanguages(value.id));
+    return dispatch(changeLanguages(value));
   };
 
   return (
-    <Autocomplete
-      id="country-select-demo"
-      sx={{ width: 300 }}
-      //   style={{ width: '100px' }}
-      options={languages}
-      autoHighlight
-      //   onChange={(event, value) => setCurrentLangs(value.code)}
-      onChange={onChangeLangs}
-      getOptionLabel={option => option.label}
-      renderOption={(props, option) => (
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-          <img
-            loading="lazy"
-            width="20"
-            src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-            srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-            alt=""
+    <>
+      <Autocomplete
+        id="country-select-demo"
+        sx={{ width: 200 }}
+        //   style={{ width: '100px' }}
+        style={{ backgroundColor: '#838383' }}
+        options={languages}
+        autoHighlight
+        onChange={onChangeLangs}
+        getOptionLabel={option => option.label}
+        renderOption={(props, option) => (
+          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+            <img
+              loading="lazy"
+              width="20"
+              src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+              srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+              alt=""
+            />
+            {option.label}
+          </Box>
+        )}
+        renderInput={params => (
+          <TextField
+            {...params}
+            // label={currentLang}
+            color="info"
+            placeholder={currentLang.label}
+
+            // inputProps={{
+            //   ...params.inputProps,
+            //   autoComplete: 'new-password', // disable autocomplete and autofill
+            // }}
           />
-          {option.label} ({option.code})
-        </Box>
-      )}
-      renderInput={params => (
-        <TextField
-          {...params}
-          label="Choose a language"
-          // inputProps={{
-          //   ...params.inputProps,
-          //   autoComplete: 'new-password', // disable autocomplete and autofill
-          // }}
-        />
-      )}
-    />
+        )}
+      />
+    </>
   );
 }
 

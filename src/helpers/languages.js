@@ -5,8 +5,8 @@ export const languages = [
     id: 'de',
   },
   {
-    code: 'US',
-    label: 'United States',
+    code: 'GB',
+    label: 'Englisch',
     id: 'en',
   },
   {
@@ -26,7 +26,7 @@ export const languages = [
   },
   {
     code: 'UA',
-    label: 'Ukraine',
+    label: 'Ukrainian',
     id: 'uk',
   },
 ];

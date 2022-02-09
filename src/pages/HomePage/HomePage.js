@@ -19,10 +19,10 @@ export default function HomePage() {
   const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
-    fetchUpMovies(currentLang).then(res => setUpComingMovies(res.results));
-    fetchTopMovies(currentLang).then(res => setTopMovies(res.results));
-    fetchPopularMovies(currentLang).then(res => setPopularMovies(res.results));
-    fetchTrendMovies(currentLang).then(res => setTrendMovies(res.results));
+    fetchUpMovies(currentLang.id).then(res => setUpComingMovies(res.results));
+    fetchTopMovies(currentLang.id).then(res => setTopMovies(res.results));
+    fetchPopularMovies(currentLang.id).then(res => setPopularMovies(res.results));
+    fetchTrendMovies(currentLang.id).then(res => setTrendMovies(res.results));
   }, [currentLang]);
 
   return (

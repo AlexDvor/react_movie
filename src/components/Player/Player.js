@@ -31,7 +31,7 @@ export default function Player({ movieId }) {
   };
 
   useEffect(() => {
-    fetchTrailer(Number(movieId), currentLang).then(res => setMovie(res.results.slice(0, 1)));
+    fetchTrailer(Number(movieId), currentLang.id).then(res => setMovie(res.results.slice(0, 1)));
   }, [movieId, currentLang]);
 
   return (

@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
 import MyListPage from './pages/MyListPage/MyListPage';
 import SearchPage from './pages/SearchPage/SearchPage';
-// import { Footer } from './components/Footer/Footer';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <SearchPage />
         </Route>
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
