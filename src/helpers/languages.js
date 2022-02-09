@@ -6,7 +6,7 @@ export const languages = [
   },
   {
     code: 'GB',
-    label: 'Englisch',
+    label: 'English',
     id: 'en',
   },
   {

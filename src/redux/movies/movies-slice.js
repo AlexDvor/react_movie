@@ -3,7 +3,7 @@ import * as moviesOperations from './movies-operations';
 
 const initialState = {
   favorite: [],
-  language: { code: 'GB', label: 'Englisch', id: 'en' },
+  language: { code: 'GB', label: 'English', id: 'en' },
 };
 
 const movieSlice = createSlice({

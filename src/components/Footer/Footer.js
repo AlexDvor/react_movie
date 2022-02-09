@@ -1,13 +1,13 @@
 import Container from '../Container';
 import { WrapperFooter, ContentBox } from './Footer.styled';
-import LanguageSelectBox from '../LanguageSelectBox/LanguageSelectBox';
+import LanguageSelectBtn from '../LanguageSelectBtn/LanguageSelectBtn';
 
 export function Footer() {
   return (
     <WrapperFooter>
       <Container>
         <ContentBox>
-          <LanguageSelectBox />
+          <LanguageSelectBtn />
         </ContentBox>
       </Container>
     </WrapperFooter>

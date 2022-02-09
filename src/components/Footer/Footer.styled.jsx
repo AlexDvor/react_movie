@@ -10,7 +10,7 @@ export const ContentBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 50px;
 
   @media screen and (min-width: 768px) {
     justify-content: end;
