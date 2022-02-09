@@ -20,9 +20,9 @@ export default function AboutMoviePage() {
   const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
-    fetchMovieByID(Number(movieId), currentLang).then(setMovie);
-    fetchTrailer(Number(movieId), currentLang).then(res => setTrailer(res.results.slice(0, 1)));
-    fetchMovieByCast(Number(movieId), currentLang)
+    fetchMovieByID(Number(movieId), currentLang.id).then(setMovie);
+    fetchTrailer(Number(movieId), currentLang.id).then(res => setTrailer(res.results.slice(0, 1)));
+    fetchMovieByCast(Number(movieId), currentLang.id)
       .then(res => {
         return filterByProfilePath(res.cast);
       })

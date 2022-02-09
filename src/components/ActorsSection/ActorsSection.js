@@ -22,7 +22,7 @@ export default function ActorsSection({ data }) {
   const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
-    if (personId) fetchPersonById(Number(personId), currentLang).then(res => setActor(res));
+    if (personId) fetchPersonById(Number(personId), currentLang.id).then(res => setActor(res));
   }, [currentLang, personId]);
 
   const checkArrLength = () => {
