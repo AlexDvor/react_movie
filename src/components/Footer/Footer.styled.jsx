@@ -11,4 +11,8 @@ export const ContentBox = styled.div`
   justify-content: center;
   align-items: center;
   padding: 15px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: end;
+  }
 `;
