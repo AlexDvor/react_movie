@@ -23,15 +23,22 @@ export default function LanguageSelectBox() {
     <>
       <Autocomplete
         id="country-select-demo"
-        sx={{ width: 200 }}
-        //   style={{ width: '100px' }}
-        style={{ backgroundColor: '#838383' }}
+        style={{
+          backgroundColor: '#838383',
+          width: 150,
+          // height: 40,
+        }}
         options={languages}
         autoHighlight
         onChange={onChangeLangs}
         getOptionLabel={option => option.label}
         renderOption={(props, option) => (
-          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+          <Box
+            style={{ fontSize: '12px' }}
+            component="li"
+            sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
+            {...props}
+          >
             <img
               loading="lazy"
               width="20"
@@ -46,7 +53,8 @@ export default function LanguageSelectBox() {
           <TextField
             {...params}
             // label={currentLang}
-            color="info"
+            // color="info"
+            style={{ fontSize: '12px' }}
             placeholder={currentLang.label}
 
             // inputProps={{
