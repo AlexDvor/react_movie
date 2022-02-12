@@ -21,6 +21,8 @@ export default function ActorsSection({ data }) {
   const [personId, setPersonId] = useState(null);
   const currentLang = useSelector(getCurrentLanguages);
 
+  console.log('data:', data);
+
   useEffect(() => {
     if (personId) fetchPersonById(Number(personId), currentLang.id).then(res => setActor(res));
   }, [currentLang, personId]);
@@ -34,10 +36,6 @@ export default function ActorsSection({ data }) {
 
   const handleClick = e => {
     setPersonId(e.target.id);
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
   };
 
   return (
@@ -45,7 +43,7 @@ export default function ActorsSection({ data }) {
       <Container>
         <WrapperSlider>
           <ActorsSlider quantity={checkQuantity()}>
-            {data.length > 0 &&
+            {data.length > 4 &&
               data.map(({ id, profile_path, name }) => (
                 <CardWrapper key={id} onClick={handleClick}>
                   <WrapperImage>
