@@ -9,6 +9,8 @@ import {
   CardWrapper,
   WrapperImage,
   WrapperActor,
+  Message,
+  ExclamationIcon,
 } from './ActorsSection.styled';
 //components
 import AboutActor from '../AboutActor/AboutActor';
@@ -38,16 +40,22 @@ export default function ActorsSection({ data }) {
     <>
       <Container>
         <WrapperSlider>
-          <ActorsSlider quantity={checkQuantity()}>
-            {data.length > 4 &&
-              data.map(({ id, profile_path, name }) => (
+          {data.length > 4 ? (
+            <ActorsSlider quantity={checkQuantity()}>
+              {data.map(({ id, profile_path, name }) => (
                 <CardWrapper key={id} onClick={handleClick}>
                   <WrapperImage>
                     <Image src={`${URL}/${profile_path}`} alt={name} width="200px" id={id} />
                   </WrapperImage>
                 </CardWrapper>
               ))}
-          </ActorsSlider>
+            </ActorsSlider>
+          ) : (
+            <Message>
+              <ExclamationIcon fontSize="1.2em" />
+              Sorry but we don't have any information about the actors in this movie...!
+            </Message>
+          )}
         </WrapperSlider>
       </Container>
 

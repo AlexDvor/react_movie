@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BsExclamationCircle } from 'react-icons/bs';
 
 export const Container = styled.div`
   padding: 0px 20px;
@@ -32,4 +33,16 @@ export const CardWrapper = styled.div`
 
 export const WrapperActor = styled.div`
   margin-bottom: 50px;
+`;
+
+export const ExclamationIcon = styled(BsExclamationCircle)`
+  color: #ff3a3a;
+  margin-right: 10px;
+`;
+
+export const Message = styled.p`
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
