@@ -1,5 +1,7 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { fetchMovieByName } from '../../services/movies-api';
+import { useSelector } from 'react-redux';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import { Link } from 'react-router-dom';
 import {
   MovieListWrapper,
@@ -25,18 +27,19 @@ export default function SearchPage() {
   const [filter, setFilter] = useState('');
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
     if (query === '') return;
 
-    fetchMovieByName(query, page)
+    fetchMovieByName(query, page, currentLang.id)
       .then(res => {
         return filterByPosterPath(res.results);
       })
       .then(res => {
         setMovies(prevState => [...prevState, ...res]);
       });
-  }, [query, page]);
+  }, [query, page, currentLang.id]);
 
   const debouncedSearch = useMemo(
     () =>
