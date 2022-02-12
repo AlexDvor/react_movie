@@ -203,7 +203,7 @@ export const WrapperButton = styled.div`
   z-index: 2;
 
   @media screen and (min-width: 768px) {
-    bottom: 443px;
+    bottom: 228px;
     left: 221px;
   }
   @media screen and (min-width: 769px) {

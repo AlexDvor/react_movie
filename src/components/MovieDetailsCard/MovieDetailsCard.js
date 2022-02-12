@@ -26,14 +26,16 @@ import Modal from '../Modal/Modal';
 import Player from '../Player/Player';
 //helpers
 import checkForCopyById from '../../helpers/checkForCopyById';
+import parseMovieGenres from '../../helpers/parseMovieGenres';
 
 const URL = 'https://image.tmdb.org/t/p/w500/';
-const parseMovieData = obj => obj.map(item => item.name).join(', ');
 
 export default function MovieDetailsCard({ movie, trailer }) {
   const [isOpen, setIsOpen] = useState(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
   const onClick = e => setIsOpen(prevState => !prevState);
+
+  console.log('movie:', movie);
 
   return (
     <>
@@ -44,7 +46,7 @@ export default function MovieDetailsCard({ movie, trailer }) {
             <MovieTitle>{movie.title}</MovieTitle>
             <MovieYear>{movie.release_date.slice(0, 4)}</MovieYear>
             <MovieMinutes>{movie.runtime} min</MovieMinutes>
-            <MovieType>{parseMovieData(movie.genres)}</MovieType>
+            <MovieType>{parseMovieGenres(movie.genres)}</MovieType>
           </MovieHeader>
           <MovieDesc>
             <MovieText>{movie.overview}</MovieText>

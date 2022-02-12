@@ -19,8 +19,8 @@ import {
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
 // import PlayButton from '../PlayButton/PlayButton';
+import parseMovieGenres from '../../helpers/parseMovieGenres';
 
-const parseMovieData = obj => obj.map(item => item.name).join(', ');
 const URL = 'https://image.tmdb.org/t/p/w500/';
 
 export default function FavoriteMovieList({ movie }) {
@@ -37,7 +37,7 @@ export default function FavoriteMovieList({ movie }) {
                     <TitleMovie>{item.title}</TitleMovie>
                     <ReleaseDate>{item.release_date.slice(0, 4)}</ReleaseDate>
                     <Minutes>{item.runtime}</Minutes>
-                    <Type>{parseMovieData(item.genres)}</Type>
+                    <Type>{parseMovieGenres(item.genres)}</Type>
                   </MovieHeader>
 
                   <MovieDesc>{/* <Text>{item.overview}</Text> */}</MovieDesc>

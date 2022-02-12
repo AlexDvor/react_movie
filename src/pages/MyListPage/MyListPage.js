@@ -7,7 +7,7 @@ import { Message, Wrapper } from './MyListPage.styled';
 
 export default function MyListPage() {
   const favoriteMovie = useSelector(getFavoriteMovies);
-  console.log(favoriteMovie);
+
   return (
     <Container>
       <Wrapper>

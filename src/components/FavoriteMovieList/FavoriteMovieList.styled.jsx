@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 export const MovieCardList = styled.ul`
   @media (min-width: 768px) {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 15px; */
   }
 `;
 
@@ -17,12 +17,16 @@ export const MovieCardItem = styled.li`
   &:hover {
     box-shadow: 0px 0px 150px -45px rgb(255 100 143 / 30%);
   }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const MovieCard = styled.div`
   position: relative;
   display: block;
-  width: 95%;
+  width: auto;
   height: auto;
   margin: 50px auto;
   overflow: hidden;
@@ -34,7 +38,7 @@ export const MovieCard = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 550px;
+    /* width: 550px; */
     height: 300px;
      margin:0px;
   }
@@ -131,16 +135,18 @@ export const BlurBack = styled.div`
   right: 0;
   background-size: cover;
   border-radius: 11px;
+  background-repeat: no-repeat;
 
   @media (min-width: 768px) {
-    width: 85%;
-    background-position: -100% 10%;
+    width: 55%;
+    background-position: -100% 27%;
   }
   @media (max-width: 768px) {
     width: 100%;
     background-position: 50% 50%;
   }
 `;
+
 export const WrapperButton = styled.div`
   position: absolute;
   bottom: 10px;
