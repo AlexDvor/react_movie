@@ -1,3 +1,7 @@
+import { fetchPersonById } from '../../services/movies-api';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import {
   Container,
   WrapperSlider,
@@ -6,10 +10,6 @@ import {
   WrapperImage,
   WrapperActor,
 } from './ActorsSection.styled';
-import { fetchPersonById } from '../../services/movies-api';
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 //components
 import AboutActor from '../AboutActor/AboutActor';
 import ActorsSlider from '../ActorsSlider/ActorsSlider';
@@ -21,8 +21,6 @@ export default function ActorsSection({ data }) {
   const [personId, setPersonId] = useState(null);
   const currentLang = useSelector(getCurrentLanguages);
 
-  console.log('data:', data);
-
   useEffect(() => {
     if (personId) fetchPersonById(Number(personId), currentLang.id).then(res => setActor(res));
   }, [currentLang, personId]);
@@ -31,8 +29,6 @@ export default function ActorsSection({ data }) {
     if (data.length > 10) return 9;
     return 7;
   };
-
-  console.log(data);
 
   const handleClick = e => {
     setPersonId(e.target.id);

@@ -5,7 +5,6 @@ import {
   MovieListWrapper,
   MovieCardItem,
   MovieCardWrapper,
-  DefaultImage,
   ContentBox,
   Image,
   SearchWrapper,
@@ -14,7 +13,6 @@ import {
 import InfiniteScroll from 'react-infinite-scroll-component';
 import debounce from 'lodash.debounce';
 //components
-import defaultImage from '../../images/default_gallery.jpg';
 import Container from '../../components/Container/Container';
 import SearchBar from '../../components/SearchBar/SearchBar';
 //helpers
@@ -85,11 +83,7 @@ export default function SearchPage() {
                 <MovieCardItem key={id}>
                   <MovieCardWrapper>
                     <Link to={{ pathname: `/movies/${id}` }}>
-                      {poster_path ? (
-                        <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
-                      ) : (
-                        <DefaultImage src={defaultImage} alt="Not Found" width="200px" />
-                      )}
+                      <Image src={`${URL}/${poster_path}`} alt={title} width="200px" />
                     </Link>
                   </MovieCardWrapper>
                 </MovieCardItem>

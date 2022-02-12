@@ -19,6 +19,7 @@ import {
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
 // import PlayButton from '../PlayButton/PlayButton';
+// helpers
 import parseMovieGenres from '../../helpers/parseMovieGenres';
 
 const URL = 'https://image.tmdb.org/t/p/w500/';
