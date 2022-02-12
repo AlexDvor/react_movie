@@ -4,7 +4,7 @@ export const MovieWrapper = styled.div`
   position: relative;
   display: block;
   max-width: 1820px;
-  height: 90vh;
+  height: 60vh;
   margin: 50px auto;
   overflow: hidden;
   border-radius: 10px;
@@ -207,8 +207,8 @@ export const WrapperButton = styled.div`
     left: 221px;
   }
   @media screen and (min-width: 769px) {
-    bottom: 489px;
-    left: 221px;
+    bottom: 25px;
+    left: 25px;
   }
 `;
 
