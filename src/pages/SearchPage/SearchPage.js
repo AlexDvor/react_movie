@@ -1,7 +1,5 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { fetchMovieByName } from '../../services/movies-api';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import debounce from 'lodash.debounce';
 import { Link } from 'react-router-dom';
 import {
   MovieListWrapper,
@@ -12,10 +10,17 @@ import {
   Image,
   SearchWrapper,
 } from './SearchPage.styled';
+
+import InfiniteScroll from 'react-infinite-scroll-component';
+import debounce from 'lodash.debounce';
+//components
 import defaultImage from '../../images/default_gallery.jpg';
 import Container from '../../components/Container/Container';
 import SearchBar from '../../components/SearchBar/SearchBar';
+//helpers
 import { filterByPosterPath } from '../../helpers/filterByPath';
+
+const URL = 'https://image.tmdb.org/t/p/w500';
 
 export default function SearchPage() {
   const [movies, setMovies] = useState([]);
@@ -57,7 +62,6 @@ export default function SearchPage() {
     setPage(prevState => prevState + 1);
   };
 
-  const URL = 'https://image.tmdb.org/t/p/w500';
   return (
     <Container>
       <ContentBox>

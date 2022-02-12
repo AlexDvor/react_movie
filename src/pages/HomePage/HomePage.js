@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
+import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
+import { useSelector } from 'react-redux';
 import {
   fetchUpMovies,
   fetchTopMovies,
   fetchPopularMovies,
   fetchTrendMovies,
 } from '../../services/movies-api';
+
+//components
 import Container from '../../components/Container';
 import HomeMovieList from '../../components/HomeMovieList/HomeMovieList';
 import TitleByType from '../../components/TitleByType/TitleByType';
-import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
-import { useSelector } from 'react-redux';
 
 export default function HomePage() {
   const [upComingMovies, setUpComingMovies] = useState([]);
@@ -33,7 +35,7 @@ export default function HomePage() {
       <TitleByType text="Top Day" />
       <HomeMovieList movies={trendMovies} />
 
-      <TitleByType text="Populas Movies" />
+      <TitleByType text="Popular Movies" />
       <HomeMovieList movies={popularMovies} />
 
       <TitleByType text="Top Movies" />

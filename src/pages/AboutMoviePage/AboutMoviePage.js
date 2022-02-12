@@ -8,7 +8,6 @@ import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
 import ActorsSection from '../../components/ActorsSection/ActorsSection';
-
 //helpers
 import { filterByProfilePath } from '../../helpers/filterByPath';
 
