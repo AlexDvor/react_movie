@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import { useSelector } from 'react-redux';
+import { Wrapper } from './HomePage.styled';
 import {
   fetchUpMovies,
   fetchTopMovies,
@@ -29,17 +30,19 @@ export default function HomePage() {
 
   return (
     <Container>
-      <TitleByType text="Upcoming" />
-      <HomeMovieList movies={upComingMovies} />
+      <Wrapper>
+        <TitleByType text="Upcoming" />
+        <HomeMovieList movies={upComingMovies} />
 
-      <TitleByType text="Top Day" />
-      <HomeMovieList movies={trendMovies} />
+        <TitleByType text="Top Day" />
+        <HomeMovieList movies={trendMovies} />
 
-      <TitleByType text="Popular Movies" />
-      <HomeMovieList movies={popularMovies} />
+        <TitleByType text="Popular" />
+        <HomeMovieList movies={popularMovies} />
 
-      <TitleByType text="Top Movies" />
-      <HomeMovieList movies={topMovies} />
+        <TitleByType text="Top" />
+        <HomeMovieList movies={topMovies} />
+      </Wrapper>
     </Container>
   );
 }
