@@ -1,20 +1,20 @@
-// import AppBar from './components/AppBar/AppBar';
-// import { Route, Switch } from 'react-router';
-// // Pages
-// import HomePage from './pages/HomePage/HomePage';
-// import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
-// import MyListPage from './pages/MyListPage/MyListPage';
-// import SearchPage from './pages/SearchPage/SearchPage';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
-// import { Footer } from './components/Footer/Footer';
+import AppBar from './components/AppBar/AppBar';
+import { Route, Switch } from 'react-router';
+// Pages
+import HomePage from './pages/HomePage/HomePage';
+import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
+import MyListPage from './pages/MyListPage/MyListPage';
+import SearchPage from './pages/SearchPage/SearchPage';
+// import SignUpPage from './pages/SignUpPage/SignUpPage';
+// import LogInPage from './pages/LogInPage/LogInPage';
+import { Footer } from './components/Footer/Footer';
 
-// import { Main, WrapperFooter } from './App.styled';
+import { Main, WrapperFooter } from './App.styled';
 
 function App() {
   return (
     <>
-      <SignUpPage />
-      {/* <AppBar></AppBar>
+      <AppBar></AppBar>
 
       <Main>
         <Switch>
@@ -38,7 +38,7 @@ function App() {
 
       <WrapperFooter>
         <Footer />
-      </WrapperFooter> */}
+      </WrapperFooter>
     </>
   );
 }
