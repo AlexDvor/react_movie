@@ -64,7 +64,10 @@ export default function SignUpForm() {
                 <WrapperLink>
                   <StyledLink to="/login">LogIn</StyledLink>
                 </WrapperLink>
-                <Button disabled={!isValid && !dirty}> Sign Up</Button>
+                <Button disabled={!isValid && !dirty} type="submit">
+                  {' '}
+                  Sign Up
+                </Button>
               </BoxButton>
             </Form>
           )}
