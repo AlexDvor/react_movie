@@ -1,21 +1,13 @@
 import { Formik, Form } from 'formik';
-
-import { TextField } from '@mui/material';
-import Box from '@mui/material/Box';
 import {
-  ErrorMessageName,
-  ErrorMessageEmail,
-  ErrorMessagePassword,
-  ErrorMessageConfirmPassword,
+  ErrorMessage,
   WrapperForm,
   StyledInput,
-  InputName,
-  AdditionallyInfo,
   BoxButton,
-  WrapperButton,
   StyledLink,
   WrapperLink,
   Title,
+  WrapperInput,
   Button,
 } from './SignUpForm.styled';
 // import * as authOperations from '../../redux/Auth/Auth-operations';
@@ -28,7 +20,6 @@ export default function SignUpForm() {
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
   };
 
   const handleSubmit = ({ name, email, password }) => {
@@ -47,23 +38,27 @@ export default function SignUpForm() {
         >
           {({ errors, touched, isValid, handleSubmit, dirty }) => (
             <Form onSubmit={handleSubmit}>
-              <StyledInput name="name" type="text" placeholder="Name" />
-              {errors.name && touched.name && <ErrorMessageName>{errors.name}</ErrorMessageName>}
+              <WrapperInput>
+                <StyledInput name="name" type="text" placeholder="Name" />
+                {errors.name && touched.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+              </WrapperInput>
 
-              <StyledInput name="email" type="email" placeholder="your@email.com" />
-              {errors.email && touched.email && (
-                <ErrorMessageEmail>{errors.email}</ErrorMessageEmail>
-              )}
+              <WrapperInput>
+                <StyledInput name="email" type="email" placeholder="your@email.com" />
+                {errors.email && touched.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+              </WrapperInput>
 
-              <StyledInput
-                type="password"
-                name="password"
-                autoComplete="on"
-                placeholder="Password"
-              />
-              {touched.password && errors.password && (
-                <ErrorMessagePassword>{errors.password}</ErrorMessagePassword>
-              )}
+              <WrapperInput>
+                <StyledInput
+                  type="password"
+                  name="password"
+                  autoComplete="on"
+                  placeholder="Password"
+                />
+                {touched.password && errors.password && (
+                  <ErrorMessage>{errors.password}</ErrorMessage>
+                )}
+              </WrapperInput>
 
               <BoxButton>
                 <WrapperLink>

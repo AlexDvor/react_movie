@@ -11,8 +11,7 @@ export const WrapperForm = styled.div`
   width: 300px;
   padding: 40px 17px;
   background-color: rgb(0, 0, 0, 0.65);
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-  border-radius: 30px;
+  border-radius: 5px;
   @media (min-width: 768px) {
     width: 436px;
     padding: 50px 85px;
@@ -74,60 +73,15 @@ export const InputName = styled.p`
   }
 `;
 
-export const ErrorMessageName = styled.p`
+export const ErrorMessage = styled.p`
   position: absolute;
-  top: 269px;
+  bottom: -3px;
   font-family: ${props => props.theme.fontFamily};
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: #eb5757;
-  @media (min-width: 768px) {
-    top: 286px;
-  }
-`;
-
-export const ErrorMessageEmail = styled.p`
-  position: absolute;
-  top: 374px;
-  font-family: ${props => props.theme.fontFamily};
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: #eb5757;
-  @media (min-width: 768px) {
-    top: 393px;
-  }
-`;
-
-export const ErrorMessagePassword = styled.p`
-  position: absolute;
-  top: 481px;
-  font-family: ${props => props.theme.fontFamily};
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: #eb5757;
-  @media (min-width: 768px) {
-    top: 501px;
-  }
-`;
-
-export const ErrorMessageConfirmPassword = styled.p`
-  position: absolute;
-  top: 584px;
-  font-family: ${props => props.theme.fontFamily};
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  color: #eb5757;
-  @media (min-width: 768px) {
-    top: 609px;
-  }
 `;
 
 export const BoxButton = styled.div`
@@ -179,5 +133,6 @@ export const WrapperLink = styled.div`
   margin-right: 15px;
 `;
 
-
-export const WrapperInput
+export const WrapperInput = styled.div`
+  position: relative;
+`;
