@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 // import contactReducer from './Contact/contacts-reducer';
-// import authSlice from './Auth/Auth-slice';
+import authReducer from './auth/auth-slice';
 import moviesSlice from './movies/movies-slice';
 
 const middleware = [
@@ -28,9 +28,12 @@ const moviesPersistConfig = {
   whitelist: ['favorite'],
 };
 
+const authPersistConfig = { key: 'auth', storage, whitelist: ['token'] };
+
 const store = configureStore({
   reducer: {
     movies: persistReducer(moviesPersistConfig, moviesSlice),
+    auth: persistReducer(authPersistConfig, authReducer),
     // contacts: contactReducer,
   },
   middleware,
