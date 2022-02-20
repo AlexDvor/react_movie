@@ -1,5 +1,4 @@
 import {
-  NavBox,
   NavList,
   NavItem,
   StyledNavLink,
@@ -7,10 +6,17 @@ import {
   ItemButton,
   ExitButton,
 } from './Navigation.styled';
+import { useDispatch } from 'react-redux';
+import * as authOperations from '../../redux/auth/auth-operations';
 
 export default function Navigation() {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(authOperations.logout());
+  };
+
   return (
-    <NavBox>
+    <>
       <NavList>
         <NavItem>
           <StyledNavLink exact to="/">
@@ -28,9 +34,11 @@ export default function Navigation() {
       </NavList>
       <ListButton>
         <ItemButton>
-          <ExitButton>LogOut</ExitButton>
+          <ExitButton type="submit" onClick={() => dispatch(authOperations.logout())}>
+            LogOut
+          </ExitButton>
         </ItemButton>
       </ListButton>
-    </NavBox>
+    </>
   );
 }

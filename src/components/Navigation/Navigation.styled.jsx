@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-export const NavBox = styled.nav``;
-
 export const NavList = styled.ul`
   display: flex;
 `;

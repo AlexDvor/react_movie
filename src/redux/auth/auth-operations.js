@@ -15,17 +15,20 @@ const token = {
 const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/auth/signup', userData);
+    console.log('data', data);
     token.set(data.token);
     return data;
   } catch (error) {
     // toast.error('This email is already registered ');
+    console.log('data');
     return rejectWithValue(console.log(error));
   }
 });
 
 const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue }) => {
   try {
-    const { data } = await axios.post('/users/login', userData);
+    const { data } = await axios.post('/auth/login', userData);
+    console.log('loginData ', data);
     token.set(data.token);
     return data;
   } catch (error) {
@@ -36,7 +39,7 @@ const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue 
 
 const logout = createAsyncThunk('auth/logout ', async (_, { rejectWithValue }) => {
   try {
-    await axios.post('/users/logout');
+    await axios.post('/auth/logout');
     token.unset();
   } catch (error) {
     return rejectWithValue(console.log(error));

@@ -3,7 +3,6 @@ import * as authOperations from './auth-operations';
 
 const initialState = {
   name: null,
-  email: null,
   subscription: null,
   verifyToken: null,
   token: null,
@@ -14,16 +13,9 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    setTokenToState(state, { payload }) {
-      state.token = payload;
-    },
-  },
-
   extraReducers: {
     [authOperations.signup.fulfilled](state, { payload }) {
       state.name = payload.user.name;
-      state.email = payload.user.email;
       state.subscription = payload.user.subscription;
       state.verifyToken = payload.user.verifyToken;
       // state.token = payload.data.token;
@@ -31,15 +23,17 @@ const authSlice = createSlice({
     },
 
     [authOperations.login.fulfilled](state, { payload }) {
-      state.user = payload.data.user;
-      state.token = payload.data.token;
+      state.name = payload.data.user.name;
+      state.token = payload.data.user.token;
       state.isLoggedIn = true;
     },
+
     [authOperations.logout.fulfilled](state, action) {
-      state.user = { name: null, email: null };
+      // state.name = null;
       state.token = null;
       state.isLoggedIn = false;
     },
+
     [authOperations.getCurrentUser.fulfilled](state, { payload }) {
       state.user = payload.data;
       state.isLoggedIn = true;
