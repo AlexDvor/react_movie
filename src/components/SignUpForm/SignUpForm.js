@@ -1,4 +1,5 @@
 import { Formik, Form } from 'formik';
+import { useDispatch } from 'react-redux';
 import {
   ErrorMessage,
   WrapperForm,
@@ -10,20 +11,25 @@ import {
   WrapperInput,
   Button,
 } from './SignUpForm.styled';
-// import * as authOperations from '../../redux/Auth/Auth-operations';
+import * as authOperations from '../../redux/auth/auth-operations';
 
 import { SignUpSchema } from '../../helpers/validationShema';
 
 export default function SignUpForm() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const initialValues = {
     name: '',
     email: '',
     password: '',
   };
 
-  const handleSubmit = ({ name, email, password }) => {
-    // dispatch(authOperations.signup({ name, email, password }));
+  // const handleSubmit = ({ name, email, password }) => {
+  //   // dispatch(authOperations.signup({ name, email, password }));
+  // };
+
+  const handleSubmit = value => {
+    console.log('value :', value);
+    dispatch(authOperations.signup(value));
   };
 
   return (
@@ -65,8 +71,7 @@ export default function SignUpForm() {
                   <StyledLink to="/login">LogIn</StyledLink>
                 </WrapperLink>
                 <Button disabled={!isValid && !dirty} type="submit">
-                  {' '}
-                  Sign Up
+                  Sign In
                 </Button>
               </BoxButton>
             </Form>

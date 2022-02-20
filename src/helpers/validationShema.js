@@ -14,4 +14,13 @@ const SignUpSchema = yup.object().shape({
     .required('This field is required'),
 });
 
-export { SignUpSchema };
+const LogInSchema = yup.object().shape({
+  email: yup.string().email('Please enter a valid email').required('This field is required'),
+  password: yup
+    .string()
+    .typeError('Should be a string')
+    .min(7, 'Password is too short - should be 7 chars minimum.')
+    .required('This field is required'),
+});
+
+export { SignUpSchema, LogInSchema };

@@ -1,4 +1,5 @@
 import { Formik, Form } from 'formik';
+import { useDispatch } from 'react-redux';
 import {
   ErrorMessage,
   WrapperForm,
@@ -10,29 +11,29 @@ import {
   WrapperInput,
   Button,
 } from './LogInForm.styled';
-// import * as authOperations from '../../redux/Auth/Auth-operations';
+import * as authOperations from '../../redux/auth/auth-operations';
 
-import { SignUpSchema } from '../../helpers/validationShema';
+import { LogInSchema } from '../../helpers/validationShema';
 
 export default function LogInForm() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const initialValues = {
     email: '',
     password: '',
   };
 
-  const handleSubmit = ({ name, email, password }) => {
-    // dispatch(authOperations.signup({ name, email, password }));
+  const handleSubmit = value => {
+    dispatch(authOperations.login(value));
   };
 
   return (
     <>
       <WrapperForm>
-        <Title>Sign Up</Title>
+        <Title>Log in</Title>
         <Formik
           initialValues={initialValues}
           validatedOnBlur
-          validationSchema={SignUpSchema}
+          validationSchema={LogInSchema}
           onSubmit={handleSubmit}
         >
           {({ errors, touched, isValid, handleSubmit, dirty }) => (
@@ -56,11 +57,10 @@ export default function LogInForm() {
 
               <BoxButton>
                 <WrapperLink>
-                  <StyledLink to="/login">LogIn</StyledLink>
+                  <StyledLink to="/signup">SignUp</StyledLink>
                 </WrapperLink>
                 <Button disabled={!isValid && !dirty} type="submit">
-                  {' '}
-                  Sign Up
+                  LogIn
                 </Button>
               </BoxButton>
             </Form>

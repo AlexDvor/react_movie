@@ -28,13 +28,16 @@ const moviesPersistConfig = {
   whitelist: ['favorite'],
 };
 
-const authPersistConfig = { key: 'auth', storage, whitelist: ['token'] };
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
 
 const store = configureStore({
   reducer: {
     movies: persistReducer(moviesPersistConfig, moviesSlice),
-    auth: persistReducer(authPersistConfig, authReducer),
-    // contacts: contactReducer,
+    user: persistReducer(authPersistConfig, authReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

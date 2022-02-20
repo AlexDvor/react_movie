@@ -1,14 +1,16 @@
 import AppBar from './components/AppBar/AppBar';
-import { Route, Switch } from 'react-router';
+import { Switch, Redirect } from 'react-router';
 import { Main, WrapperFooter } from './App.styled';
 // Pages
 import HomePage from './pages/HomePage/HomePage';
 import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
 import MyListPage from './pages/MyListPage/MyListPage';
 import SearchPage from './pages/SearchPage/SearchPage';
-// import SignUpPage from './pages/SignUpPage/SignUpPage';
-// import LogInPage from './pages/LogInPage/LogInPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
+import LogInPage from './pages/LogInPage/LogInPage';
 import { Footer } from './components/Footer/Footer';
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
 
 function App() {
   return (
@@ -17,21 +19,33 @@ function App() {
 
       <Main>
         <Switch>
-          <Route exact path="/">
+          <PublicRoute path="/" exact redirectTo="/home" restricted>
+            <Redirect to="/login" />
+          </PublicRoute>
+
+          <PublicRoute path="/signup" redirectTo="/home" restricted>
+            <SignUpPage />
+          </PublicRoute>
+
+          <PublicRoute path="/login" exact redirectTo="/home" restricted>
+            <LogInPage />
+          </PublicRoute>
+
+          <PrivateRoute exact path="/home">
             <HomePage />
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path="/movies/:movieId">
+          <PrivateRoute exact path="/movies/:movieId">
             <AboutMoviePage />
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path="/my_list">
+          <PrivateRoute exact path="/my_list">
             <MyListPage />
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path="/search">
+          <PrivateRoute exact path="/search">
             <SearchPage />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Main>
 
