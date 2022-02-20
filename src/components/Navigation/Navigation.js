@@ -1,8 +1,16 @@
-import { NavList, NavItem, StyledNavLink } from './Navigation.styled';
+import {
+  NavBox,
+  NavList,
+  NavItem,
+  StyledNavLink,
+  ListButton,
+  ItemButton,
+  ExitButton,
+} from './Navigation.styled';
 
 export default function Navigation() {
   return (
-    <nav>
+    <NavBox>
       <NavList>
         <NavItem>
           <StyledNavLink exact to="/">
@@ -18,6 +26,11 @@ export default function Navigation() {
           <StyledNavLink to="/search">Search</StyledNavLink>
         </NavItem>
       </NavList>
-    </nav>
+      <ListButton>
+        <ItemButton>
+          <ExitButton>LogOut</ExitButton>
+        </ItemButton>
+      </ListButton>
+    </NavBox>
   );
 }
