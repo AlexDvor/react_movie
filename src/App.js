@@ -1,5 +1,6 @@
 import AppBar from './components/AppBar/AppBar';
 import { Route, Switch } from 'react-router';
+import { Main, WrapperFooter } from './App.styled';
 // Pages
 import HomePage from './pages/HomePage/HomePage';
 import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
@@ -8,8 +9,6 @@ import SearchPage from './pages/SearchPage/SearchPage';
 // import SignUpPage from './pages/SignUpPage/SignUpPage';
 // import LogInPage from './pages/LogInPage/LogInPage';
 import { Footer } from './components/Footer/Footer';
-
-import { Main, WrapperFooter } from './App.styled';
 
 function App() {
   return (
