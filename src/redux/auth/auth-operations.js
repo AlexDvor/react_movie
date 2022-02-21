@@ -15,8 +15,6 @@ const token = {
 const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/auth/signup', userData);
-    console.log('signupData', data);
-    // token.set(data.user.token);
     return data;
   } catch (error) {
     // toast.error('This email is already registered ');
@@ -53,6 +51,7 @@ const getCurrentUser = createAsyncThunk('auth/refresh ', async (_, thunkApi) => 
   }
 
   token.set(persistToken);
+
   try {
     const response = await axios.get('/users/current').then(res => res.data);
     return response;
