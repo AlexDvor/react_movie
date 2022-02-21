@@ -11,9 +11,6 @@ import * as authOperations from '../../redux/auth/auth-operations';
 
 export default function Navigation() {
   const dispatch = useDispatch();
-  const handleClick = () => {
-    dispatch(authOperations.logout());
-  };
 
   return (
     <>

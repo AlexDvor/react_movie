@@ -3,11 +3,10 @@ import * as authOperations from './auth-operations';
 
 const initialState = {
   name: null,
-  subscription: null,
-  verifyToken: null,
   token: null,
   isLoggedIn: false,
   isFetchingCurrent: false,
+  isSentLetter: false,
 };
 
 const authSlice = createSlice({
@@ -15,21 +14,20 @@ const authSlice = createSlice({
   initialState,
   extraReducers: {
     [authOperations.signup.fulfilled](state, { payload }) {
+      console.log('sign payload', payload);
       state.name = payload.user.name;
-      state.subscription = payload.user.subscription;
-      state.verifyToken = payload.user.verifyToken;
+      state.isSentLetter = true;
       // state.token = payload.data.token;
-      state.isLoggedIn = true;
     },
 
     [authOperations.login.fulfilled](state, { payload }) {
-      state.name = payload.data.user.name;
-      state.token = payload.data.user.token;
+      // state.name = payload.data.user.name;
+      state.token = payload.data.token;
       state.isLoggedIn = true;
     },
 
     [authOperations.logout.fulfilled](state, action) {
-      // state.name = null;
+      state.name = null;
       state.token = null;
       state.isLoggedIn = false;
     },

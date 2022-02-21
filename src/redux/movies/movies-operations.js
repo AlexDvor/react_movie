@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 const API_KEY = 'f992f54d2833387603d88ceb953812b4';
-const BASE_URL = 'https://api.themoviedb.org/3/movie';
+// const BASE_URL = 'https://api.themoviedb.org/3/movie';
 // import { toast } from 'react-toastify';
 // axios.defaults.headers.common['Authorization'] = API_KEY;
 // axios.defaults.baseURL = BASE_URL;

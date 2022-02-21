@@ -28,7 +28,6 @@ export default function SignUpForm() {
   // };
 
   const handleSubmit = value => {
-    console.log('value :', value);
     dispatch(authOperations.signup(value));
   };
 

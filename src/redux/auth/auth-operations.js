@@ -15,12 +15,11 @@ const token = {
 const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/auth/signup', userData);
-    console.log('data', data);
-    token.set(data.token);
+    console.log('signupData', data);
+    // token.set(data.user.token);
     return data;
   } catch (error) {
     // toast.error('This email is already registered ');
-    console.log('data');
     return rejectWithValue(console.log(error));
   }
 });
@@ -28,8 +27,7 @@ const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValu
 const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/auth/login', userData);
-    console.log('loginData ', data);
-    token.set(data.token);
+    token.set(data.data.token);
     return data;
   } catch (error) {
     // toast.error('Incorrect username or password');
@@ -39,7 +37,7 @@ const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue 
 
 const logout = createAsyncThunk('auth/logout ', async (_, { rejectWithValue }) => {
   try {
-    await axios.post('/auth/logout');
+    await axios.get('/auth/logout');
     token.unset();
   } catch (error) {
     return rejectWithValue(console.log(error));
