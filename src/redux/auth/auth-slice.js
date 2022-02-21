@@ -14,10 +14,8 @@ const authSlice = createSlice({
   initialState,
   extraReducers: {
     [authOperations.signup.fulfilled](state, { payload }) {
-      console.log('sign payload', payload);
       state.name = payload.user.name;
       state.isSentLetter = true;
-      // state.token = payload.data.token;
     },
 
     [authOperations.login.fulfilled](state, { payload }) {
@@ -37,14 +35,15 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
       state.isFetchingCurrent = false;
     },
+
     [authOperations.getCurrentUser.pending](state, _) {
       state.isFetchingCurrent = true;
     },
+
     [authOperations.getCurrentUser.rejected](state, _) {
       state.isFetchingCurrent = false;
     },
   },
 });
 
-// export const { setTokenToState } = authSlice.actions;
 export default authSlice.reducer;

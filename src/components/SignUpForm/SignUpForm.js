@@ -23,10 +23,6 @@ export default function SignUpForm() {
     password: '',
   };
 
-  // const handleSubmit = ({ name, email, password }) => {
-  //   // dispatch(authOperations.signup({ name, email, password }));
-  // };
-
   const handleSubmit = value => {
     dispatch(authOperations.signup(value));
   };
