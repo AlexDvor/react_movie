@@ -1,6 +1,7 @@
-import AppBar from './components/AppBar/AppBar';
 import { Switch, Redirect } from 'react-router';
 import { Main, WrapperFooter } from './App.styled';
+import { getIsLoggedIn } from './redux/auth/auth-selectors';
+import { useSelector } from 'react-redux';
 // Pages
 import HomePage from './pages/HomePage/HomePage';
 import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
@@ -8,15 +9,17 @@ import MyListPage from './pages/MyListPage/MyListPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import LogInPage from './pages/LogInPage/LogInPage';
-import { Footer } from './components/Footer/Footer';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
+//components
+import Footer from './components/Footer/Footer';
+import AppBar from './components/AppBar/AppBar';
 
 function App() {
+  const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <>
-      <AppBar></AppBar>
-
+      {isLoggedIn && <AppBar />}
       <Main>
         <Switch>
           <PublicRoute path="/" exact redirectTo="/home" restricted>
@@ -49,9 +52,11 @@ function App() {
         </Switch>
       </Main>
 
-      <WrapperFooter>
-        <Footer />
-      </WrapperFooter>
+      {isLoggedIn && (
+        <WrapperFooter>
+          <Footer />
+        </WrapperFooter>
+      )}
     </>
   );
 }

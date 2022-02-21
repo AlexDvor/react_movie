@@ -2,7 +2,7 @@ import Container from '../Container';
 import { WrapperFooter, ContentBox } from './Footer.styled';
 import LanguageSelectBtn from '../LanguageSelectBtn/LanguageSelectBtn';
 
-export function Footer() {
+export default function Footer() {
   return (
     <WrapperFooter>
       <Container>
