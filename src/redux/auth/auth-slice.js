@@ -19,7 +19,7 @@ const authSlice = createSlice({
     },
 
     [authOperations.login.fulfilled](state, { payload }) {
-      // state.name = payload.data.user.name;
+      state.name = payload.data.user.name;
       state.token = payload.data.token;
       state.isLoggedIn = true;
     },
@@ -31,7 +31,7 @@ const authSlice = createSlice({
     },
 
     [authOperations.getCurrentUser.fulfilled](state, { payload }) {
-      state.user = payload.data;
+      state.name = payload.data.user.name;
       state.isLoggedIn = true;
       state.isFetchingCurrent = false;
     },

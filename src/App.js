@@ -1,10 +1,11 @@
 import { Switch, Redirect } from 'react-router';
 import { Main, WrapperFooter } from './App.styled';
 import { getIsLoggedIn } from './redux/auth/auth-selectors';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, lazy, Suspense } from 'react';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
+import * as authOperations from './redux/auth/auth-operations';
 
 //components
 import Footer from './components/Footer/Footer';
@@ -36,7 +37,12 @@ const LogInPage = lazy(() =>
 );
 
 function App() {
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector(getIsLoggedIn);
+
+  useEffect(() => {
+    dispatch(authOperations.getCurrentUser());
+  }, [dispatch]);
   return (
     <>
       {isLoggedIn && <AppBar />}

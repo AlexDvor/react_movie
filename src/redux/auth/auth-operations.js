@@ -45,7 +45,7 @@ const logout = createAsyncThunk('auth/logout ', async (_, { rejectWithValue }) =
 
 const getCurrentUser = createAsyncThunk('auth/refresh ', async (_, thunkApi) => {
   const state = thunkApi.getState();
-  const persistToken = state.auth.token;
+  const persistToken = state.user.token;
 
   if (persistToken === null) {
     return thunkApi.rejectWithValue();
