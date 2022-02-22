@@ -4,9 +4,11 @@ import { getUsername } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
 import {
   Wrapper,
-  AvatarBox,
+  AvatarBackground,
+  WrapperAvatar,
   FirstLetterName,
   ExitButton,
+  WrapperButton,
   NameBox,
   Name,
   ExitIcon,
@@ -18,15 +20,20 @@ export default function UserMenu() {
   return (
     <>
       <Wrapper>
-        <AvatarBox>
-          <FirstLetterName>{userName[0]}</FirstLetterName>
-        </AvatarBox>
+        <WrapperAvatar>
+          <AvatarBackground>
+            <FirstLetterName>{userName[0]}</FirstLetterName>
+          </AvatarBackground>
+        </WrapperAvatar>
+
         <NameBox>
           <Name>{userName}</Name>
         </NameBox>
-        <ExitButton type="submit" onClick={() => dispatch(authOperations.logout())}>
-          <ExitIcon />
-        </ExitButton>
+        <WrapperButton>
+          <ExitButton type="submit" onClick={() => dispatch(authOperations.logout())}>
+            <ExitIcon />
+          </ExitButton>
+        </WrapperButton>
       </Wrapper>
     </>
   );

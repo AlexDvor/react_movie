@@ -6,8 +6,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export const AvatarBox = styled.div`
+export const WrapperAvatar = styled.div`
+  padding: 20px 0px;
+`;
+export const AvatarBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,15 +23,9 @@ export const FirstLetterName = styled.div`
   color: white;
   font-size: 18px;
 `;
-export const ExitButton = styled.button`
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-`;
 export const NameBox = styled.div`
   margin-right: 12px;
 `;
-
 export const Name = styled.p`
   display: none;
 
@@ -37,6 +33,14 @@ export const Name = styled.p`
     display: inline;
     color: White;
   }
+`;
+export const WrapperButton = styled.div`
+  padding: 20px 0px;
+`;
+export const ExitButton = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 `;
 export const ExitIcon = styled(MdExitToApp)`
   font-size: 25px;

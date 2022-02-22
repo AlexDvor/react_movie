@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const NavList = styled.ul`
   display: flex;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 export const NavItem = styled.li`
   padding: 20px 0px;
