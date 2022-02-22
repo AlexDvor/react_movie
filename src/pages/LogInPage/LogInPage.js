@@ -7,7 +7,7 @@ export default function LogInPage() {
   return (
     <>
       <WrapperBackImage>
-        <Logo></Logo>
+        <Logo width="220px" />
         <Container>
           <LogInForm />
         </Container>

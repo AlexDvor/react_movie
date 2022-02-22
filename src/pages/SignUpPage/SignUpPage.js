@@ -14,7 +14,7 @@ export default function SignUpPage() {
   return (
     <>
       <WrapperBackImage>
-        <Logo />
+        <Logo width="220px" />
         <Container>{!isSentLetter ? <SignUpForm /> : <ConfirmEmail name={userName} />}</Container>
       </WrapperBackImage>
     </>

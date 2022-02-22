@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 export const WrapperAvatar = styled.div`
   padding: 20px 0px;
 `;

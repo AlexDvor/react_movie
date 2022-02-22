@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import * as authOperations from '../../redux/auth/auth-operations';
 import { getUsername } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
+import Logo from '../Logo/Logo';
 import {
   Wrapper,
   AvatarBackground,
@@ -20,6 +21,8 @@ export default function UserMenu() {
   return (
     <>
       <Wrapper>
+        <Logo width="100px" position="initial" />
+
         <WrapperAvatar>
           <AvatarBackground>
             <FirstLetterName>{userName[0]}</FirstLetterName>
