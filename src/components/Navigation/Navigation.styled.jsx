@@ -16,8 +16,3 @@ export const StyledNavLink = styled(NavLink)({
     color: 'tomato',
   },
 });
-export const ListButton = styled.ul``;
-export const ItemButton = styled.li``;
-export const ExitButton = styled.button`
-  width: 125px;
-`;

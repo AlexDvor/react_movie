@@ -1,6 +1,7 @@
 import Navigation from '../Navigation/Navigation';
 import Container from '../Container';
 import { WrapperAppBar, ContentBox } from './AppBar.styled';
+import UserMenu from '../UserMenu/UserMenu';
 
 export default function AppBar() {
   return (
@@ -8,6 +9,7 @@ export default function AppBar() {
       <Container>
         <ContentBox>
           <Navigation />
+          <UserMenu />
         </ContentBox>
       </Container>
     </WrapperAppBar>
