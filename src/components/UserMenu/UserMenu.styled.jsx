@@ -28,12 +28,8 @@ export const NameBox = styled.div`
   margin-right: 12px;
 `;
 export const Name = styled.p`
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: inline;
-    color: White;
-  }
+  display: inline;
+  color: White;
 `;
 export const WrapperButton = styled.div`
   padding: 20px 0px;

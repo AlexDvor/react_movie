@@ -2,11 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const NavList = styled.ul`
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
+  display: flex;
 `;
 export const NavItem = styled.li`
   padding: 20px 0px;
