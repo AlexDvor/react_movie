@@ -12,7 +12,7 @@ export default function AppBar() {
       <Container>
         <DesktopMenuContent>
           <Navigation />
-          <UserMenu />
+          <UserMenu showExitButton={true} />
         </DesktopMenuContent>
         <MobileMenuContent>
           <MobileMenu />

@@ -15,7 +15,7 @@ import {
   ExitIcon,
 } from './UserMenu.styled';
 
-export default function UserMenu() {
+export default function UserMenu({ showExitButton }) {
   const userName = useSelector(getUsername);
   const dispatch = useDispatch();
   return (
@@ -30,7 +30,7 @@ export default function UserMenu() {
         <NameBox>
           <Name>{userName}</Name>
         </NameBox>
-        <WrapperButton>
+        <WrapperButton showExitButton={showExitButton}>
           <ExitButton type="submit" onClick={() => dispatch(authOperations.logout())}>
             <ExitIcon />
           </ExitButton>

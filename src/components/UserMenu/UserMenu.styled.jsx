@@ -1,12 +1,19 @@
 import styled from '@emotion/styled';
 import { MdExitToApp } from 'react-icons/md';
 
+const setDisplay = props => {
+  if (props.showExitButton === true) {
+    return 'block';
+  } else {
+    return 'none';
+  }
+};
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 export const WrapperAvatar = styled.div`
   padding: 20px 0px;
 `;
@@ -33,6 +40,7 @@ export const Name = styled.p`
 `;
 export const WrapperButton = styled.div`
   padding: 20px 0px;
+  display: ${setDisplay};
 `;
 export const ExitButton = styled.button`
   cursor: pointer;
