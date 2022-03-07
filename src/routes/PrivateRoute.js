@@ -7,7 +7,7 @@ export default function PrivateRoute({ children, redirectTo = '/', ...routeProps
   const hasToken = useSelector(getToken);
   return (
     <Route {...routeProps}>
-      {isLoggedIn || hasToken ? children : <Redirect to={redirectTo} />}
+      {isLoggedIn && hasToken ? children : <Redirect to={redirectTo} />}
     </Route>
   );
 }
