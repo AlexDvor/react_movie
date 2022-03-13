@@ -10,26 +10,14 @@ const movieSlice = createSlice({
   name: 'movies',
   initialState,
   reducers: {
-    addMovieToLibrary(state, { payload }) {
-      const result = state.favorite.some(item => item.id === payload.id);
-      if (!result) {
-        state.favorite = [...state.favorite, payload];
-      }
-      return;
-    },
-
-    removeMovieById(state, { payload }) {
-      const result = state.favorite.filter(todo => todo.id !== payload);
-      state.favorite = [...result];
-    },
-
     changeLanguages(state, { payload }) {
       state.language = payload;
     },
   },
   extraReducers: {
-    [moviesOperations.getMovies.fulfilled](state, action) {
-      state.favorite = action.payload.results;
+    [moviesOperations.getMovies.fulfilled](state, { payload }) {
+      console.log('getMovies', payload);
+      state.favorite = payload.data;
     },
     [moviesOperations.addMovies.fulfilled](state, { payload }) {
       state.favorite = [...state.favorite, payload.data];
@@ -42,4 +30,4 @@ const movieSlice = createSlice({
 });
 
 export default movieSlice.reducer;
-export const { addMovieToLibrary, removeMovieById, changeLanguages } = movieSlice.actions;
+export const { removeMovieById, changeLanguages, getMovie, addMovies } = movieSlice.actions;
