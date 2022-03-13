@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-const API_KEY = 'f992f54d2833387603d88ceb953812b4';
+// const API_KEY = 'f992f54d2833387603d88ceb953812b4';
 // const BASE_URL = 'https://api.themoviedb.org/3/movie';
 // import { toast } from 'react-toastify';
 // axios.defaults.headers.common['Authorization'] = API_KEY;
@@ -15,14 +15,46 @@ const API_KEY = 'f992f54d2833387603d88ceb953812b4';
 //   },
 // };
 
-const getMovies = createAsyncThunk('auth/register', async (userData, { rejectWithValue }) => {
+// const getMovies = createAsyncThunk('auth/register', async (userData, { rejectWithValue }) => {
+//   try {
+//     const { data } = await axios.get(
+//       `/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
+//       userData,
+//     );
+//     console.log('getMovies: ', data);
+//     // token.set(data.token);
+//     return data;
+//   } catch (error) {
+//     // toast.error('This email is already registered ');
+//     return rejectWithValue(console.log(error));
+//   }
+// });
+
+const getMovies = createAsyncThunk('get/movie', async (_, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get(
-      `/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
-      userData,
-    );
-    console.log('getMovies: ', data);
-    // token.set(data.token);
+    const res = await axios.get('/users/favorite/get');
+    return res;
+  } catch (error) {
+    // toast.error('This email is already registered ');
+    return rejectWithValue(console.log(error));
+  }
+});
+
+// /favorite/get
+
+const addMovies = createAsyncThunk('add/movie', async (userData, { rejectWithValue }) => {
+  try {
+    const { data } = await axios.post('/users/favorite/add', userData);
+    return data;
+  } catch (error) {
+    // toast.error('This email is already registered ');
+    return rejectWithValue(console.log(error));
+  }
+});
+
+const removeMovieById = createAsyncThunk('remove/movie', async (userData, { rejectWithValue }) => {
+  try {
+    const { data } = await axios.delete(`/users/favorite/remove/${userData}`);
     return data;
   } catch (error) {
     // toast.error('This email is already registered ');
@@ -67,4 +99,4 @@ const getMovies = createAsyncThunk('auth/register', async (userData, { rejectWit
 //   }
 // });
 
-export { getMovies };
+export { getMovies, addMovies, removeMovieById };

@@ -31,6 +31,13 @@ const movieSlice = createSlice({
     [moviesOperations.getMovies.fulfilled](state, action) {
       state.favorite = action.payload.results;
     },
+    [moviesOperations.addMovies.fulfilled](state, { payload }) {
+      state.favorite = [...state.favorite, payload.data];
+    },
+    [moviesOperations.removeMovieById.fulfilled](state, { payload }) {
+      const result = state.favorite.filter(todo => todo.id !== payload.data.id);
+      state.favorite = [...result];
+    },
   },
 });
 

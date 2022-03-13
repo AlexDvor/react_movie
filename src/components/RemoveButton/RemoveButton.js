@@ -1,5 +1,6 @@
 import { StyledButton, DeleteIcon } from './RemoveButton.styled';
-import { removeMovieById } from '../../redux/movies/movies-slice';
+// import { removeMovieById } from '../../redux/movies/movies-slice';
+import { removeMovieById } from '../../redux/movies/movies-operations';
 import { useDispatch } from 'react-redux';
 
 export default function RemoveButton({ id }) {

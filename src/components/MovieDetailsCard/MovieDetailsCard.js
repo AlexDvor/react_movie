@@ -34,9 +34,6 @@ export default function MovieDetailsCard({ movie, trailer }) {
   const [isOpen, setIsOpen] = useState(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
   const onClick = e => setIsOpen(prevState => !prevState);
-
-  console.log('movie:', movie);
-
   return (
     <>
       <MovieWrapper>
