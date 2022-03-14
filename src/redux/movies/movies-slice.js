@@ -16,7 +16,6 @@ const movieSlice = createSlice({
   },
   extraReducers: {
     [moviesOperations.getMovies.fulfilled](state, { payload }) {
-      console.log('getMovies', payload);
       state.favorite = payload.data;
     },
     [moviesOperations.addMovies.fulfilled](state, { payload }) {
