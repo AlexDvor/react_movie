@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'http://localhost:4040/api';
-// axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
+// axios.defaults.baseURL = 'http://localhost:4040/api';
+axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
 
 const token = {
   set(token) {
