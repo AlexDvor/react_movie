@@ -1,7 +1,7 @@
-import { useDispatch } from 'react-redux';
-import * as authOperations from '../../redux/auth/auth-operations';
 import { getUsername } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
+import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
+import { useState } from 'react';
 
 import {
   Wrapper,
@@ -16,8 +16,17 @@ import {
 } from './UserMenu.styled';
 
 export default function UserMenu({ showExitButton }) {
+  const [modal, setModal] = useState(false);
   const userName = useSelector(getUsername);
-  const dispatch = useDispatch();
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
+  const handleClick = () => {
+    setModal(true);
+  };
+
   return (
     <>
       <Wrapper>
@@ -31,11 +40,19 @@ export default function UserMenu({ showExitButton }) {
           <Name>{userName}</Name>
         </NameBox>
         <WrapperButton showExitButton={showExitButton}>
-          <ExitButton type="submit" onClick={() => dispatch(authOperations.logout())}>
+          <ExitButton type="button" onClick={handleClick}>
             <ExitIcon />
           </ExitButton>
         </WrapperButton>
       </Wrapper>
+
+      {modal && (
+        <LogOutConfirmModal
+          onClick={closeModal}
+          text="Do you really want to leave?"
+          cancelOperation={() => setModal(prevState => !prevState)}
+        />
+      )}
     </>
   );
 }
