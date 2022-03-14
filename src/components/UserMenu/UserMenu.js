@@ -1,8 +1,9 @@
 import { getUsername } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
-import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
 import { useState } from 'react';
-
+//components
+import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
+//style
 import {
   Wrapper,
   AvatarBackground,

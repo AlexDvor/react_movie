@@ -1,8 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
-// import Button from '../Button/Button';
-// import { theme } from '../../constants/theme';
 import * as authOperations from '../../redux/auth/auth-operations';
+//style
 import {
   ModalContainer,
   ModalContent,

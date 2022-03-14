@@ -21,7 +21,6 @@ export const LinkItem = styled.li`
   &:not(:first-of-type) {
     margin-top: 20px;
   }
-
   &:hover,
   &:focus {
     background: linear-gradient(0deg, #440404 28%, #991212 100%);
@@ -37,4 +36,13 @@ export const StyledLink = styled(Link)`
   &:focus {
     color: white;
   }
+`;
+
+export const ExitButton = styled.button`
+  display: block;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 100%;
 `;
