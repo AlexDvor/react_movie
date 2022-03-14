@@ -12,9 +12,19 @@ export const MenuIcon = styled(FiMenu)`
 `;
 export const ListLink = styled.ul``;
 export const LinkItem = styled.li`
-  background-color: red;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #d61313 28%, #d87777 100%);
   &:not(:first-of-type) {
     margin-top: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(0deg, #440404 28%, #991212 100%);
   }
 `;
 export const StyledLink = styled(Link)`
@@ -23,4 +33,8 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
   width: 100%;
+  &:hover,
+  &:focus {
+    color: white;
+  }
 `;

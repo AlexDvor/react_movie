@@ -24,7 +24,7 @@ export default function MobileMenu() {
             show={show}
             onHide={handleClose}
             placement="end"
-            style={{ background: '#0e0c0ccc', color: 'white' }}
+            style={{ background: 'rgb(26 26 26 / 80%)', color: 'white' }}
           >
             <Offcanvas.Header closeButton closeVariant="white">
               <Offcanvas.Title>
