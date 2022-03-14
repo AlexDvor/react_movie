@@ -10,7 +10,7 @@ import * as authOperations from './redux/auth/auth-operations';
 //components
 import Footer from './components/Footer/Footer';
 import AppBar from './components/AppBar/AppBar';
-import Loader from './components/Loader/Loader';
+import Spinner from './components/Spinner/Spinner';
 // Pages
 // import HomePage from './pages/HomePage/HomePage';
 // import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
@@ -47,7 +47,7 @@ function App() {
     <>
       {isLoggedIn && <AppBar />}
       <Main>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Spinner />}>
           <Switch>
             <PublicRoute path="/" exact redirectTo="/home" restricted>
               <Redirect to="/login" />
