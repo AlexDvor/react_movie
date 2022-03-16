@@ -9,6 +9,7 @@ import { getFetchingCurrent } from '../../redux/auth/auth-selectors';
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
 import ActorsSection from '../../components/ActorsSection/ActorsSection';
+import Spinner from '../../components/Spinner/Spinner';
 //helpers
 import { filterByProfilePath } from '../../helpers/filterByPath';
 
@@ -30,12 +31,12 @@ export default function AboutMoviePage() {
       .then(res => setActorsData(res));
   }, [currentLang, movieId]);
 
-  return (
-    !isFetchingCurrent && (
-      <Container>
-        {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
-        {actorsData && <ActorsSection data={actorsData} />}
-      </Container>
-    )
+  return !isFetchingCurrent ? (
+    <Container>
+      {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
+      {actorsData && <ActorsSection data={actorsData} />}
+    </Container>
+  ) : (
+    <Spinner />
   );
 }
