@@ -209,9 +209,9 @@ class Hero extends Component {
     );
 
     return (
-      <header>
+      <>
         <div className="popular">{moviesList}</div>
-      </header>
+      </>
     );
   }
 }
