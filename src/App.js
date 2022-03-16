@@ -1,6 +1,7 @@
 import { Switch, Redirect } from 'react-router';
 import { Main, WrapperFooter } from './App.styled';
-import { getIsLoggedIn } from './redux/auth/auth-selectors';
+// import { getIsLoggedIn } from './redux/auth/auth-selectors';
+import { getFetchingCurrent } from './redux/auth/auth-selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, lazy, Suspense } from 'react';
 import PrivateRoute from './routes/PrivateRoute';
@@ -38,51 +39,53 @@ const LogInPage = lazy(() =>
 
 function App() {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const isFetchingCurrent = useSelector(getFetchingCurrent);
 
   useEffect(() => {
     dispatch(authOperations.getCurrentUser());
   }, [dispatch]);
   return (
-    <>
-      <AppBar />
-      <Main>
-        <Suspense fallback={<Spinner />}>
-          <Switch>
-            <PublicRoute path="/" exact redirectTo="/home" restricted>
-              <Redirect to="/login" />
-            </PublicRoute>
+    !isFetchingCurrent && (
+      <>
+        <AppBar />
+        <Main>
+          <Suspense fallback={<Spinner />}>
+            <Switch>
+              <PublicRoute path="/" exact redirectTo="/home" restricted>
+                <Redirect to="/login" />
+              </PublicRoute>
 
-            <PublicRoute path="/signup" redirectTo="/home" restricted>
-              <SignUpPage />
-            </PublicRoute>
+              <PublicRoute path="/signup" redirectTo="/home" restricted>
+                <SignUpPage />
+              </PublicRoute>
 
-            <PublicRoute path="/login" exact redirectTo="/home" restricted>
-              <LogInPage />
-            </PublicRoute>
+              <PublicRoute path="/login" exact redirectTo="/home" restricted>
+                <LogInPage />
+              </PublicRoute>
 
-            <PrivateRoute exact path="/home">
-              <HomePage />
-            </PrivateRoute>
+              <PrivateRoute exact path="/home">
+                <HomePage />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/movies/:movieId">
-              <AboutMoviePage />
-            </PrivateRoute>
+              <PrivateRoute exact path="/movies/:movieId">
+                <AboutMoviePage />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/my_list">
-              <MyListPage />
-            </PrivateRoute>
+              <PrivateRoute exact path="/my_list">
+                <MyListPage />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/search">
-              <SearchPage />
-            </PrivateRoute>
-          </Switch>
-        </Suspense>
-      </Main>
-      <WrapperFooter>
-        <Footer />
-      </WrapperFooter>
-    </>
+              <PrivateRoute exact path="/search">
+                <SearchPage />
+              </PrivateRoute>
+            </Switch>
+          </Suspense>
+        </Main>
+        <WrapperFooter>
+          <Footer />
+        </WrapperFooter>
+      </>
+    )
   );
 }
 
