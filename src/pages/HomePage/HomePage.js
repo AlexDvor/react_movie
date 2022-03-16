@@ -13,6 +13,7 @@ import {
 import Container from '../../components/Container';
 import HomeMovieList from '../../components/HomeMovieList/HomeMovieList';
 import TitleByType from '../../components/TitleByType/TitleByType';
+import Hero from '../../components/Hero/Hero';
 
 export default function HomePage() {
   const [upComingMovies, setUpComingMovies] = useState([]);
@@ -31,6 +32,7 @@ export default function HomePage() {
   return (
     <Container>
       <Wrapper>
+        <Hero />
         <TitleByType text="Upcoming" />
         <HomeMovieList movies={upComingMovies} />
 
