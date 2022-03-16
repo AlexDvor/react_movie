@@ -5,7 +5,7 @@ export const Popular = styled.div``;
 export const Wrapper = styled.div``;
 
 export const BackgroundImage = styled.div`
-  height: 750px;
+  height: 400px; //750
   width: 100%;
   background-position: center top;
   background-repeat: no-repeat;
@@ -28,10 +28,11 @@ export const BackgroundImage = styled.div`
       background-size: 280%;
     }
   }
-
-  /* @media screen and (min-width: 768px) {
-    
-  } */
+  @media screen and (min-width: 768px) {
+    height: 750px;
+  }
+  @media screen and (min-width: 768px) {
+  }
 `;
 
 export const PopularInfo = styled.div`
@@ -39,14 +40,14 @@ export const PopularInfo = styled.div`
   top: 20%;
   left: 6%;
   width: 40%;
-  /* @media screen and (max-width: 350px) {
+  @media screen and (max-width: 350px) {
     text-align: center;
     top: 40%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 90%;
-  } */
+  }
 
   /* .popularInfo button {
     height: 40px;
@@ -79,11 +80,15 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 export const SwitchImg = styled.div`
+  display: none;
   position: absolute;
   top: 90%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 `;
 export const Item = styled.div`
   width: 50px;
