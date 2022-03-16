@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
+import { getFetchingCurrent } from '../../redux/auth/auth-selectors';
 
 // Components
 import Container from '../../components/Container';
@@ -17,6 +18,7 @@ export default function AboutMoviePage() {
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams('');
   const currentLang = useSelector(getCurrentLanguages);
+  const isFetchingCurrent = useSelector(getFetchingCurrent);
 
   useEffect(() => {
     fetchMovieByID(Number(movieId), currentLang.id).then(setMovie);
@@ -29,9 +31,11 @@ export default function AboutMoviePage() {
   }, [currentLang, movieId]);
 
   return (
-    <Container>
-      {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
-      {actorsData && <ActorsSection data={actorsData} />}
-    </Container>
+    !isFetchingCurrent && (
+      <Container>
+        {movie && <MovieDetailsCard movie={movie} trailer={trailer} />}
+        {actorsData && <ActorsSection data={actorsData} />}
+      </Container>
+    )
   );
 }
