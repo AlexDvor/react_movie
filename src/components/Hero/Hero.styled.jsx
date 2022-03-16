@@ -5,7 +5,7 @@ export const Popular = styled.div``;
 export const Wrapper = styled.div``;
 
 export const BackgroundImage = styled.div`
-  height: 400px; //750
+  height: 500px; //750
   width: 100%;
   background-position: center top;
   background-repeat: no-repeat;
@@ -28,10 +28,26 @@ export const BackgroundImage = styled.div`
       background-size: 280%;
     }
   }
+
   @media screen and (min-width: 768px) {
     height: 750px;
   }
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 1280px) {
+    @keyframes moving {
+      0% {
+        background-size: 180%; //300
+        background-position: 60% 80%;
+      }
+      50% {
+        background-size: 130%; //250
+        background-position: 55% 55%;
+      }
+      100% {
+        background-size: 150%; //280
+        background-position: 60% 40%;
+      }
+    }
   }
 `;
 
@@ -62,7 +78,6 @@ export const Title = styled.h1`
   margin: 0;
   margin-bottom: 30px;
 `;
-
 export const Rating = styled.p``;
 export const ReleaseDate = styled.p``;
 export const HeaderOverview = styled.p`
