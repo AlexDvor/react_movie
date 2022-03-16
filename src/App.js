@@ -45,7 +45,7 @@ function App() {
   }, [dispatch]);
   return (
     <>
-      {isLoggedIn && <AppBar />}
+      <AppBar />
       <Main>
         <Suspense fallback={<Spinner />}>
           <Switch>
@@ -79,12 +79,9 @@ function App() {
           </Switch>
         </Suspense>
       </Main>
-
-      {isLoggedIn && (
-        <WrapperFooter>
-          <Footer />
-        </WrapperFooter>
-      )}
+      <WrapperFooter>
+        <Footer />
+      </WrapperFooter>
     </>
   );
 }
