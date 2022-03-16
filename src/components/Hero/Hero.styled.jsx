@@ -35,6 +35,21 @@ export const PopularInfo = styled.div`
   top: 20%;
   left: 6%;
   width: 40%;
+  /* @media screen and (max-width: 350px) {
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  } */
+
+  /* .popularInfo button {
+    height: 40px;
+    width: 100px;
+    font-size: 90%;
+    margin-top: 0px;
+  } */
 `;
 
 export const Title = styled.h1`

@@ -12,6 +12,7 @@ import {
   Item,
 } from './Hero.styled';
 import { useState, useEffect } from 'react';
+import imdb from '../../images/imdb-logo.png';
 
 // export default function Hero() {
 //   const [showcaseMovies, setShowcaseMovies] = useState(3);
@@ -177,7 +178,7 @@ class Hero extends Component {
               <Rating>
                 <em>
                   <img
-                    src={require('../../images/logo.png')}
+                    src={imdb}
                     alt="Rating"
                     style={{ width: '40px', height: '20px', marginBottom: '-5px' }}
                   />{' '}
