@@ -40,7 +40,8 @@ export const PopularInfo = styled.div`
   top: 20%;
   left: 6%;
   width: 40%;
-  @media screen and (max-width: 350px) {
+
+  @media screen and (max-width: 768px) {
     text-align: center;
     top: 40%;
     left: 50%;
