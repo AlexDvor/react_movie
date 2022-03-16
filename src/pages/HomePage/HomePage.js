@@ -30,21 +30,23 @@ export default function HomePage() {
   }, [currentLang]);
 
   return (
-    <Container>
-      <Wrapper>
-        <Hero />
-        <TitleByType text="Upcoming" />
-        <HomeMovieList movies={upComingMovies} />
+    <>
+      <Hero />
+      <Container>
+        <Wrapper>
+          <TitleByType text="Upcoming" />
+          <HomeMovieList movies={upComingMovies} />
 
-        <TitleByType text="Top Day" />
-        <HomeMovieList movies={trendMovies} />
+          <TitleByType text="Top Day" />
+          <HomeMovieList movies={trendMovies} />
 
-        <TitleByType text="Popular" />
-        <HomeMovieList movies={popularMovies} />
+          <TitleByType text="Popular" />
+          <HomeMovieList movies={popularMovies} />
 
-        <TitleByType text="Top" />
-        <HomeMovieList movies={topMovies} />
-      </Wrapper>
-    </Container>
+          <TitleByType text="Top" />
+          <HomeMovieList movies={topMovies} />
+        </Wrapper>
+      </Container>
+    </>
   );
 }
