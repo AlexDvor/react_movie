@@ -1,5 +1,10 @@
+import React, { Component } from 'react';
+import Animate from 'react-smooth';
+import { Link } from 'react-router-dom';
+// import { useState, useEffect } from 'react';
+import imdb from '../../images/imdb-logo.png';
 import {
-  Popular,
+  //   Popular,
   Wrapper,
   BackgroundImage,
   PopularInfo,
@@ -11,8 +16,6 @@ import {
   SwitchImg,
   Item,
 } from './Hero.styled';
-import { useState, useEffect } from 'react';
-import imdb from '../../images/imdb-logo.png';
 
 // export default function Hero() {
 //   const [showcaseMovies, setShowcaseMovies] = useState(3);
@@ -44,53 +47,61 @@ import imdb from '../../images/imdb-logo.png';
 //     }, timeoutTime);
 //   };
 
-//     const moviesList = movies.length ? (
-//       <div key={movies[i].id}>
-//         <Animate to="1" from="0.2" attributeName="opacity">
-//           <div
-//             style={{
-//               backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%), url("https://image.tmdb.org/t/p/original/${
-//                 movies[i].backdrop_path
-//               }")`
-//             }}
-//             className="bgImage"
-//           >
-//             <div className="popularInfo">
-//               <h1>{movies[i].title}</h1>
-//               <p className="rating">
-//                 <em><img src={require('./imdb_logo.png')} alt="Rating" style={{width:"40px", height:"20px",marginBottom:"-5px"}}/> {movies[i].vote_average}</em>
-//               </p>
-//               <p className="release-date">
-//                 Release Date: {new Date(movies[i].release_date).toDateString()}
-//               </p>
-//               <p className="header-overview">{movies[i].overview}</p>
-//               <Link to={"/" + movies[i].id}>
-//                 {/* <button> Play</button> */}
-//                 <Button
-//            variant="contained"
+//   const divs = movies.length
+//     ? movies.map((movie, index) => {
+//         if (index <= showcaseMovies) {
+//           return (
+//             <Item
+//               key={index}
+//               active={i === index ? 'active' : null}
+//               onClick={
+//                 (() => setI(index),
+//                 () => {
+//                   clearTimeout(timeout);
+//                   this.startTimeout();
+//                 })
+//               }
+//             />
+//           );
+//         } else return null;
+//       })
+//     : null;
 
-//            style={{
-//              width: "150px",
-//              padding: "15px",
-//              fontSize:"12px",
-//              borderColor:"white",
-//              background: "white",
-//              color: "black",
-
-//            }}>
-//              <PlayArrowIcon /><b>
-//              &nbsp;&nbsp;
-//              Play</b></Button>
-
-//               </Link>
-//             </div>
-//             <div className="switchImg">{divs}</div>
-//           </div>
-//         </Animate>
-//       </div>
-//     ) : (
-//       <h4>Loading</h4>
-//     );
+//   const moviesList = movies.length ? (
+//     <Wrapper key={movies[i].id}>
+//       <Animate to="1" from="0.2" attributeName="opacity">
+//         <BackgroundImage
+//           style={{
+//             backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%), url("https://image.tmdb.org/t/p/original/${movies[i].backdrop_path}")`,
+//           }}
+//         >
+//           <PopularInfo>
+//             <Title>{movies[i].title}</Title>
+//             <Rating>
+//               <em>
+//                 <img
+//                   src={imdb}
+//                   alt="Rating"
+//                   style={{ width: '40px', height: '20px', marginBottom: '-5px' }}
+//                 />{' '}
+//                 {movies[i].vote_average}
+//               </em>
+//             </Rating>
+//             <ReleaseDate>
+//               Release Date: {new Date(movies[i].release_date).toDateString()}
+//             </ReleaseDate>
+//             <HeaderOverview>{movies[i].overview}</HeaderOverview>
+//             <Link to={'/' + movies[i].id}>
+//               <Button>Thriler</Button>
+//             </Link>
+//           </PopularInfo>
+//           <SwitchImg className="switchImg">{divs}</SwitchImg>
+//         </BackgroundImage>
+//       </Animate>
+//     </Wrapper>
+//   ) : (
+//     <h4>Loading</h4>
+//   );
 
 //   return (
 //     <>
@@ -98,10 +109,6 @@ import imdb from '../../images/imdb-logo.png';
 //     </>
 //   );
 // }
-
-import React, { Component } from 'react';
-import Animate from 'react-smooth';
-import { Link } from 'react-router-dom';
 
 class Hero extends Component {
   constructor(props) {
@@ -118,7 +125,7 @@ class Hero extends Component {
   componentDidMount() {
     this.mounted = true;
     this.random = Math.floor(Math.random() * 100) + 1;
-    console.log('random', this.random);
+    // console.log('random', this.random);
     fetch(
       `https://api.themoviedb.org/3/trending/upcoming/day?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&include_adult=false&page=${this.random}`,
     )
