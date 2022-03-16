@@ -28,6 +28,10 @@ export const BackgroundImage = styled.div`
       background-size: 280%;
     }
   }
+
+  /* @media screen and (min-width: 768px) {
+    
+  } */
 `;
 
 export const PopularInfo = styled.div`
