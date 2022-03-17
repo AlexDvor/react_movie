@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 // axios.defaults.baseURL = 'http://localhost:4040/api';
 axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
@@ -18,7 +19,7 @@ const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValu
     const { data } = await axios.post('/auth/signup', userData);
     return data;
   } catch (error) {
-    // toast.error('This email is already registered ');
+    toast.error('This email is already registered ');
     return rejectWithValue(console.log(error));
   }
 });
@@ -29,7 +30,7 @@ const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue 
     token.set(data.data.token);
     return data;
   } catch (error) {
-    // toast.error('Incorrect username or password');
+    toast.error('Incorrect username or password');
     return rejectWithValue(console.log(error));
   }
 });

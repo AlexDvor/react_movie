@@ -151,7 +151,8 @@ class Hero extends Component {
   }
 
   render() {
-    const { movies, i, random } = this.state;
+    // const { movies, i, random } = this.state;
+    const { movies, i } = this.state;
 
     const divs = movies.length
       ? movies.map((movie, index) => {

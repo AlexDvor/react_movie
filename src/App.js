@@ -1,13 +1,12 @@
 import { Switch, Redirect } from 'react-router';
 import { Main, WrapperFooter } from './App.styled';
-// import { getIsLoggedIn } from './redux/auth/auth-selectors';
 import { getFetchingCurrent } from './redux/auth/auth-selectors';
 import { useSelector, useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import { useEffect, lazy, Suspense } from 'react';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 import * as authOperations from './redux/auth/auth-operations';
-
 //components
 import Footer from './components/Footer/Footer';
 import AppBar from './components/AppBar/AppBar';
@@ -18,7 +17,7 @@ import Spinner from './components/Spinner/Spinner';
 // import MyListPage from './pages/MyListPage/MyListPage';
 // import SearchPage from './pages/SearchPage/SearchPage';
 // import SignUpPage from './pages/SignUpPage/SignUpPage';
-// import LogInPage from './pages/LogInPage/LogInPage';
+import LogInPage from './pages/LogInPage/LogInPage';
 const HomePage = lazy(() => import('./pages/HomePage/HomePage' /* webpackChunkName: 'HomePage' */));
 
 const AboutMoviePage = lazy(() =>
@@ -33,9 +32,9 @@ const SearchPage = lazy(() =>
 const SignUpPage = lazy(() =>
   import('./pages/SignUpPage/SignUpPage' /* webpackChunkName: 'SignUpPage' */),
 );
-const LogInPage = lazy(() =>
-  import('./pages/LogInPage/LogInPage' /* webpackChunkName: ' LogInPage' */),
-);
+// const LogInPage = lazy(() =>
+//   import('./pages/LogInPage/LogInPage' /* webpackChunkName: ' LogInPage' */),
+// );
 
 function App() {
   const dispatch = useDispatch();
@@ -80,6 +79,7 @@ function App() {
               </PrivateRoute>
             </Switch>
           </Suspense>
+          <ToastContainer autoClose={4000} />
         </Main>
         <WrapperFooter>
           <Footer />
