@@ -12,16 +12,10 @@ export default function LogInPage() {
 
   return (
     <>
-      {!isLoading ? (
-        <WrapperBackImage>
-          <Logo width="220px" />
-          <Container>
-            <LogInForm />
-          </Container>
-        </WrapperBackImage>
-      ) : (
-        <Spinner />
-      )}
+      <WrapperBackImage>
+        <Logo width="220px" />
+        <Container>{!isLoading ? <LogInForm /> : <Spinner />}</Container>
+      </WrapperBackImage>
     </>
   );
 }

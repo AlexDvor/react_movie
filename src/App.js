@@ -17,10 +17,10 @@ import Spinner from './components/Spinner/Spinner';
 // import AboutMoviePage from './pages/AboutMoviePage/AboutMoviePage';
 // import MyListPage from './pages/MyListPage/MyListPage';
 // import SearchPage from './pages/SearchPage/SearchPage';
-// import SignUpPage from './pages/SignUpPage/SignUpPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
 import LogInPage from './pages/LogInPage/LogInPage';
-const HomePage = lazy(() => import('./pages/HomePage/HomePage' /* webpackChunkName: 'HomePage' */));
 
+const HomePage = lazy(() => import('./pages/HomePage/HomePage' /* webpackChunkName: 'HomePage' */));
 const AboutMoviePage = lazy(() =>
   import('./pages/AboutMoviePage/AboutMoviePage' /* webpackChunkName: 'AboutMoviePage' */),
 );
@@ -30,9 +30,9 @@ const MyListPage = lazy(() =>
 const SearchPage = lazy(() =>
   import('./pages/SearchPage/SearchPage' /* webpackChunkName: 'SearchPage' */),
 );
-const SignUpPage = lazy(() =>
-  import('./pages/SignUpPage/SignUpPage' /* webpackChunkName: 'SignUpPage' */),
-);
+// const SignUpPage = lazy(() =>
+//   import('./pages/SignUpPage/SignUpPage' /* webpackChunkName: 'SignUpPage' */),
+// );
 // const LogInPage = lazy(() =>
 //   import('./pages/LogInPage/LogInPage' /* webpackChunkName: ' LogInPage' */),
 // );
