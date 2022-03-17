@@ -131,7 +131,7 @@ class Hero extends Component {
       .then(res => res.json())
       .then(data => {
         if (this.mounted) this.setState({ movies: data.results });
-        console.log('state movies ', this.state.movies);
+        // console.log('state movies ', this.state.movies);
       })
       .catch(err => console.log(err));
     this.startTimeout();
