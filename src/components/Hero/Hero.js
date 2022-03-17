@@ -125,13 +125,13 @@ class Hero extends Component {
   componentDidMount() {
     this.mounted = true;
     this.random = Math.floor(Math.random() * 100) + 1;
-    // console.log('random', this.random);
     fetch(
       `https://api.themoviedb.org/3/trending/upcoming/day?api_key=17117ab9c18276d48d8634390c025df4&language=en-US&include_adult=false&page=${this.random}`,
     )
       .then(res => res.json())
       .then(data => {
         if (this.mounted) this.setState({ movies: data.results });
+        console.log('state movies ', this.state.movies);
       })
       .catch(err => console.log(err));
     this.startTimeout();
@@ -197,9 +197,13 @@ class Hero extends Component {
                 Release Date: {new Date(movies[i].release_date).toDateString()}
               </ReleaseDate>
               <HeaderOverview>{movies[i].overview}</HeaderOverview>
-              <Link to={'/' + movies[i].id}>
+
+              <Link to={{ pathname: `/movies/${movies[i].id}` }}>
                 <Button>Thriler</Button>
               </Link>
+              {/* <Link to={'/' + movies[i].id}>
+                <Button>Thriler</Button>
+              </Link> */}
             </PopularInfo>
             <SwitchImg className="switchImg">{divs}</SwitchImg>
           </BackgroundImage>
