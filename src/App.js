@@ -7,6 +7,7 @@ import { useEffect, lazy, Suspense } from 'react';
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 import * as authOperations from './redux/auth/auth-operations';
+import 'react-toastify/dist/ReactToastify.css';
 //components
 import Footer from './components/Footer/Footer';
 import AppBar from './components/AppBar/AppBar';
