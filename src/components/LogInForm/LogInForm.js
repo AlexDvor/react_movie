@@ -1,5 +1,7 @@
 import { Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
+import { LogInSchema } from '../../helpers/validationShema';
+import * as authOperations from '../../redux/auth/auth-operations';
 import {
   ErrorMessage,
   WrapperForm,
@@ -11,9 +13,6 @@ import {
   WrapperInput,
   Button,
 } from './LogInForm.styled';
-import * as authOperations from '../../redux/auth/auth-operations';
-
-import { LogInSchema } from '../../helpers/validationShema';
 
 export default function LogInForm() {
   const dispatch = useDispatch();
