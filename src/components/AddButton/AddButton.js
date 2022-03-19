@@ -10,6 +10,7 @@ export default function AddButton({ addToList, disabled }) {
     <>
       <StyledButton type="button" onClick={handleClick} disabled={disabled}>
         {disabled ? <AddedIcon /> : <AddIcon />}
+        {disabled ? 'Added' : 'Add'}
       </StyledButton>
     </>
   );

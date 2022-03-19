@@ -10,21 +10,26 @@ const setBackgroundImage = props => {
 
 const setHover = props => {
   if (!props.disabled) {
-    return 'linear-gradient(0deg, rgb(141 17 57) 49%, rgb(219 117 164 / 45%) 100%)';
+    return 'linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);';
   }
   return null;
 };
 
 const setColorIcon = props => {
   if (!props.disabled) {
-    return 'white';
+    return 'black';
   }
   return `rgba(187,187,187,1)`;
 };
 
+const setColor = props => {
+  if (!props.disabled) {
+    return 'white';
+  }
+  return 'null';
+};
+
 export const StyledButton = styled.button`
-  /* width: 100px; */
-  /* height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,16 +41,31 @@ export const StyledButton = styled.button`
   background-image: ${setBackgroundImage};
   border-radius: 50%;
 
+  @media screen and (min-width: 767px) {
+    width: 150px;
+    padding: 15px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+
   cursor: pointer;
   &:hover,
   &:focus {
     background-image: ${setHover};
+    color: ${setColor};
+    svg {
+      color: ${setColor};
+    }
   }
 `;
 
 export const PlayIcon = styled(AiFillPlayCircle)`
   color: ${setColorIcon};
   font-size: 20px;
+  margin-right: 8px;
   /* &:hover,
   &:focus {
     color: ${setHover};

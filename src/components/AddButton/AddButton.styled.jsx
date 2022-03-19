@@ -16,9 +16,14 @@ const setHover = props => {
   return null;
 };
 
+const setColor = props => {
+  if (!props.disabled) {
+    return 'red';
+  }
+  return 'null';
+};
+
 export const StyledButton = styled.button`
-  /* width: 100px;
-  height: 30px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,19 +35,39 @@ export const StyledButton = styled.button`
   background-image: ${setBackgroundImage};
   border-radius: 50%;
 
+  @media screen and (min-width: 767px) {
+    width: 150px;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    font-weight: bolder;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+
   cursor: pointer;
   &:hover,
   &:focus {
-    background-image: ${setHover};
+    /* background-image: ${setHover}; */
+    border-color: ${setColor};
+    color: ${setColor};
+    svg {
+      color: ${setColor};
+    }
   }
 `;
 
 export const AddIcon = styled(MdBookmarkAdd)`
   color: white;
   font-size: 20px;
+  margin-right: 6px;
 `;
 
 export const AddedIcon = styled(MdBookmarkAdded)`
   color: white;
   font-size: 20px;
+  margin-right: 6px;
 `;
