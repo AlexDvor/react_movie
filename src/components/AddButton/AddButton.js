@@ -13,10 +13,17 @@ export default function AddButton({ addToList, disabled }) {
   return (
     <>
       <StyledButton type="button" onClick={handleClick} disabled={disabled}>
-        {disabled ? <AddedIcon /> : <AddIcon />}
-        {disabled ? 'Added' : 'Add'}
-        <ThreeDots ariaLabel="loading-indicator" color="#00BFFF" height={50} width={50} />
+        {!isAddingMovie ? (
+          <>
+            {disabled ? <AddedIcon /> : <AddIcon />}
+            {disabled ? 'Added' : 'Add'}
+          </>
+        ) : (
+          <ThreeDots ariaLabel="loading-indicator" color="#00BFFF" height={50} width={50} />
+        )}
       </StyledButton>
     </>
   );
 }
+
+// red  #c1121f
