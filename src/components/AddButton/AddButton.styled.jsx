@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   width: 100px;
-  height: 50px;
+  height: 34px;
   padding: 7px;
   background: transparent;
   color: white;
@@ -30,6 +30,7 @@ export const StyledButton = styled.button`
   @media screen and (min-width: 768px) {
     width: 150px;
     padding: 15px;
+    height: 50px;
   }
 
   &:hover,
