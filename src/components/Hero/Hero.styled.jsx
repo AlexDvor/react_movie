@@ -90,10 +90,17 @@ export const Button = styled.button`
   padding: 15px;
   font-size: 12px;
   border: none;
+  font-weight: bold;
   border-radius: 5px;
   background: white;
   color: black;
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-image: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
+    color: white;
+  }
 `;
 export const SwitchImg = styled.div`
   display: none;

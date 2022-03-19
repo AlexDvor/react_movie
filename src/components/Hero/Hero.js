@@ -199,7 +199,7 @@ class Hero extends Component {
               <HeaderOverview>{movies[i].overview}</HeaderOverview>
 
               <Link to={{ pathname: `/movies/${movies[i].id}` }}>
-                <Button>Thriler</Button>
+                <Button>Trailer</Button>
               </Link>
               {/* <Link to={'/' + movies[i].id}>
                 <Button>Thriler</Button>
