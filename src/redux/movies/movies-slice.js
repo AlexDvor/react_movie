@@ -4,6 +4,7 @@ import * as moviesOperations from './movies-operations';
 const initialState = {
   favorite: [],
   isLoading: false,
+  isAddingMovie: false,
   language: { code: 'GB', label: 'English', id: 'en' },
 };
 
@@ -30,12 +31,15 @@ const movieSlice = createSlice({
     [moviesOperations.addMovies.fulfilled](state, { payload }) {
       state.favorite = [...state.favorite, payload.data];
       state.isLoading = false;
+      state.isAddingMovie = false;
     },
     [moviesOperations.addMovies.pending](state, _) {
       state.isLoading = true;
+      state.isAddingMovie = true;
     },
     [moviesOperations.addMovies.rejected](state, _) {
       state.isLoading = false;
+      state.isAddingMovie = false;
     },
 
     [moviesOperations.removeMovieById.fulfilled](state, { payload }) {

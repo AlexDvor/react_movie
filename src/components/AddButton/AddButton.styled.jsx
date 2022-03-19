@@ -14,6 +14,7 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   width: 100px;
+  height: 50px;
   padding: 7px;
   background: transparent;
   color: white;
