@@ -2,23 +2,9 @@ import styled from '@emotion/styled';
 import { MdBookmarkAdd } from 'react-icons/md';
 import { MdBookmarkAdded } from 'react-icons/md';
 
-const setBackgroundImage = props => {
-  if (!props.disabled) {
-    return 'linear-gradient(0deg, rgb(30 77 116) 49%, rgb(0 241 253 / 45%) 100%)';
-  }
-  return 'linear-gradient(0deg, rgba(87,87,87,1) 2%, rgba(187,187,187,1) 100%)';
-};
-
 const setHover = props => {
   if (!props.disabled) {
-    return 'linear-gradient(0deg, rgb(141 17 57) 49%, rgb(219 117 164 / 45%) 100%)';
-  }
-  return null;
-};
-
-const setColor = props => {
-  if (!props.disabled) {
-    return 'red';
+    return '#c1121f';
   }
   return 'null';
 };
@@ -27,35 +13,30 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: white;
+  width: 100px;
   padding: 7px;
-  border: 0px;
-  border-radius: 4px;
-  background-image: ${setBackgroundImage};
-  border-radius: 50%;
+  background: transparent;
+  color: white;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     width: 150px;
     padding: 15px;
-    background: transparent;
-    color: white;
-    border-width: 2px;
-    border-color: white;
-    border-style: solid;
-    font-weight: bolder;
-    margin-left: 10px;
-    border-radius: 5px;
   }
 
-  cursor: pointer;
   &:hover,
   &:focus {
-    /* background-image: ${setHover}; */
-    border-color: ${setColor};
-    color: ${setColor};
+    border-color: ${setHover};
+    color: ${setHover};
     svg {
-      color: ${setColor};
+      color: ${setHover};
     }
   }
 `;
