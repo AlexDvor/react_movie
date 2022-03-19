@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  background: linear-gradient(0deg, #d61313 28%, #d87777 100%);
+  background: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 110px;
-  height: 27px;
+  width: 117px;
+  height: 34px;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
