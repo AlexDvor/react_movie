@@ -19,7 +19,7 @@ export default function AddButton({ addToList, disabled }) {
             {disabled ? 'Added' : 'Add'}
           </>
         ) : (
-          <ThreeDots ariaLabel="loading-indicator" color="#00BFFF" height={50} width={50} />
+          <ThreeDots ariaLabel="loading-indicator" color="white" height={50} width={50} />
         )}
       </StyledButton>
     </>

@@ -1,38 +1,33 @@
 import styled from '@emotion/styled';
 import { MdDelete } from 'react-icons/md';
 
-const setBackgroundImage = props => {
-  if (!props.disabled) {
-    return 'linear-gradient(0deg, rgb(30 77 116) 49%, rgb(0 241 253 / 45%) 100%)';
-  }
-  return 'linear-gradient(0deg, rgba(87,87,87,1) 2%, rgba(187,187,187,1) 100%)';
-};
-
 export const StyledButton = styled.button`
-  /* width: 30px;   */
-  /* height: 30px;  */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  color: white;
-  padding: 7px;
+  font-size: 12px;
   border: 0px;
-  border-radius: 4px;
-  background-image: ${setBackgroundImage};
-  border-radius: 50%;
+  width: 125px;
+  height: 35px;
+  padding: 7px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
 
   cursor: pointer;
   &:hover,
   &:focus {
-    background-image: linear-gradient(0deg, rgb(141 17 57) 49%, rgb(219 117 164 / 45%) 100%);
+    background-image: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
+    color: white;
+    svg {
+      color: white;
+    }
   }
 `;
 
 export const DeleteIcon = styled(MdDelete)`
-  color: white;
+  color: black;
   font-size: 20px;
-  /* &:hover,
-  &:focus {
-    color:  #070707; */
+  margin-right: 6px;
 `;
