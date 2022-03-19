@@ -5,6 +5,7 @@ const initialState = {
   favorite: [],
   isLoading: false,
   isAddingMovie: false,
+  isRemovingMovie: false,
   language: { code: 'GB', label: 'English', id: 'en' },
 };
 
@@ -46,12 +47,15 @@ const movieSlice = createSlice({
       const result = state.favorite.filter(todo => todo.id !== payload.data.id);
       state.favorite = [...result];
       state.isLoading = false;
+      state.isRemovingMovie = false;
     },
     [moviesOperations.removeMovieById.pending](state, _) {
       state.isLoading = true;
+      state.isRemovingMovie = true;
     },
     [moviesOperations.removeMovieById.rejected](state, _) {
       state.isLoading = false;
+      state.isRemovingMovie = false;
     },
   },
 });
