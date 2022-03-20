@@ -23,7 +23,7 @@ export const AvatarBackground = styled.div`
   align-items: center;
   width: 32px;
   height: 32px;
-  background-color: rgb(187, 37, 37);
+  background: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
   border-radius: 50%;
   margin-right: 12px;
 `;

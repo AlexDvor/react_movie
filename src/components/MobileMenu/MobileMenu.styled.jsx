@@ -17,7 +17,7 @@ export const LinkItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(0deg, #d61313 28%, #d87777 100%);
+  background: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
   &:not(:first-of-type) {
     margin-top: 20px;
   }
