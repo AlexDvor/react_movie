@@ -10,9 +10,20 @@ export const NavItem = styled.li`
     margin-left: 25px;
   }
 `;
-export const StyledNavLink = styled(NavLink)({
-  color: 'white',
-  '&[aria-current="page"]': {
-    color: 'tomato',
-  },
-});
+
+// export const StyledNavLink = styled(NavLink)({
+//   color: 'white',
+
+//   '&[aria-current="page"]': {
+//     color: '#c1121f',
+//   },
+// });
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+
+  /* &:focus,
+  &:hover {
+    color: red;
+  } */
+`;
