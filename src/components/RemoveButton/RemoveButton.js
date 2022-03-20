@@ -17,7 +17,6 @@ export default function RemoveButton({ id }) {
         ) : (
           <ThreeDots ariaLabel="loading-indicator" color="white" height={50} width={50} />
         )}
-        {/* <DeleteIcon /> Delete */}
       </StyledButton>
     </>
   );

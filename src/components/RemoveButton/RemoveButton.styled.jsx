@@ -10,24 +10,24 @@ export const StyledButton = styled.button`
   width: 125px;
   height: 35px;
   padding: 7px;
-  background: white;
-  color: black;
+  background: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
+  color: white;
   font-weight: bold;
   border-radius: 5px;
 
   cursor: pointer;
   &:hover,
   &:focus {
-    background-image: linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);
-    color: white;
+    background: white;
+    color: black;
     svg {
-      color: white;
+      color: black;
     }
   }
 `;
 
 export const DeleteIcon = styled(MdDelete)`
-  color: black;
+  color: white;
   font-size: 20px;
   margin-right: 6px;
 `;
