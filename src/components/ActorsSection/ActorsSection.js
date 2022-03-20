@@ -41,7 +41,7 @@ export default function ActorsSection({ data }) {
     <>
       <Container>
         <WrapperSlider>
-          {data.length > 4 ? (
+          {data.length > 6 ? (
             <ActorsSlider quantity={checkQuantity()}>
               {data.map(({ id, profile_path, name }) => (
                 <CardWrapper key={id} onClick={handleClick}>
@@ -52,7 +52,7 @@ export default function ActorsSection({ data }) {
               ))}
             </ActorsSlider>
           ) : (
-            isLoadingMovie && (
+            !isLoadingMovie && (
               <Message>
                 <ExclamationIcon fontSize="1.2em" />
                 Sorry but we don't have any information about the actors in this movie...!
