@@ -41,15 +41,13 @@ export default function Hero() {
   useEffect(() => {
     intervalId.current = setTimeout(() => {
       console.log('Вызов');
-      if (i >= 3) {
+      if (i >= showcaseMovies) {
         setI(0);
       } else {
         setI(prevState => prevState + 1);
       }
     }, timeoutTime);
 
-    // console.log('i :', i);
-    // clearTimeout(startTimeout);
     return () => {
       clearTimeout(intervalId.current);
       console.log('exit from interval');
@@ -64,18 +62,20 @@ export default function Hero() {
   //   }, timeoutTime);
   // };
 
-  const test = index => {
+  const handelClick = index => {
     setI(index);
     clearTimeout(intervalId.current);
-
-    console.log('test');
   };
 
   const divs = movies.length
     ? movies.map((movie, index) => {
         if (index <= showcaseMovies) {
           return (
-            <Item key={index} active={i === index ? 'active' : null} onClick={() => test(index)} />
+            <Item
+              key={index}
+              active={i === index ? 'active' : null}
+              onClick={() => handelClick(index)}
+            />
           );
         } else return null;
       })
