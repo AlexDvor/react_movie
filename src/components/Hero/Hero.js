@@ -1,7 +1,7 @@
 // import React, { Component } from 'react';
 import Animate from 'react-smooth';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import logoImdb from '../../images/imdb-logo.png';
 import {
   Popular,
@@ -23,6 +23,7 @@ export default function Hero() {
   const [i, setI] = useState(0);
   const showcaseMovies = 3;
   const timeoutTime = 5000;
+  const intervalId = useRef(null);
 
   useEffect(() => {
     setMounted(true);
@@ -38,21 +39,20 @@ export default function Hero() {
   }, [mounted]);
 
   useEffect(() => {
-    const startTimeout = () => {
-      setTimeout(() => {
-        if (i >= 3) {
-          setI(0);
-        } else {
-          setI(prevState => prevState + 1);
-        }
-      }, timeoutTime);
-    };
+    intervalId.current = setTimeout(() => {
+      console.log('Вызов');
+      if (i >= 3) {
+        setI(0);
+      } else {
+        setI(prevState => prevState + 1);
+      }
+    }, timeoutTime);
 
-    startTimeout();
-    console.log('i :', i);
+    // console.log('i :', i);
+    // clearTimeout(startTimeout);
     return () => {
-      // clearTimeout(startTimeout);
-      // console.log('Closed');
+      clearTimeout(intervalId.current);
+      console.log('exit from interval');
     };
   }, [i]);
 
@@ -64,15 +64,18 @@ export default function Hero() {
   //   }, timeoutTime);
   // };
 
+  const test = index => {
+    setI(index);
+    clearTimeout(intervalId.current);
+
+    console.log('test');
+  };
+
   const divs = movies.length
     ? movies.map((movie, index) => {
         if (index <= showcaseMovies) {
           return (
-            <Item
-              key={index}
-              active={i === index ? 'active' : null}
-              // onClick={clearTimeout(startTimeout)}
-            />
+            <Item key={index} active={i === index ? 'active' : null} onClick={() => test(index)} />
           );
         } else return null;
       })
