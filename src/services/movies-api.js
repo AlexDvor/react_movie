@@ -4,8 +4,8 @@ const API_KEY = '93e18502a4f670f89316c5fc1b091bd6';
 // const API_KEY = 'f992f54d2833387603d88ceb953812b4';
 const BASE_URL = 'https://api.themoviedb.org/3/movie';
 
-export async function fetchUpMovies(lang) {
-  return await axios(`${BASE_URL}/upcoming?api_key=${API_KEY}&language=${lang}&page=1`)
+export async function fetchUpMovies(lang, page = 1) {
+  return await axios(`${BASE_URL}/upcoming?api_key=${API_KEY}&language=${lang}&page=${page}`)
     .then(res => res.data)
     .catch(error => error.massage);
 }
@@ -16,8 +16,8 @@ export async function fetchMovieByID(id, lang) {
     .catch(error => error.massage);
 }
 
-export async function fetchTopMovies(lang) {
-  return await axios(`${BASE_URL}/top_rated?api_key=${API_KEY}&language=${lang}&page=1`)
+export async function fetchTopMovies(lang, page = 1) {
+  return await axios(`${BASE_URL}/top_rated?api_key=${API_KEY}&language=${lang}&page=${page}`)
     .then(res => res.data)
     .catch(error => error.massage);
 }
@@ -28,9 +28,9 @@ export async function fetchPopularMovies(lang) {
     .catch(error => error.massage);
 }
 
-export async function fetchTrendMovies(lang) {
+export async function fetchTrendMovies(lang, page = 1) {
   return await axios(
-    `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=${lang}&page=1`,
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=${lang}&page=${page}`,
   )
     .then(res => res.data)
     .catch(error => error.massage);
