@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import { getFetchingCurrent } from '../../redux/auth/auth-selectors';
-
 // Components
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';

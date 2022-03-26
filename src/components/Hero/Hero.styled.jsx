@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+const setBackground = props => {
+  if (props.active) {
+    return '#dfdddd';
+  } else {
+    return 'gray';
+  }
+};
 export const Popular = styled.div``;
 
 export const Wrapper = styled.div``;
@@ -50,7 +57,6 @@ export const BackgroundImage = styled.div`
     }
   }
 `;
-
 export const PopularInfo = styled.div`
   position: absolute;
   top: 20%;
@@ -65,15 +71,7 @@ export const PopularInfo = styled.div`
     transform: translate(-50%, -50%);
     width: 90%;
   }
-
-  /* .popularInfo button {
-    height: 40px;
-    width: 100px;
-    font-size: 90%;
-    margin-top: 0px;
-  } */
 `;
-
 export const Title = styled.h1`
   margin: 0;
   margin-bottom: 30px;
@@ -120,11 +118,5 @@ export const Item = styled.div`
   display: inline-block;
   margin: 20px;
   cursor: pointer;
-  background: ${props => {
-    if (props.active) {
-      return '#dfdddd';
-    } else {
-      return 'gray';
-    }
-  }};
+  background: ${setBackground};
 `;

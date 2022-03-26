@@ -68,7 +68,7 @@ export default function Hero() {
   return (
     <>
       <Popular>
-        {movies.length ? (
+        {movies.length && (
           <Wrapper key={movies[i].id}>
             <Animate to="1" from="0.2" attributeName="opacity">
               <BackgroundImage
@@ -92,7 +92,7 @@ export default function Hero() {
                     Release Date: {new Date(movies[i].release_date).toDateString()}
                   </ReleaseDate>
                   <HeaderOverview>{movies[i].overview}</HeaderOverview>
-                  <Link to={'/' + movies[i].id}>
+                  <Link to={`/movies/${movies[i].id}`}>
                     <Button>Thriler</Button>
                   </Link>
                 </PopularInfo>
@@ -100,8 +100,6 @@ export default function Hero() {
               </BackgroundImage>
             </Animate>
           </Wrapper>
-        ) : (
-          <h4>Loading</h4>
         )}
       </Popular>
     </>
