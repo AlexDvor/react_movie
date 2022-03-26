@@ -8,9 +8,7 @@ const setBackground = props => {
   }
 };
 export const Popular = styled.div``;
-
 export const Wrapper = styled.div``;
-
 export const BackgroundImage = styled.div`
   height: 500px; //750
   width: 100%;
