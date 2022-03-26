@@ -4,4 +4,4 @@
 - Play Button (disabled)
 - remove items (actors) without profile_path
 - debounce react
-- delete GenerationID
+- delete GenerationID -- Fix remover list item (spinner)
