@@ -25,7 +25,7 @@ const middleware = [
 const moviesPersistConfig = {
   key: 'favorite',
   storage,
-  whitelist: ['favorite'],
+  whitelist: ['favorite', 'language'],
 };
 
 const authPersistConfig = {
