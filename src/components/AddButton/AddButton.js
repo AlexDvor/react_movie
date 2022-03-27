@@ -25,5 +25,3 @@ export default function AddButton({ addToList, disabled }) {
     </>
   );
 }
-
-// red  #c1121f
