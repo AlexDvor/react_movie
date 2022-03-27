@@ -65,8 +65,6 @@ export default function MovieDetailsCard({ movie, trailer }) {
                 />
               </ItemButton>
             </ListButton>
-
-            {/* <AdditionalButton movieId={movieId} /> */}
           </WrapperButton>
           {/* <MovieButtonsContainer>
               <MovieButtonsList>
@@ -106,11 +104,7 @@ export default function MovieDetailsCard({ movie, trailer }) {
               </MovieSocialList>
             </MovieSocial> */}
         </InfoSection>
-        <BlurBack
-          style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path}`,
-          }}
-        ></BlurBack>
+        <BlurBack image={movie.backdrop_path}></BlurBack>
       </MovieWrapper>
       {isOpen && (
         <Modal onClose={onClick}>

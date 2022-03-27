@@ -183,6 +183,7 @@ export const BlurBack = styled.div`
   background-size: cover;
   border-radius: 11px;
   background-repeat: no-repeat;
+  background-image: ${props => `url("https://image.tmdb.org/t/p/original/${props.image}")`};
 
   @media screen and (min-width: 768px) {
     width: 80%;
