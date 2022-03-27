@@ -1,5 +1,5 @@
 import Animate from 'react-smooth';
-import logoImdb from '../../images/imdb-logo.png';
+import logo from '../../images/imdb-logo.png';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
@@ -17,6 +17,7 @@ import {
   Button,
   SwitchImg,
   Item,
+  Img,
 } from './Hero.styled';
 
 export default function Hero() {
@@ -79,14 +80,7 @@ export default function Hero() {
                 <PopularInfo>
                   <Title>{movies[i].title}</Title>
                   <Rating>
-                    <em>
-                      <img
-                        src={logoImdb}
-                        alt="Rating"
-                        style={{ width: '40px', height: '20px', marginBottom: '-5px' }}
-                      />{' '}
-                      {movies[i].vote_average}
-                    </em>
+                    <Img src={logo} alt="Rating" /> {movies[i].vote_average}
                   </Rating>
                   <ReleaseDate>
                     Release Date: {new Date(movies[i].release_date).toDateString()}

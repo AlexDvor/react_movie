@@ -75,6 +75,11 @@ export const Title = styled.h1`
   margin-bottom: 30px;
 `;
 export const Rating = styled.p``;
+export const Img = styled.img`
+  width: 40px;
+  height: 20px;
+  margin-bottom: -5px;
+`;
 export const ReleaseDate = styled.p``;
 export const HeaderOverview = styled.p`
   @media screen and (max-width: 900px) {
