@@ -72,11 +72,7 @@ export default function Hero() {
         {movies.length && (
           <Wrapper key={movies[i].id}>
             <Animate to="1" from="0.2" attributeName="opacity">
-              <BackgroundImage
-                style={{
-                  backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%), url("https://image.tmdb.org/t/p/original/${movies[i].backdrop_path}")`,
-                }}
-              >
+              <BackgroundImage image={movies[i].backdrop_path}>
                 <PopularInfo>
                   <Title>{movies[i].title}</Title>
                   <Rating>

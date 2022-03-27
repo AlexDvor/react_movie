@@ -16,6 +16,8 @@ export const BackgroundImage = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  background-image: ${props =>
+    `linear-gradient(90deg, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 60%), url("https://image.tmdb.org/t/p/original/${props.image}")`};
   color: white;
   z-index: 0;
   animation: 6s ease-in-out infinite alternate moving;
