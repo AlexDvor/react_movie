@@ -5,7 +5,18 @@ import { ThreeDots } from 'react-loader-spinner';
 import { getAddingMovie } from '../../redux/movies/movies-selectors';
 import { useSelector } from 'react-redux';
 
-export default function AddButton({ addToList, disabled }) {
+
+type TMovie = {
+  id: number;
+}
+
+interface Props {
+  addToList: TMovie;
+  disabled: boolean;
+}
+
+
+export default function AddButton({ addToList, disabled }:Props) {
   const isAddingMovie = useSelector(getAddingMovie);
   const dispatch = useDispatch();
   const handleClick = () => dispatch(moviesOperations.addMovies(addToList));

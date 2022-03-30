@@ -21,7 +21,7 @@ import {
 import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 //components
 import PlayButton from '../PlayButton/PlayButton';
-import AddButton from '../AddButton/AddButton';
+import AddButton from '../AddButton/AddButton.tsx';
 import Modal from '../Modal/Modal';
 import Player from '../Player/Player';
 //helpers
