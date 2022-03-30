@@ -18,22 +18,33 @@ import ActorsSlider from '../ActorsSlider/ActorsSlider';
 
 const URL = 'https://image.tmdb.org/t/p/w500';
 
-export default function ActorsSection({ data }) {
+type props = {
+  id: number;
+  profile_path: string;
+  name: string;
+}
+
+interface ArrayData {
+ data: props[];  
+}
+
+export default function ActorsSection({ data }: ArrayData) {
   const [actor, setActor] = useState(null);
-  const [personId, setPersonId] = useState(null);
+  const [personId, setPersonId] = useState<string | null>(null);
   const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
     if (personId) fetchPersonById(Number(personId), currentLang.id).then(res => setActor(res));
   }, [currentLang, personId]);
 
-  const checkQuantity = () => {
+  const checkQuantity = ():number => {
     if (data.length > 10) return 9;
     return 7;
   };
 
-  const handleClick = e => {
-    setPersonId(e.target.id);
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+    const target = e.target as Element;
+    setPersonId(target.id);
   };
 
   return (
@@ -45,7 +56,7 @@ export default function ActorsSection({ data }) {
               {data.map(({ id, profile_path, name }) => (
                 <CardWrapper key={id} onClick={handleClick}>
                   <WrapperImage>
-                    <Image src={`${URL}/${profile_path}`} alt={name} width="200px" id={id} />
+                    <Image src={`${URL}/${profile_path}`} alt={name} width="200px" id={`${id}`} />
                   </WrapperImage>
                 </CardWrapper>
               ))}

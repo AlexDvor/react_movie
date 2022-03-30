@@ -6,7 +6,17 @@ import {
   TextMessage,
 } from './AboutActor.styled';
 
-export default function AboutActor({ person }) {
+
+type props = {
+  name: string;
+  biography: string; 
+}
+
+interface PersonProps {
+  person: props;  
+}
+
+export default function AboutActor({ person }: PersonProps) {
   const { name, biography } = person;
 
   const checkBiography = () => {
