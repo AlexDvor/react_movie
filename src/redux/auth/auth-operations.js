@@ -5,6 +5,14 @@ import { toast } from 'react-toastify';
 // axios.defaults.baseURL = 'http://localhost:4040/api';
 axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
 
+type TDataForm = {
+  email: string,
+  name: string,
+  password: string,
+};
+
+type TSignUp = (userData: TDataForm) => TDataForm;
+
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -14,7 +22,7 @@ const token = {
   },
 };
 
-const signup = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
+const signup: TSignUp = createAsyncThunk('auth/signup', async (userData, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/auth/signup', userData);
     return data;

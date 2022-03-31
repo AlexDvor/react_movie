@@ -16,6 +16,13 @@ import {
   Button,
 } from './SignUpForm.styled';
 
+type TUserData = {
+  email: string;
+  name: string;
+  password: string;
+};
+
+
 export default function SignUpForm() {
   const isSentLetter = useSelector(getSentLetter);
   const userName = useSelector(getUsername);
@@ -26,7 +33,7 @@ export default function SignUpForm() {
     password: '',
   };
 
-  const handleSubmit = value => {
+  const handleSubmit = (value:TUserData) => {
     dispatch(authOperations.signup(value));
   };
 

@@ -1,6 +1,11 @@
 import { WrapperMessage, Message, WrapperLink, StyledLink } from './ConfirmEmail.styled';
 
-export default function ConfirmEmail({ name }) {
+
+
+type TName = {
+  name: string;
+}
+export default function ConfirmEmail({ name }:TName) {
   return (
     <>
       <WrapperMessage>
