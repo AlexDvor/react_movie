@@ -24,7 +24,28 @@ import parseMovieGenres from '../../helpers/parseMovieGenres';
 
 const URL = 'https://image.tmdb.org/t/p/w500/';
 
-export default function FavoriteMovieList({ movie }) {
+
+type TObject = {
+  id: number;
+  poster_path: string;
+  backdrop_path:string;
+  name: string;
+  title: string;
+  release_date: string;
+  runtime: number;
+  genres: Object[];
+
+}
+
+interface IMovie {
+  movie: TObject[];
+ 
+}
+
+
+
+export default function FavoriteMovieList({ movie }:IMovie) {
+  console.log('movie,', movie); 
   return (
     <>
       <MovieCardList>
