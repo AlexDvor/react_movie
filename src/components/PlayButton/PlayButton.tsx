@@ -1,13 +1,13 @@
 import { StyledButton, PlayIcon } from './PlayButton.styled';
 
-export default function PlayButton({ movieId, click, isDisable }) {
-  const messageBtn = () => {
-    return !isDisable ? 'Play' : 'Not Available';
-  };
+type TProps = {
+  movieId: number;
+  isDisable: boolean;
+  click: () => void;
+};
 
-  // const showIcon = () => {
-  //   return !isDisable ? 'flex' : 'none';
-  // };
+export default function PlayButton({ movieId, click, isDisable }: TProps) {
+  const messageBtn = () => (!isDisable ? 'Play' : 'Not Available');
 
   return (
     <>
