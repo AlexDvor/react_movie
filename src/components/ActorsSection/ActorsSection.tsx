@@ -22,10 +22,10 @@ type props = {
   id: number;
   profile_path: string;
   name: string;
-}
+};
 
 interface ArrayData {
- data: props[];  
+  data: props[];
 }
 
 export default function ActorsSection({ data }: ArrayData) {
@@ -37,10 +37,7 @@ export default function ActorsSection({ data }: ArrayData) {
     if (personId) fetchPersonById(Number(personId), currentLang.id).then(res => setActor(res));
   }, [currentLang, personId]);
 
-  const checkQuantity = ():number => {
-    if (data.length > 10) return 9;
-    return 7;
-  };
+  const checkQuantity = (): number => (data.length > 10 ? 9 : 7);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     const target = e.target as Element;
