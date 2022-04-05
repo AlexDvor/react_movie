@@ -1,8 +1,13 @@
 import { WrapperLogo, Img } from './Logo.styled';
-import imageLogo from '../../images/logo.png';
 import { Link } from 'react-router-dom';
+import imageLogo from '../../images/logo.png';
 
-export default function Logo({ width, position }) {
+type TProps = {
+  width: string;
+  position: string;
+};
+
+export default function Logo({ width, position }: TProps) {
   return (
     <>
       <Link to="/home">

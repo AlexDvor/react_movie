@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 //components
-import Logo from '../Logo/Logo';
+import Logo from '../Logo/Logo.tsx';
 import UserMenu from '../UserMenu/UserMenu';
 import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
 //style
