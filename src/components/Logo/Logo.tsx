@@ -4,7 +4,7 @@ import imageLogo from '../../images/logo.png';
 
 type TProps = {
   width: string;
-  position: string;
+  position?: string;
 };
 
 export default function Logo({ width, position }: TProps) {
