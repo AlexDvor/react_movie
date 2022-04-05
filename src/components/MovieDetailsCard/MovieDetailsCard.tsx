@@ -21,19 +21,50 @@ import {
 import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 //components
 import PlayButton from '../PlayButton/PlayButton';
-import AddButton from '../AddButton/AddButton.tsx';
+import AddButton from '../AddButton/AddButton';
 import Modal from '../Modal/Modal';
 import Player from '../Player/Player';
 //helpers
 import checkForCopyById from '../../helpers/checkForCopyById';
 import parseMovieGenres from '../../helpers/parseMovieGenres';
 
+type TMovie = {
+  id: number;
+  poster_path: string;
+  backdrop_path: string;
+  name: string;
+  title: string;
+  release_date: string;
+  runtime: number;
+  genres: Object[];
+  [key: string]: any;
+};
+
+type TrailerObj = {
+  id: string;
+  iso_639_1: string;
+  iso_3166_1: string;
+  key: string;
+  name: string;
+  official: boolean;
+  published_at: string;
+  site: string;
+  size: number;
+  type: string;
+};
+
+interface Props {
+  movie: TMovie;
+  trailer: TrailerObj[];
+}
+
 const URL = 'https://image.tmdb.org/t/p/w500/';
 
-export default function MovieDetailsCard({ movie, trailer }) {
+export default function MovieDetailsCard({ movie, trailer }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
-  const onClick = e => setIsOpen(prevState => !prevState);
+  const onClick = () => setIsOpen(prevState => !prevState);
+
   return (
     <>
       <MovieWrapper>
@@ -54,7 +85,7 @@ export default function MovieDetailsCard({ movie, trailer }) {
                 <PlayButton
                   movieId={movie.id}
                   click={onClick}
-                  isDisable={trailer.length >= 1 ? false : true}
+                  isDisable={trailer.length ? false : true}
                 />
               </ItemButton>
 
