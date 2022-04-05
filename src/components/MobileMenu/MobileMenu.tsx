@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 //components
-import Logo from '../Logo/Logo.tsx';
+import Logo from '../Logo/Logo';
 import UserMenu from '../UserMenu/UserMenu';
 import LogOutConfirmModal from '../LogOutConfirmModal/LogOutConfirmModal';
 //style
@@ -15,8 +15,8 @@ import {
 } from './MobileMenu.styled';
 
 export default function MobileMenu() {
-  const [show, setShow] = useState(false);
-  const [modal, setModal] = useState(false);
+  const [show, setShow] = useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false);
   const handleClose = () => setShow(false);
   const toggleShow = () => setShow(state => !state);
   const closeModal = () => setModal(false);
@@ -75,5 +75,3 @@ export default function MobileMenu() {
     </>
   );
 }
-
-// style={{ color: 'white' }}

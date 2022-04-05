@@ -13,8 +13,15 @@ import {
   Button,
 } from './LogOutConfirmModal.styled';
 
-export default function LogOutConfirmModal({ onClick, text, cancelOperation }) {
+type TProps = {
+  text: string;
+  onClick: () => void;
+  cancelOperation: () => void;
+};
+
+export default function LogOutConfirmModal({ onClick, text, cancelOperation }: TProps) {
   const dispatch = useDispatch();
+
   return (
     <>
       <Overlay>

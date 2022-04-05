@@ -1,6 +1,10 @@
 import { Wrapper, Title } from './TitleByType.styled';
 
-export default function TitleByType({ text }) {
+type TProps = {
+  text: string;
+};
+
+export default function TitleByType({ text }: TProps) {
   return (
     <>
       <Wrapper>

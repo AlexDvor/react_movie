@@ -16,8 +16,12 @@ import {
   ExitIcon,
 } from './UserMenu.styled';
 
-export default function UserMenu({ showExitButton }) {
-  const [modal, setModal] = useState(false);
+type TProps = {
+  showExitButton: boolean;
+};
+
+export default function UserMenu({ showExitButton }: TProps) {
+  const [modal, setModal] = useState<boolean>(false);
   const userName = useSelector(getUsername);
 
   const closeModal = () => {

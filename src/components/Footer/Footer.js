@@ -1,8 +1,8 @@
 import Container from '../Container';
 import { WrapperFooter, ContentBox } from './Footer.styled';
-import LanguageSelectBtn from '../LanguageSelectBtn/LanguageSelectBtn.tsx';
 import { getIsLoggedIn } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
+import LanguageSelectBtn from '../LanguageSelectBtn/LanguageSelectBtn.tsx';
 
 export default function Footer() {
   const isLoggedIn = useSelector(getIsLoggedIn);
