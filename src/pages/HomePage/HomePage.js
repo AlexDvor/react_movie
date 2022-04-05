@@ -13,7 +13,7 @@ import {
 import Container from '../../components/Container';
 import HomeMovieList from '../../components/HomeMovieList/HomeMovieList';
 import TitleByType from '../../components/TitleByType/TitleByType';
-import Hero from '../../components/Hero/Hero';
+import Hero from '../../components/Hero/Hero.tsx';
 
 export default function HomePage() {
   const [upComingMovies, setUpComingMovies] = useState([]);

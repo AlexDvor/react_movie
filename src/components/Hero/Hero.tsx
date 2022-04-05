@@ -20,11 +20,23 @@ import {
   Img,
 } from './Hero.styled';
 
+type TMovie = {
+  id: number;
+  poster_path: string;
+  backdrop_path: string;
+  name: string;
+  title: string;
+  release_date: string;
+  runtime: number;
+  genres: Object[];
+  [key: string]: any;
+};
+
 export default function Hero() {
-  const [movies, setMovies] = useState([]);
-  const [i, setI] = useState(0);
+  const [movies, setMovies] = useState<TMovie[]>([]);
+  const [i, setI] = useState<number>(0);
   const currentLang = useSelector(getCurrentLanguages);
-  const intervalId = useRef(null);
+  const intervalId = useRef<NodeJS.Timeout | null>(null);
   const showcaseMovies = 3;
   const timeoutTime = 5000;
 
@@ -43,13 +55,13 @@ export default function Hero() {
     }, timeoutTime);
 
     return () => {
-      clearTimeout(intervalId.current);
+      clearTimeout(intervalId.current as NodeJS.Timeout);
     };
   }, [i]);
 
-  const handelClick = index => {
+  const handelClick = (index: number) => {
     setI(index);
-    clearTimeout(intervalId.current);
+    clearTimeout(intervalId.current as NodeJS.Timeout);
   };
 
   const switchItems = movies.length

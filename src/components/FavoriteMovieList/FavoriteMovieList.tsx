@@ -21,35 +21,16 @@ import RemoveButton from '../RemoveButton/RemoveButton';
 // import PlayButton from '../PlayButton/PlayButton';
 // helpers
 import parseMovieGenres from '../../helpers/parseMovieGenres';
+import IMovies from '../../interfaces/Movie.interface';
 
 const URL = 'https://image.tmdb.org/t/p/w500/';
 
-
-type TObject = {
-  id: number;
-  poster_path: string;
-  backdrop_path:string;
-  name: string;
-  title: string;
-  release_date: string;
-  runtime: number;
-  genres: Object[];
-
-}
-
-interface IMovie {
-  movie: TObject[];
- 
-}
-
-
-
-export default function FavoriteMovieList({ movie }:IMovie) {
-  console.log('movie,', movie); 
+export default function FavoriteMovieList({ movies }: IMovies) {
+  console.log('movie,', movies);
   return (
     <>
       <MovieCardList>
-        {movie.map(item => (
+        {movies.map(item => (
           <MovieCardItem key={item.id}>
             <Link to={{ pathname: `/movies/${item.id}` }}>
               <MovieCard>
