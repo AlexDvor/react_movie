@@ -11,7 +11,14 @@ type TDataForm = {
   password: string,
 };
 
+type TDataLogin = {
+  email: string,
+  password: string,
+};
+
 type TSignUp = (userData: TDataForm) => TDataForm;
+
+type TLogin = (userData: TDataLogin) => TDataLogin;
 
 const token = {
   set(token) {
@@ -32,7 +39,7 @@ const signup: TSignUp = createAsyncThunk('auth/signup', async (userData, { rejec
   }
 });
 
-const login = createAsyncThunk('auth/login', async (userData, { rejectWithValue }) => {
+const login: TLogin = createAsyncThunk('auth/login', async (userData, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/auth/login', userData);
     token.set(data.data.token);

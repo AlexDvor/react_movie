@@ -14,6 +14,11 @@ import {
   Button,
 } from './LogInForm.styled';
 
+type TDataLogin = {
+  email: string;
+  password: string;
+};
+
 export default function LogInForm() {
   const dispatch = useDispatch();
   const initialValues = {
@@ -21,7 +26,7 @@ export default function LogInForm() {
     password: '',
   };
 
-  const handleSubmit = value => {
+  const handleSubmit = (value: TDataLogin) => {
     dispatch(authOperations.login(value));
   };
 
