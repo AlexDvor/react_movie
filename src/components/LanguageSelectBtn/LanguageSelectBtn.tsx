@@ -9,9 +9,9 @@ export default function LanguageSelectBtn() {
   const currentLang = useSelector(getCurrentLanguages);
   const dispatch = useDispatch();
 
-  const handleSelect = value => {
-    const res = languages.find(item => item.id === value);
-    dispatch(changeLanguages(res));
+  const handleSelect = (value: string | null) => {
+    const result = languages.find(item => item.id === value);
+    dispatch(changeLanguages(result));
   };
 
   return (

@@ -23,7 +23,7 @@ export default function MyListPage() {
     <Container>
       <Wrapper>
         {favoriteMovie.length > 0 ? (
-          <FavoriteMovieList movie={favoriteMovie} />
+          <FavoriteMovieList movies={favoriteMovie} />
         ) : (
           <Message>Your List Is Empty</Message>
         )}
