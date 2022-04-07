@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 type TMovie = (userData: Object) => Object;
+type TId = (userData: number) => number;
 
 const getMovies = createAsyncThunk('get/movie', async (_, { rejectWithValue }) => {
   try {
@@ -22,13 +23,16 @@ const addMovies: TMovie = createAsyncThunk('add/movie', async (userData, { rejec
   }
 });
 
-const removeMovieById = createAsyncThunk('remove/movie', async (userData, { rejectWithValue }) => {
-  try {
-    const { data } = await axios.delete(`/users/favorite/remove/${userData}`);
-    return data;
-  } catch (error) {
-    return rejectWithValue(console.log(error));
-  }
-});
+const removeMovieById: TId = createAsyncThunk(
+  'remove/movie',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.delete(`/users/favorite/remove/${userData}`);
+      return data;
+    } catch (error) {
+      return rejectWithValue(console.log(error));
+    }
+  },
+);
 
 export { getMovies, addMovies, removeMovieById };

@@ -4,7 +4,11 @@ import { getRemovingMovie } from '../../redux/movies/movies-selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThreeDots } from 'react-loader-spinner';
 
-export default function RemoveButton({ id }) {
+type Props = {
+  id: number;
+};
+
+export default function RemoveButton({ id }: Props) {
   const isRemovingMovie = useSelector(getRemovingMovie);
   const dispatch = useDispatch();
   return (
