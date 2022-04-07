@@ -25,7 +25,7 @@ import AddButton from '../AddButton/AddButton';
 import Modal from '../Modal/Modal';
 import Player from '../Player/Player';
 //helpers
-import checkForCopyById from '../../helpers/checkForCopyById';
+import checkCopyById from '../../helpers/checkCopyById';
 import parseMovieGenres from '../../helpers/parseMovieGenres';
 
 type TMovie = {
@@ -36,7 +36,10 @@ type TMovie = {
   title: string;
   release_date: string;
   runtime: number;
-  genres: Object[];
+  genres: {
+    id: number;
+    name: string;
+  }[];
   [key: string]: any;
 };
 
@@ -61,6 +64,7 @@ interface Props {
 const URL = 'https://image.tmdb.org/t/p/w500/';
 
 export default function MovieDetailsCard({ movie, trailer }: Props) {
+  console.log('Movie', movie);
   const [isOpen, setIsOpen] = useState(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
   const onClick = () => setIsOpen(prevState => !prevState);
@@ -90,10 +94,7 @@ export default function MovieDetailsCard({ movie, trailer }: Props) {
               </ItemButton>
 
               <ItemButton>
-                <AddButton
-                  addToList={movie}
-                  disabled={checkForCopyById(favoriteMovies, movie.id)}
-                />
+                <AddButton addToList={movie} disabled={checkCopyById(favoriteMovies, movie.id)} />
               </ItemButton>
             </ListButton>
           </WrapperButton>

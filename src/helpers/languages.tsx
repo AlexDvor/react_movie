@@ -1,4 +1,10 @@
-export const languages = [
+type TValue = {
+  code: string;
+  label: string;
+  id: string;
+}[];
+
+export const languages: TValue = [
   {
     code: 'DE',
     label: 'German',
