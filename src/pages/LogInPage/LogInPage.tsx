@@ -3,8 +3,8 @@ import { isLoadingAuth } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
 //components
 import Container from '../../components/Container';
-import Logo from '../../components/Logo/Logo.tsx';
-import LogInForm from '../../components/LogInForm/LogInForm.tsx';
+import Logo from '../../components/Logo/Logo';
+import LogInForm from '../../components/LogInForm/LogInForm';
 import Spinner from '../../components/Spinner/Spinner';
 
 export default function LogInPage() {

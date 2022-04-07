@@ -7,16 +7,35 @@ import { getFetchingCurrent } from '../../redux/auth/auth-selectors';
 // Components
 import Container from '../../components/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
-import ActorsSection from '../../components/ActorsSection/ActorsSection.tsx';
+import ActorsSection from '../../components/ActorsSection/ActorsSection';
 import Spinner from '../../components/Spinner/Spinner';
 //helpers
 import { filterByProfilePath } from '../../helpers/filterByPath';
 
+type TParams = {
+  movieId: string;
+};
+
+type TActor = {
+  adult: boolean;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  order: number;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+};
+
 export default function AboutMoviePage() {
   const [movie, setMovie] = useState(null);
-  const [actorsData, setActorsData] = useState([]);
+  const [actorsData, setActorsData] = useState<TActor[]>([]);
   const [trailer, setTrailer] = useState([]);
-  const { movieId } = useParams('');
+  const { movieId } = useParams<TParams>();
   const currentLang = useSelector(getCurrentLanguages);
   const isFetchingCurrent = useSelector(getFetchingCurrent);
 
