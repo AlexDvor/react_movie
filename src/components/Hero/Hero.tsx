@@ -20,7 +20,7 @@ import {
   Img,
 } from './Hero.styled';
 
-type TMovie = {
+type TMovieState = {
   id: number;
   poster_path: string;
   backdrop_path: string;
@@ -30,15 +30,15 @@ type TMovie = {
   runtime: number;
   genres: Object[];
   [key: string]: any;
-};
+}[];
 
 export default function Hero() {
-  const [movies, setMovies] = useState<TMovie[]>([]);
+  const [movies, setMovies] = useState<TMovieState>([]);
   const [i, setI] = useState<number>(0);
   const currentLang = useSelector(getCurrentLanguages);
   const intervalId = useRef<NodeJS.Timeout | null>(null);
-  const showcaseMovies = 3;
-  const timeoutTime = 5000;
+  const showcaseMovies: number = 3;
+  const timeoutTime: number = 5000;
 
   useEffect(() => {
     const randomPage = Math.floor(Math.random() * 10) + 1;

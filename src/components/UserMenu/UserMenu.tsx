@@ -24,11 +24,11 @@ export default function UserMenu({ showExitButton }: TProps) {
   const [modal, setModal] = useState<boolean>(false);
   const userName = useSelector(getUsername);
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setModal(false);
   };
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setModal(true);
   };
 

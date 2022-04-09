@@ -18,7 +18,6 @@ import {
 } from './FavoriteMovieList.styled';
 //components
 import RemoveButton from '../RemoveButton/RemoveButton';
-// import PlayButton from '../PlayButton/PlayButton';
 // helpers
 import parseMovieGenres from '../../helpers/parseMovieGenres';
 import IMovies from '../../interfaces/Movie.interface';

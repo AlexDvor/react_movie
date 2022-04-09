@@ -1,7 +1,11 @@
 import { NavList, NavItem, StyledNavLink } from './Navigation.styled';
 
+type TObject = {
+  color: string;
+};
+
 export default function Navigation() {
-  const setActivePage = state => {
+  const setActivePage = (state: boolean): TObject => {
     if (state) {
       return { color: '#c1121f' };
     } else {

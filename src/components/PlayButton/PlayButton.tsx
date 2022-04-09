@@ -6,8 +6,10 @@ type TProps = {
   click: () => void;
 };
 
+type TFnMessageBtn = () => 'Play' | 'Not Available';
+
 export default function PlayButton({ movieId, click, isDisable }: TProps) {
-  const messageBtn = () => (!isDisable ? 'Play' : 'Not Available');
+  const messageBtn: TFnMessageBtn = () => (!isDisable ? 'Play' : 'Not Available');
 
   return (
     <>

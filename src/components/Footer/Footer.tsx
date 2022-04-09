@@ -2,7 +2,7 @@ import Container from '../Container/Container';
 import { WrapperFooter, ContentBox } from './Footer.styled';
 import { getIsLoggedIn } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
-import LanguageSelectBtn from '../LanguageSelectBtn/LanguageSelectBtn.tsx';
+import LanguageSelectBtn from '../LanguageSelectBtn/LanguageSelectBtn';
 
 export default function Footer() {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -18,5 +18,3 @@ export default function Footer() {
     )
   );
 }
-
-// onSelect={(e: string) => setSelectedFruit(Number(e))}>

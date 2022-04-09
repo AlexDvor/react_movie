@@ -11,19 +11,6 @@ export const NavItem = styled.li`
   }
 `;
 
-// export const StyledNavLink = styled(NavLink)({
-//   color: 'white',
-
-//   '&[aria-current="page"]': {
-//     color: '#c1121f',
-//   },
-// });
-
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
-
-  /* &:focus,
-  &:hover {
-    color: red;
-  } */
 `;

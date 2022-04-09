@@ -61,13 +61,12 @@ interface Props {
   trailer: TrailerObj[];
 }
 
-const URL = 'https://image.tmdb.org/t/p/w500/';
+const URL: string = 'https://image.tmdb.org/t/p/w500/';
 
 export default function MovieDetailsCard({ movie, trailer }: Props) {
-  console.log('Movie', movie);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
-  const onClick = () => setIsOpen(prevState => !prevState);
+  const onClick = (): void => setIsOpen(prevState => !prevState);
 
   return (
     <>

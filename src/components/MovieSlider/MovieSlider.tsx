@@ -1,6 +1,10 @@
 import Slider from 'react-slick';
 
-export default function MovieSlider({ children }) {
+type TProps = {
+  children: JSX.Element | JSX.Element[];
+};
+
+export default function MovieSlider({ children }: TProps) {
   const settings = {
     dots: false,
     infinite: true, // Infinitely wrap around contents

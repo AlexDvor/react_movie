@@ -17,10 +17,10 @@ import {
 export default function MobileMenu() {
   const [show, setShow] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
-  const handleClose = () => setShow(false);
-  const toggleShow = () => setShow(state => !state);
-  const closeModal = () => setModal(false);
-  const handleClick = () => {
+  const handleClose = (): void => setShow(false);
+  const toggleShow = (): void => setShow(state => !state);
+  const closeModal = (): void => setModal(false);
+  const handleClick = (): void => {
     setShow(false);
     setModal(true);
   };
