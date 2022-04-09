@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import { getFetchingCurrent } from '../../redux/auth/auth-selectors';
 // Components
-import Container from '../../components/Container';
+import Container from '../../components/Container/Container';
 import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
 import ActorsSection from '../../components/ActorsSection/ActorsSection';
 import Spinner from '../../components/Spinner/Spinner';

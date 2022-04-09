@@ -6,27 +6,27 @@ import {
   TextMessage,
 } from './AboutActor.styled';
 
-
-type props = {
+type TObject = {
   name: string;
-  biography: string; 
-}
+  biography: string;
+};
 
 interface PersonProps {
-  person: props;  
+  person: TObject;
 }
 
 export default function AboutActor({ person }: PersonProps) {
   const { name, biography } = person;
 
   const checkBiography = () => {
-    if (biography === '')
+    if (biography === '') {
       return (
         <TextMessage>
           <ExclamationIcon fontSize="1.2em" />
           {`Sorry, we don't have biography about ${name}`}
         </TextMessage>
       );
+    }
     return biography;
   };
 

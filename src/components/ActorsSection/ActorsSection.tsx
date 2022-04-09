@@ -16,19 +16,19 @@ import {
 import AboutActor from '../AboutActor/AboutActor';
 import ActorsSlider from '../ActorsSlider/ActorsSlider';
 
-const URL = 'https://image.tmdb.org/t/p/w500';
-
-type props = {
+type TObject = {
   id: number;
   profile_path: string;
   name: string;
 };
 
-interface ArrayData {
-  data: props[];
+interface Props {
+  data: TObject[];
 }
 
-export default function ActorsSection({ data }: ArrayData) {
+const URL: string = 'https://image.tmdb.org/t/p/w500';
+
+export default function ActorsSection({ data }: Props) {
   const [actor, setActor] = useState(null);
   const [personId, setPersonId] = useState<string | null>(null);
   const currentLang = useSelector(getCurrentLanguages);
@@ -37,7 +37,7 @@ export default function ActorsSection({ data }: ArrayData) {
     if (personId) fetchPersonById(Number(personId), currentLang.id).then(res => setActor(res));
   }, [currentLang, personId]);
 
-  const checkQuantity = (): number => (data.length > 10 ? 9 : 7);
+  const checkQuantity = () => (data.length > 10 ? 9 : 7);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     const target = e.target as Element;

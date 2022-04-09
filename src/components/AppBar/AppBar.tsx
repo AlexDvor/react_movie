@@ -1,5 +1,5 @@
 // components
-import Container from '../Container';
+import Container from '../Container/Container';
 import UserMenu from '../UserMenu/UserMenu';
 import Navigation from '../Navigation/Navigation';
 import MobileMenu from '../MobileMenu/MobileMenu';

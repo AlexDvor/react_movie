@@ -1,22 +1,20 @@
 import { StyledButton, AddIcon, AddedIcon } from './AddButton.styled';
 import { useDispatch } from 'react-redux';
-import * as moviesOperations from '../../redux/movies/movies-operations';
 import { ThreeDots } from 'react-loader-spinner';
 import { getAddingMovie } from '../../redux/movies/movies-selectors';
 import { useSelector } from 'react-redux';
-
+import * as moviesOperations from '../../redux/movies/movies-operations';
 
 type TMovie = {
   id: number;
-}
+};
 
 interface Props {
   addToList: TMovie;
   disabled: boolean;
 }
 
-
-export default function AddButton({ addToList, disabled }:Props) {
+export default function AddButton({ addToList, disabled }: Props) {
   const isAddingMovie = useSelector(getAddingMovie);
   const dispatch = useDispatch();
   const handleClick = () => dispatch(moviesOperations.addMovies(addToList));

@@ -1,6 +1,11 @@
 import Slider from 'react-slick';
 
-export default function ActorsSlider({ children, quantity = 12 }) {
+interface Props {
+  children: JSX.Element;
+  quantity: number;
+}
+
+export default function ActorsSlider({ children, quantity = 12 }: Props) {
   const settings = {
     dots: false,
     infinite: true, // Infinitely wrap around contents

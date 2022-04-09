@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ImageWrapper, Image, CardWrapper } from './HomeMovieList.styled';
-import Container from '../Container';
+import Container from '../Container/Container';
 import MovieSlider from '../MovieSlider/MovieSlider';
 import IMovies from '../../interfaces/Movie.interface';
 

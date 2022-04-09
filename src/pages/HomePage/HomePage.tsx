@@ -10,7 +10,7 @@ import {
 } from '../../services/movies-api';
 
 //components
-import Container from '../../components/Container';
+import Container from '../../components/Container/Container';
 import HomeMovieList from '../../components/HomeMovieList/HomeMovieList';
 import TitleByType from '../../components/TitleByType/TitleByType';
 import Hero from '../../components/Hero/Hero';

@@ -1,4 +1,4 @@
-import Container from '../Container';
+import Container from '../Container/Container';
 import { WrapperFooter, ContentBox } from './Footer.styled';
 import { getIsLoggedIn } from '../../redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
