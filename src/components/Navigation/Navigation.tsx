@@ -4,15 +4,15 @@ type TObject = {
   color: string;
 };
 
-export default function Navigation() {
-  const setActivePage = (state: boolean): TObject => {
-    if (state) {
-      return { color: '#c1121f' };
-    } else {
-      return { color: 'white' };
-    }
-  };
+const setActivePage = (state: boolean): TObject => {
+  if (state) {
+    return { color: '#c1121f' };
+  } else {
+    return { color: 'white' };
+  }
+};
 
+export default function Navigation() {
   return (
     <>
       <NavList>

@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 
 type TProps = {
-  children: JSX.Element | JSX.Element[];
+  children: number | JSX.Element | JSX.Element[];
 };
 
 export default function MovieSlider({ children }: TProps) {

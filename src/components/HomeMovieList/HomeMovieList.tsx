@@ -2,15 +2,19 @@ import { Link } from 'react-router-dom';
 import { ImageWrapper, Image, CardWrapper } from './HomeMovieList.styled';
 import Container from '../Container/Container';
 import MovieSlider from '../MovieSlider/MovieSlider';
-import IMovies from '../../interfaces/Movie.interface';
+import IMovie from '../../interfaces/Movie.interface';
 
-export default function HomeMovieList({ movies }: IMovies) {
-  const URL: string = 'https://image.tmdb.org/t/p/w500/';
+const URL: string = 'https://image.tmdb.org/t/p/w500/';
 
+type Props = {
+  movies: IMovie[];
+};
+
+export default function HomeMovieList({ movies }: Props) {
   return (
     <Container>
       <MovieSlider>
-        {movies.length > 0 &&
+        {movies.length &&
           movies.map(({ id, poster_path, title }) => (
             <CardWrapper key={id}>
               <Link to={{ pathname: `/movies/${id}` }}>

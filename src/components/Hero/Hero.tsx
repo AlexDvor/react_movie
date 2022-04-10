@@ -19,21 +19,11 @@ import {
   Item,
   Img,
 } from './Hero.styled';
-
-type TMovieState = {
-  id: number;
-  poster_path: string;
-  backdrop_path: string;
-  name: string;
-  title: string;
-  release_date: string;
-  runtime: number;
-  genres: Object[];
-  [key: string]: any;
-}[];
+// Interface TS
+import IMovie from '../../interfaces/Movie.interface';
 
 export default function Hero() {
-  const [movies, setMovies] = useState<TMovieState>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
   const [i, setI] = useState<number>(0);
   const currentLang = useSelector(getCurrentLanguages);
   const intervalId = useRef<NodeJS.Timeout | null>(null);

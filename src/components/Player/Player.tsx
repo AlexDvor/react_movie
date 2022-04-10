@@ -3,27 +3,16 @@ import { useEffect, useState } from 'react';
 import { fetchTrailer } from '../../services/movies-api';
 import { useSelector } from 'react-redux';
 import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
+//interface TS
+import ITrailer from '../../interfaces/Trailer.interface';
 
 type TMovieId = {
   movieId: number;
 };
 
-type TTrailer = {
-  id: string;
-  iso_639_1: string;
-  iso_3166_1: string;
-  key: string;
-  name: string;
-  official: boolean;
-  published_at: string;
-  site: string;
-  size: number;
-  type: string;
-}[];
-
 export default function Player({ movieId }: TMovieId) {
   const URL: string = 'https://www.youtube.com';
-  const [movie, setMovie] = useState<TTrailer>([]);
+  const [movie, setMovie] = useState<ITrailer[]>([]);
   const currentLang = useSelector(getCurrentLanguages);
 
   const settings = {

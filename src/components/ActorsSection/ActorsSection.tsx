@@ -16,6 +16,8 @@ import {
 import AboutActor from '../AboutActor/AboutActor';
 import ActorsSlider from '../ActorsSlider/ActorsSlider';
 
+const URL: string = 'https://image.tmdb.org/t/p/w500';
+
 type TObject = {
   id: number;
   profile_path: string;
@@ -25,8 +27,6 @@ type TObject = {
 interface Props {
   data: TObject[];
 }
-
-const URL: string = 'https://image.tmdb.org/t/p/w500';
 
 export default function ActorsSection({ data }: Props) {
   const [actor, setActor] = useState(null);

@@ -20,12 +20,16 @@ import {
 import RemoveButton from '../RemoveButton/RemoveButton';
 // helpers
 import parseMovieGenres from '../../helpers/parseMovieGenres';
-import IMovies from '../../interfaces/Movie.interface';
+//Interface TS
+import IMovie from '../../interfaces/Movie.interface';
 
-const URL = 'https://image.tmdb.org/t/p/w500/';
+const URL: string = 'https://image.tmdb.org/t/p/w500/';
 
-export default function FavoriteMovieList({ movies }: IMovies) {
-  console.log('movie,', movies);
+type TProps = {
+  movies: IMovie[];
+};
+
+export default function FavoriteMovieList({ movies }: TProps) {
   return (
     <>
       <MovieCardList>

@@ -4,13 +4,11 @@ import { ThreeDots } from 'react-loader-spinner';
 import { getAddingMovie } from '../../redux/movies/movies-selectors';
 import { useSelector } from 'react-redux';
 import * as moviesOperations from '../../redux/movies/movies-operations';
-
-type TMovie = {
-  id: number;
-};
+// Interface TS
+import IMovie from '../../interfaces/Movie.interface';
 
 interface Props {
-  addToList: TMovie;
+  addToList: IMovie;
   disabled: boolean;
 }
 

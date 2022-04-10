@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 
 interface Props {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
   quantity: number;
 }
 

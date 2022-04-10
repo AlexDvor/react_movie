@@ -1,4 +1,4 @@
-type TObject = {
+export default interface IMovie {
   adult: boolean;
   backdrop_path: string;
   budget: number;
@@ -35,8 +35,4 @@ type TObject = {
     iso_3166_1: string;
     name: string;
   }[];
-};
-
-export default interface IMovies {
-  movies: TObject[];
 }

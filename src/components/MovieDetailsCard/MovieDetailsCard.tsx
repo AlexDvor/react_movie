@@ -27,43 +27,19 @@ import Player from '../Player/Player';
 //helpers
 import checkCopyById from '../../helpers/checkCopyById';
 import parseMovieGenres from '../../helpers/parseMovieGenres';
+// Interface TS
+import IMovie from '../../interfaces/Movie.interface';
+import ITrailer from '../../interfaces/Trailer.interface';
 
-type TMovie = {
-  id: number;
-  poster_path: string;
-  backdrop_path: string;
-  name: string;
-  title: string;
-  release_date: string;
-  runtime: number;
-  genres: {
-    id: number;
-    name: string;
-  }[];
-  [key: string]: any;
-};
-
-type TrailerObj = {
-  id: string;
-  iso_639_1: string;
-  iso_3166_1: string;
-  key: string;
-  name: string;
-  official: boolean;
-  published_at: string;
-  site: string;
-  size: number;
-  type: string;
-};
-
-interface Props {
-  movie: TMovie;
-  trailer: TrailerObj[];
+interface IProps {
+  movie: IMovie;
+  trailer: ITrailer[];
 }
 
 const URL: string = 'https://image.tmdb.org/t/p/w500/';
 
-export default function MovieDetailsCard({ movie, trailer }: Props) {
+export default function MovieDetailsCard({ movie, trailer }: IProps) {
+  console.log('trailer', trailer);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
   const onClick = (): void => setIsOpen(prevState => !prevState);

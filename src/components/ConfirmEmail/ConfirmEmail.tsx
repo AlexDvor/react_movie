@@ -3,6 +3,7 @@ import { WrapperMessage, Message, WrapperLink, StyledLink } from './ConfirmEmail
 type Props = {
   name: string;
 };
+
 export default function ConfirmEmail({ name }: Props) {
   return (
     <>

@@ -1,4 +1,4 @@
-type TrailerObj = {
+export default interface ITrailer {
   id: string;
   iso_639_1: string;
   iso_3166_1: string;
@@ -9,8 +9,4 @@ type TrailerObj = {
   site: string;
   size: number;
   type: string;
-};
-
-export default interface ITrailer {
-  trailer: TrailerObj[];
 }
