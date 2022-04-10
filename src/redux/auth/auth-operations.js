@@ -6,18 +6,17 @@ import { toast } from 'react-toastify';
 axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
 
 type TDataForm = {
-  email: string,
-  name: string,
-  password: string,
+  email: string;
+  name: string;
+  password: string;
 };
 
 type TDataLogin = {
-  email: string,
-  password: string,
+  email: string;
+  password: string;
 };
 
 type TSignUp = (userData: TDataForm) => TDataForm;
-
 type TLogin = (userData: TDataLogin) => TDataLogin;
 
 const token = {
