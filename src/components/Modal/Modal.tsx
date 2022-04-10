@@ -11,7 +11,7 @@ type TProps = {
 
 export default function Modal({ children, onClose }: TProps) {
   useEffect(() => {
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.code === 'Escape') onClose();
     };
 
