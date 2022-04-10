@@ -16,7 +16,6 @@ import {
   ListButton,
   ItemButton,
 } from './MovieDetailsCard.styled';
-
 //redux
 import { getFavoriteMovies } from '../../redux/movies/movies-selectors';
 //components
@@ -39,7 +38,6 @@ interface IProps {
 const URL: string = 'https://image.tmdb.org/t/p/w500/';
 
 export default function MovieDetailsCard({ movie, trailer }: IProps) {
-  console.log('trailer', trailer);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const favoriteMovies = useSelector(getFavoriteMovies);
   const onClick = (): void => setIsOpen(prevState => !prevState);

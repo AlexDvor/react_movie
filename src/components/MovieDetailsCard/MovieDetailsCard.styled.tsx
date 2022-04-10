@@ -174,7 +174,7 @@ export const MovieText = styled.p`
 //   }
 // `;
 
-export const BlurBack = styled.div`
+export const BlurBack = styled.div<{ image: string }>`
   position: absolute;
   top: 0;
   z-index: 1;

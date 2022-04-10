@@ -1,21 +1,25 @@
 import styled from '@emotion/styled';
 import { AiFillPlayCircle } from 'react-icons/ai';
 
-const setBackgroundImage = props => {
+type DisabledProps = {
+  disabled: boolean;
+};
+
+const setBackgroundImage = (props: DisabledProps): string | null => {
   if (!props.disabled) {
     return 'linear-gradient(to right top, #780000, #890409, #9c0810, #ae0d17, #c1121f);';
   }
   return null;
 };
 
-const setColor = props => {
+const setColor = (props: DisabledProps): string | null => {
   if (!props.disabled) {
     return 'white';
   }
-  return 'null';
+  return null;
 };
 
-const setFontSize = props => {
+const setFontSize = (props: DisabledProps): string => {
   if (!props.disabled) {
     return '12px';
   }
@@ -52,7 +56,7 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const PlayIcon = styled(AiFillPlayCircle)`
+export const PlayIcon = styled(AiFillPlayCircle)<DisabledProps>`
   font-size: 20px;
   margin-right: 8px;
 `;

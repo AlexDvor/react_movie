@@ -1,15 +1,18 @@
 import styled from '@emotion/styled';
 
-const setBackground = props => {
+const setBackground = (props: { active: string | null; theme: object }) => {
   if (props.active) {
     return '#dfdddd';
   } else {
     return 'gray';
   }
 };
+
 export const Popular = styled.div``;
+
 export const Wrapper = styled.div``;
-export const BackgroundImage = styled.div`
+
+export const BackgroundImage = styled.div<{ image: string }>`
   height: 500px; //750
   width: 100%;
   background-position: center top;
@@ -57,6 +60,7 @@ export const BackgroundImage = styled.div`
     }
   }
 `;
+
 export const PopularInfo = styled.div`
   position: absolute;
   top: 20%;
@@ -72,22 +76,28 @@ export const PopularInfo = styled.div`
     width: 90%;
   }
 `;
+
 export const Title = styled.h1`
   margin: 0;
   margin-bottom: 30px;
 `;
+
 export const Rating = styled.p``;
+
 export const Img = styled.img`
   width: 40px;
   height: 20px;
   margin-bottom: -5px;
 `;
+
 export const ReleaseDate = styled.p``;
+
 export const HeaderOverview = styled.p`
   @media screen and (max-width: 900px) {
     display: none;
   }
 `;
+
 export const Button = styled.button`
   width: 150px;
   padding: 15px;
@@ -105,6 +115,7 @@ export const Button = styled.button`
     color: white;
   }
 `;
+
 export const SwitchImg = styled.div`
   display: none;
   position: absolute;
@@ -116,7 +127,8 @@ export const SwitchImg = styled.div`
     display: block;
   }
 `;
-export const Item = styled.div`
+
+export const Item = styled.div<{ active: string | null }>`
   width: 50px;
   height: 5px;
   border-radius: 2px;

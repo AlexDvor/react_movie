@@ -1,8 +1,12 @@
 import styled from '@emotion/styled';
 import { MdExitToApp } from 'react-icons/md';
 
-const setDisplay = props => {
-  if (props.showExitButton === true) {
+type PropsButton = {
+  showExitButton: boolean;
+};
+
+const setDisplay = (props: PropsButton) => {
+  if (props.showExitButton) {
     return 'block';
   } else {
     return 'none';
@@ -38,7 +42,7 @@ export const Name = styled.p`
   display: inline;
   color: White;
 `;
-export const WrapperButton = styled.div`
+export const WrapperButton = styled.div<PropsButton>`
   padding: 20px 0px;
   display: ${setDisplay};
 `;

@@ -1,13 +1,18 @@
 import styled from '@emotion/styled';
 
-const setPosition = props => {
+type PositionProps = {
+  width: string;
+  position?: string;
+};
+
+const setPosition = (props: PositionProps): string => {
   if (!props.position) {
     return 'absolute';
   }
   return props.position;
 };
 
-export const WrapperLogo = styled.div`
+export const WrapperLogo = styled.div<PositionProps>`
   position: ${setPosition};
   top: 18px;
   left: 35px;
