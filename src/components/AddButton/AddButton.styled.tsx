@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { MdBookmarkAdd } from 'react-icons/md';
 import { MdBookmarkAdded } from 'react-icons/md';
 
-const setHover = props => {
+const setHover = (props: { disabled: boolean }) => {
   if (!props.disabled) {
     return '#c1121f';
   }

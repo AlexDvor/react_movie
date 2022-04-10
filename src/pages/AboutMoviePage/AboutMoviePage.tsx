@@ -32,7 +32,7 @@ type TActor = {
 };
 
 export default function AboutMoviePage() {
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState(null as any);
   const [actorsData, setActorsData] = useState<TActor[]>([]);
   const [trailer, setTrailer] = useState([]);
   const { movieId } = useParams<TParams>();

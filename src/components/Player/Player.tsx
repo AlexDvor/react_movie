@@ -22,16 +22,14 @@ export default function Player({ movieId }: TMovieId) {
     height: '100%',
 
     config: {
-      youtube: {
-        playerVars: {
-          showinfo: 0,
-          enablejsapi: 1,
-          autoplay: 1,
-          controls: 1,
-          autohide: 1,
-          wmode: 'opaque',
-          origin: 'http://localhost:3000',
-        },
+      playerVars: {
+        showinfo: 0,
+        enablejsapi: 1,
+        autoplay: 1,
+        controls: 1,
+        autohide: 1,
+        wmode: 'opaque',
+        origin: 'http://localhost:3000',
       },
     },
   };
