@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-type TMovie = (userData: Object) => Object;
-type TId = (userData: number) => number;
+import IMovie from '../../interfaces/Movie.interface';
 
 const getMovies = createAsyncThunk('get/movie', async (_, { rejectWithValue }) => {
   try {
@@ -13,7 +11,7 @@ const getMovies = createAsyncThunk('get/movie', async (_, { rejectWithValue }) =
   }
 });
 
-const addMovies: TMovie = createAsyncThunk('add/movie', async (userData, { rejectWithValue }) => {
+const addMovies = createAsyncThunk('add/movie', async (userData: IMovie, { rejectWithValue }) => {
   try {
     console.log('ssssss', userData);
     const { data } = await axios.post('/users/favorite/add', userData);
@@ -23,9 +21,9 @@ const addMovies: TMovie = createAsyncThunk('add/movie', async (userData, { rejec
   }
 });
 
-const removeMovieById: TId = createAsyncThunk(
+const removeMovieById = createAsyncThunk(
   'remove/movie',
-  async (userData, { rejectWithValue }) => {
+  async (userData: number, { rejectWithValue }) => {
     try {
       const { data } = await axios.delete(`/users/favorite/remove/${userData}`);
       return data;
