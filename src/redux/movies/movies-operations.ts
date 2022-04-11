@@ -13,7 +13,6 @@ const getMovies = createAsyncThunk('get/movie', async (_, { rejectWithValue }) =
 
 const addMovies = createAsyncThunk('add/movie', async (userData: IMovie, { rejectWithValue }) => {
   try {
-    console.log('ssssss', userData);
     const { data } = await axios.post('/users/favorite/add', userData);
     return data;
   } catch (error) {
