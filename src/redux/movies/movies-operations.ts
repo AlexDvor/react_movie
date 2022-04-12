@@ -2,32 +2,13 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import IMovie from '../../interfaces/Movie.interface';
 
-interface IActionGetMovies {
-    code: number;
-    data: IMovie[];
-    status: string;
-}
-
-interface IActionAddMovies {
- code: number;
-  data: IMovie;
-  status: string;
-}
-
-interface IActionRemove {
-  code: number;
-  data: {id:number};
-  status: string;
-}
-
-interface TestAction<T>{
+interface ActionInterface<T>{
   code: number;
   data: T;
   status: string;
 
 }
-
-const getMovies = createAsyncThunk<IActionGetMovies>('get/movie', async (_, { rejectWithValue }) => {
+const getMovies = createAsyncThunk<ActionInterface<IMovie[]>>('get/movie', async (_, { rejectWithValue }) => {
   try {
     const { data } = await axios.get('/users/favorite/get');
     return data 
@@ -36,7 +17,7 @@ const getMovies = createAsyncThunk<IActionGetMovies>('get/movie', async (_, { re
   }
 });
 
-const addMovies = createAsyncThunk<IActionAddMovies, any,{}>('add/movie', async (userData, { rejectWithValue}) => {
+const addMovies = createAsyncThunk<ActionInterface<IMovie>, any,{}>('add/movie', async (userData, { rejectWithValue}) => {
   try {
     const { data } = await axios.post('/users/favorite/add', userData);
     return data;
@@ -45,11 +26,12 @@ const addMovies = createAsyncThunk<IActionAddMovies, any,{}>('add/movie', async 
   }
 });
 
-const removeMovieById = createAsyncThunk<IActionRemove, any, {} >(
+const removeMovieById = createAsyncThunk<ActionInterface<{id:number}>, number, {} >(
   'remove/movie',
-  async (userData: number, { rejectWithValue }) => {
+  async (userData:number, { rejectWithValue }) => {
     try {
       const { data } = await axios.delete(`/users/favorite/remove/${userData}`);
+      console.log("remove data ", data)
       return data;
     } catch (error) {
       return rejectWithValue(console.log(error));
@@ -58,3 +40,5 @@ const removeMovieById = createAsyncThunk<IActionRemove, any, {} >(
 );
 
 export { getMovies, addMovies, removeMovieById };
+
+

@@ -2,17 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import * as moviesOperations from './movies-operations';
 import TMovie from '../../interfaces/Movie.interface'
 
-
-type TInitialState = {
+interface TInitialState {
   favorite: TMovie[],
   isLoading: boolean,
   isAddingMovie:  boolean,
   isRemovingMovie:  boolean,
   language: { code: string, label: string, id: string },
 };
-
-
-
 
 const initialState:TInitialState = {
   favorite: [],
@@ -58,18 +54,12 @@ state.isLoading = false;
     })
   
   
-  
-  
-  
-  
-  builder.addCase(moviesOperations.removeMovieById.fulfilled, (state, action) => {
-    console.log("removeId", action)
-   const result = state.favorite.filter(todo => todo.id !== action.payload.data.id);
+  builder.addCase(moviesOperations.removeMovieById.fulfilled, (state, {payload}) => {
+   const result = state.favorite.filter(todo => todo.id !== payload.data.id);
       state.favorite = [...result];
       state.isLoading = false;
       state.isRemovingMovie = false;
   })
-  
   builder.addCase(moviesOperations.removeMovieById.pending, (state, _) => {
  state.isLoading = true;
       state.isRemovingMovie = true;
@@ -81,7 +71,6 @@ state.isLoading = false;
   
   
   },
-
 
   // extraReducers: {
   //   [moviesOperations.getMovies.fulfilled](state, { payload }) {
