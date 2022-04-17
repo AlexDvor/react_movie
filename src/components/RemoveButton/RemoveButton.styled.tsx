@@ -18,7 +18,6 @@ export const StyledButton = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    background: white;
     color: black;
     svg {
       color: black;
