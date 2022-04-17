@@ -31,7 +31,6 @@ const removeMovieById = createAsyncThunk<ActionInterface<{id:number}>, number, {
   async (userData:number, { rejectWithValue }) => {
     try {
       const { data } = await axios.delete(`/users/favorite/remove/${userData}`);
-      console.log("remove data ", data)
       return data;
     } catch (error) {
       return rejectWithValue(console.log(error));
