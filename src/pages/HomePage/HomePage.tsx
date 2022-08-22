@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getCurrentLanguages } from '../../redux/movies/movies-selectors';
 import { useSelector } from 'react-redux';
+import { fetchAllCategory } from '../../services/movies-api';
 import { Wrapper } from './HomePage.styled';
-import {
-  fetchUpMovies,
-  fetchTopMovies,
-  fetchPopularMovies,
-  fetchTrendMovies,
-} from '../../services/movies-api';
-
 //components
 import Container from '../../components/Container/Container';
 import HomeMovieList from '../../components/HomeMovieList/HomeMovieList';
@@ -23,10 +17,12 @@ export default function HomePage() {
   const currentLang = useSelector(getCurrentLanguages);
 
   useEffect(() => {
-    fetchUpMovies(currentLang.id).then(res => setUpComingMovies(res.results));
-    fetchTopMovies(currentLang.id).then(res => setTopMovies(res.results));
-    fetchPopularMovies(currentLang.id).then(res => setPopularMovies(res.results));
-    fetchTrendMovies(currentLang.id).then(res => setTrendMovies(res.results));
+    fetchAllCategory(currentLang.id).then(({ upcoming, top_rated, popular, movie_day }) => {
+      setUpComingMovies(upcoming.results);
+      setTopMovies(top_rated.results);
+      setPopularMovies(popular.results);
+      setTrendMovies(movie_day.results);
+    });
   }, [currentLang]);
 
   return (
