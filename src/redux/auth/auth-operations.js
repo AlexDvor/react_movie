@@ -2,8 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'http://localhost:4040/api';
-// axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
+// axios.defaults.baseURL = 'http://localhost:4040/api';
+axios.defaults.baseURL = 'https://watchentrailer.herokuapp.com/api';
 
 type TDataForm = {
   email: string,
